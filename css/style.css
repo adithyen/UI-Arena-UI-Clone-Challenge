@@ -568,6 +568,18 @@ section.restaurants-section,
   position: relative;
 }
 
+.offers-link svg,
+.nav-link svg.ppAwf {
+  fill: currentColor;
+  stroke: none !important;
+}
+
+.nav-link:hover svg.ppAwf,
+.offers-link:hover svg {
+  fill: #fc8019 !important;
+  stroke: none !important;
+}
+
 .new-badge {
   color: #e56000;
   font-size: 10px;
