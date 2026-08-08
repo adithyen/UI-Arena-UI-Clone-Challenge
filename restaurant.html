@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza Hut - Order Online | Swiggy</title>
+  <meta name="description" content="Order pizza online from Pizza Hut on Swiggy. View menu, offers and get it delivered fast.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/restaurant.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="index.html" class="logo-link">
+          <img src="assets/swiggy-logo.svg" alt="Swiggy" class="logo-img">
+        </a>
+        <button class="location-btn">
+          <span class="location-text">Other</span>
+          <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+      </div>
+      <div class="nav-right">
+        <a href="#" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Swiggy Corporate</a>
+        <a href="search.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search</a>
+        <a href="#" class="nav-link offers-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Offers<span class="new-badge">NEW</span></a>
+        <a href="help.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Help</a>
+        <a href="#" class="nav-link" id="signInBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Sign In</a>
+        <a href="cart.html" class="nav-link cart-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span id="cartCount">0</span> Cart</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- breadcrumb -->
+  <div class="breadcrumb-bar">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>Thiruvananthapuram</span>
+      <span>/</span>
+      <span class="bc-current">Pizza Hut</span>
+    </div>
+  </div>
+
+  <!-- restaurant hero -->
+  <div class="rest-hero">
+    <div class="rest-hero-inner">
+      <h1 class="rest-name">Pizza Hut</h1>
+      <div class="rest-tabs">
+        <button class="rest-tab active-tab" onclick="switchTab(this,'online')">Order Online</button>
+        <button class="rest-tab" onclick="switchTab(this,'dineout')">Dineout</button>
+      </div>
+      <div class="rest-banner-wrap">
+        <img src="assets/restaurants/pizza-hut.jpg" alt="Pizza Hut" class="rest-banner-img" onerror="this.style.background='#e8523a'">
+      </div>
+      <!-- info card -->
+      <div class="rest-info-card">
+        <div class="rest-rating-row">
+          <span class="rating-badge">★ 4.4 (4.5K+ ratings)</span>
+          <span class="rest-price">₹350 for two</span>
+        </div>
+        <p class="rest-cuisine-link">Pizzas</p>
+        <div class="rest-status">
+          <span class="status-open">Open now</span>
+          <span class="status-dot">·</span>
+          <span>Closes 11:00 pm</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="12" style="color:var(--orange)"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="outlet-row">
+          <div class="outlet-dot"></div>
+          <span class="outlet-text">Outlet <span class="outlet-name">Palayam</span> <svg viewBox="0 0 24 24" fill="currentColor" width="10" style="color:var(--orange)"><polygon points="5 3 19 12 5 21 5 3"/></svg></span>
+        </div>
+        <div class="delivery-row">
+          <div class="delivery-dot"></div>
+          <span>25–30 mins</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- menu section -->
+  <div class="menu-container" id="menuContainer">
+    <div class="menu-left" id="menuLeft">
+      <!-- sidebar categories -->
+      <div class="menu-sidebar">
+        <nav class="menu-cat-nav" id="menuCatNav">
+          <a href="#recommended" class="menu-cat-link active-cat" onclick="activateCat(this)">Recommended</a>
+          <a href="#starters" class="menu-cat-link" onclick="activateCat(this)">Starters</a>
+          <a href="#personal" class="menu-cat-link" onclick="activateCat(this)">Personal Pizzas</a>
+          <a href="#medium" class="menu-cat-link" onclick="activateCat(this)">Medium Pizzas</a>
+          <a href="#large" class="menu-cat-link" onclick="activateCat(this)">Large Pizzas</a>
+          <a href="#pasta" class="menu-cat-link" onclick="activateCat(this)">Pasta</a>
+          <a href="#sides" class="menu-cat-link" onclick="activateCat(this)">Sides &amp; More</a>
+          <a href="#drinks" class="menu-cat-link" onclick="activateCat(this)">Drinks</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="menu-right" id="menuRight">
+      <!-- deals -->
+      <div class="deals-section">
+        <div class="deals-header">
+          <h3>Deals for you</h3>
+          <div class="slider-controls">
+            <button class="slider-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <button class="slider-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+          </div>
+        </div>
+        <div class="deals-row">
+          <div class="deal-card">
+            <div class="deal-icon" style="background:#f97316">%</div>
+            <div>
+              <p class="deal-title">Flat 50% Off</p>
+              <p class="deal-sub">NO CODE REQUIRED</p>
+            </div>
+          </div>
+          <div class="deal-card">
+            <div class="deal-icon" style="background:#8b5cf6">★</div>
+            <div>
+              <p class="deal-title">Items At ₹399</p>
+              <p class="deal-sub">ON SELECT ITEMS |</p>
+            </div>
+          </div>
+          <div class="deal-card">
+            <div class="deal-icon" style="background:#f97316">%</div>
+            <div>
+              <p class="deal-title">60% Off Upto ₹120</p>
+              <p class="deal-sub">NO CODE REQUIRED</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- search dishes -->
+      <div class="dish-search-wrap">
+        <input type="text" class="dish-search" placeholder="Search for dishes" oninput="filterDishes(this.value)" id="dishSearch">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="dish-search-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+
+      <!-- filter toggles -->
+      <div class="veg-filter-row">
+        <button class="veg-toggle" id="vegToggle" onclick="toggleVeg()" title="Veg only">
+          <span class="veg-dot"></span>
+        </button>
+        <button class="veg-toggle nonveg-toggle" title="Non-veg only">
+          <span class="nonveg-dot"></span>
+        </button>
+        <button class="bestseller-chip">Bestseller</button>
+      </div>
+
+      <!-- menu items -->
+      <div class="menu-items" id="menuItems">
+        <!-- recommended -->
+        <div class="menu-category-block" id="recommended">
+          <div class="cat-header" onclick="toggleCategory('rec-items')">
+            <h3>Recommended <span class="item-count">(20)</span></h3>
+            <svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+          </div>
+          <div class="cat-items" id="rec-items">
+            <!-- item -->
+            <div class="menu-item" data-name="margherita" data-type="veg">
+              <div class="item-left">
+                <div class="veg-indicator veg-icon"></div>
+                <p class="item-bestseller">★ Bestseller</p>
+                <h4 class="item-name">Margherita</h4>
+                <p class="item-price">₹149</p>
+                <div class="item-rating">★ 4.4 (155)</div>
+                <p class="item-desc">Pizza topped with our herb-infused signature pan sauce and mozzarella cheese. A classic treat for all cheese lovers out there! (PAN Per/Med-292 K... <button class="more-btn">more</button></p>
+              </div>
+              <div class="item-right">
+                <div class="item-img-wrap">
+                  <img src="assets/menu/margherita.jpg" alt="Margherita" onerror="this.parentElement.style.background='#f0ebe0'">
+                  <button class="add-btn" onclick="addItemToCart({id:'pizza-1',name:'Margherita',price:149,img:'assets/menu/margherita.jpg'})">ADD</button>
+                  <p class="customisable-tag">Customisable</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-item" data-name="veggie feast" data-type="veg">
+              <div class="item-left">
+                <div class="veg-indicator veg-icon"></div>
+                <h4 class="item-name">Veggie Feast</h4>
+                <p class="item-price">₹229</p>
+                <div class="item-rating">★ 4.5 (43)</div>
+                <p class="item-desc">Serves 1 | Herbed onion and green capsicum, juicy sweet corn &amp; mozzarella cheese pizza</p>
+              </div>
+              <div class="item-right">
+                <div class="item-img-wrap">
+                  <img src="assets/menu/veggie-feast.jpg" alt="Veggie Feast" onerror="this.parentElement.style.background='#f5ead0'">
+                  <button class="add-btn" onclick="addItemToCart({id:'pizza-2',name:'Veggie Feast',price:229,img:'assets/menu/veggie-feast.jpg'})">ADD</button>
+                  <p class="customisable-tag">Customisable</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-item" data-name="pepperoni pizza" data-type="nonveg">
+              <div class="item-left">
+                <div class="veg-indicator nonveg-icon"></div>
+                <h4 class="item-name">Pepperoni Pizza</h4>
+                <p class="item-price">₹329</p>
+                <div class="item-rating">★ 4.6 (218)</div>
+                <p class="item-desc">Classic pepperoni slices on our signature tomato sauce with mozzarella cheese</p>
+              </div>
+              <div class="item-right">
+                <div class="item-img-wrap">
+                  <img src="assets/menu/pepperoni.jpg" alt="Pepperoni Pizza" onerror="this.parentElement.style.background='#f0d0c0'">
+                  <button class="add-btn" onclick="addItemToCart({id:'pizza-3',name:'Pepperoni Pizza',price:329})">ADD</button>
+                  <p class="customisable-tag">Customisable</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-item" data-name="bbq chicken" data-type="nonveg">
+              <div class="item-left">
+                <div class="veg-indicator nonveg-icon"></div>
+                <p class="item-bestseller">★ Bestseller</p>
+                <h4 class="item-name">BBQ Chicken</h4>
+                <p class="item-price">₹369</p>
+                <div class="item-rating">★ 4.7 (312)</div>
+                <p class="item-desc">Smoky BBQ sauce, grilled chicken, onions and green capsicum on a crispy crust</p>
+              </div>
+              <div class="item-right">
+                <div class="item-img-wrap">
+                  <img src="assets/menu/bbq-chicken.jpg" alt="BBQ Chicken" onerror="this.parentElement.style.background='#e8c8a0'">
+                  <button class="add-btn" onclick="addItemToCart({id:'pizza-4',name:'BBQ Chicken',price:369})">ADD</button>
+                  <p class="customisable-tag">Customisable</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-item" data-name="paneer tikka" data-type="veg">
+              <div class="item-left">
+                <div class="veg-indicator veg-icon"></div>
+                <h4 class="item-name">Paneer Tikka</h4>
+                <p class="item-price">₹289</p>
+                <div class="item-rating">★ 4.4 (89)</div>
+                <p class="item-desc">Tandoori paneer chunks with onion, capsicum and mint chutney base</p>
+              </div>
+              <div class="item-right">
+                <div class="item-img-wrap">
+                  <img src="assets/menu/paneer-tikka.jpg" alt="Paneer Tikka" onerror="this.parentElement.style.background='#f0d890'">
+                  <button class="add-btn" onclick="addItemToCart({id:'pizza-5',name:'Paneer Tikka',price:289})">ADD</button>
+                  <p class="customisable-tag">Customisable</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- starters -->
+        <div class="menu-category-block" id="starters">
+          <div class="cat-header" onclick="toggleCategory('starters-items')">
+            <h3>Starters <span class="item-count">(8)</span></h3>
+            <svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+          </div>
+          <div class="cat-items" id="starters-items">
+            <div class="menu-item" data-name="garlic bread" data-type="veg">
+              <div class="item-left">
+                <div class="veg-indicator veg-icon"></div>
+                <p class="item-bestseller">★ Bestseller</p>
+                <h4 class="item-name">Garlic Bread</h4>
+                <p class="item-price">₹99</p>
+                <p class="item-desc">Crispy garlic bread with herbs and butter, served with dip</p>
+              </div>
+              <div class="item-right">
+                <div class="item-img-wrap">
+                  <img src="assets/menu/garlic-bread.jpg" alt="Garlic Bread" onerror="this.parentElement.style.background='#f5e8c0'">
+                  <button class="add-btn" onclick="addItemToCart({id:'pizza-6',name:'Garlic Bread',price:99})">ADD</button>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item" data-name="stuffed garlic bread" data-type="veg">
+              <div class="item-left">
+                <div class="veg-indicator veg-icon"></div>
+                <h4 class="item-name">Stuffed Garlic Bread</h4>
+                <p class="item-price">₹149</p>
+                <p class="item-desc">Garlic bread stuffed with cheese and herbs</p>
+              </div>
+              <div class="item-right">
+                <div class="item-img-wrap">
+                  <img src="assets/menu/stuffed-bread.jpg" alt="Stuffed Garlic Bread" onerror="this.parentElement.style.background='#f0e0b0'">
+                  <button class="add-btn" onclick="addItemToCart({id:'pizza-7',name:'Stuffed Garlic Bread',price:149})">ADD</button>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item" data-name="chicken wings" data-type="nonveg">
+              <div class="item-left">
+                <div class="veg-indicator nonveg-icon"></div>
+                <h4 class="item-name">Chicken Wings (6 pcs)</h4>
+                <p class="item-price">₹189</p>
+                <p class="item-desc">Crispy fried chicken wings tossed in spicy buffalo sauce</p>
+              </div>
+              <div class="item-right">
+                <div class="item-img-wrap">
+                  <img src="assets/menu/wings.jpg" alt="Chicken Wings" onerror="this.parentElement.style.background='#e8c0a0'">
+                  <button class="add-btn" onclick="addItemToCart({id:'pizza-8',name:'Chicken Wings (6 pcs)',price:189})">ADD</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- personal pizzas -->
+        <div class="menu-category-block" id="personal">
+          <div class="cat-header" onclick="toggleCategory('personal-items')">
+            <h3>Personal Pizzas <span class="item-count">(12)</span></h3>
+            <svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+          </div>
+          <div class="cat-items" id="personal-items">
+            <div class="menu-item" data-name="veg supreme personal" data-type="veg">
+              <div class="item-left">
+                <div class="veg-indicator veg-icon"></div>
+                <h4 class="item-name">Veg Supreme Personal</h4>
+                <p class="item-price">₹179</p>
+                <p class="item-desc">Loaded with veggies — olives, capsicum, onion, mushroom, sweetcorn on tomato sauce</p>
+              </div>
+              <div class="item-right">
+                <div class="item-img-wrap">
+                  <img src="assets/menu/veg-supreme.jpg" alt="Veg Supreme" onerror="this.parentElement.style.background='#d8eac0'">
+                  <button class="add-btn" onclick="addItemToCart({id:'pizza-9',name:'Veg Supreme Personal',price:179})">ADD</button>
+                  <p class="customisable-tag">Customisable</p>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item" data-name="chicken supreme personal" data-type="nonveg">
+              <div class="item-left">
+                <div class="veg-indicator nonveg-icon"></div>
+                <h4 class="item-name">Chicken Supreme Personal</h4>
+                <p class="item-price">₹249</p>
+                <p class="item-desc">Grilled chicken, olives, onion on our signature tomato sauce</p>
+              </div>
+              <div class="item-right">
+                <div class="item-img-wrap">
+                  <img src="assets/menu/chicken-supreme.jpg" alt="Chicken Supreme" onerror="this.parentElement.style.background='#e0c8a8'">
+                  <button class="add-btn" onclick="addItemToCart({id:'pizza-10',name:'Chicken Supreme Personal',price:249})">ADD</button>
+                  <p class="customisable-tag">Customisable</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- medium pizzas -->
+        <div class="menu-category-block" id="medium">
+          <div class="cat-header" onclick="toggleCategory('medium-items')">
+            <h3>Medium Pizzas <span class="item-count">(10)</span></h3>
+            <svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+          </div>
+          <div class="cat-items" id="medium-items">
+            <div class="menu-item" data-name="farmhouse medium" data-type="veg">
+              <div class="item-left">
+                <div class="veg-indicator veg-icon"></div>
+                <h4 class="item-name">Farmhouse Medium</h4>
+                <p class="item-price">₹299</p>
+                <p class="item-desc">Grilled mushroom, capsicum, onion, tomato on a tangy tomato sauce</p>
+              </div>
+              <div class="item-right">
+                <div class="item-img-wrap">
+                  <img src="assets/menu/farmhouse.jpg" alt="Farmhouse" onerror="this.parentElement.style.background='#d0e8c0'">
+                  <button class="add-btn" onclick="addItemToCart({id:'pizza-11',name:'Farmhouse Medium',price:299})">ADD</button>
+                  <p class="customisable-tag">Customisable</p>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item" data-name="non veg supreme medium" data-type="nonveg">
+              <div class="item-left">
+                <div class="veg-indicator nonveg-icon"></div>
+                <h4 class="item-name">Non-Veg Supreme Medium</h4>
+                <p class="item-price">₹399</p>
+                <p class="item-desc">Chicken tikka, grilled chicken, peri peri chicken on a tomato base</p>
+              </div>
+              <div class="item-right">
+                <div class="item-img-wrap">
+                  <img src="assets/menu/nveg-supreme.jpg" alt="Non-veg Supreme" onerror="this.parentElement.style.background='#e8d0b0'">
+                  <button class="add-btn" onclick="addItemToCart({id:'pizza-12',name:'Non-Veg Supreme Medium',price:399})">ADD</button>
+                  <p class="customisable-tag">Customisable</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- pasta -->
+        <div class="menu-category-block" id="pasta">
+          <div class="cat-header" onclick="toggleCategory('pasta-items')">
+            <h3>Pasta <span class="item-count">(6)</span></h3>
+            <svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+          </div>
+          <div class="cat-items" id="pasta-items">
+            <div class="menu-item" data-name="arrabiata pasta" data-type="veg">
+              <div class="item-left">
+                <div class="veg-indicator veg-icon"></div>
+                <h4 class="item-name">Arrabiata Pasta</h4>
+                <p class="item-price">₹159</p>
+                <p class="item-desc">Spicy tomato-based penne pasta with herbs and parmesan</p>
+              </div>
+              <div class="item-right">
+                <div class="item-img-wrap">
+                  <img src="assets/menu/arrabiata.jpg" alt="Arrabiata Pasta" onerror="this.parentElement.style.background='#f0d0c0'">
+                  <button class="add-btn" onclick="addItemToCart({id:'pizza-13',name:'Arrabiata Pasta',price:159})">ADD</button>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item" data-name="white sauce pasta" data-type="veg">
+              <div class="item-left">
+                <div class="veg-indicator veg-icon"></div>
+                <h4 class="item-name">White Sauce Pasta</h4>
+                <p class="item-price">₹169</p>
+                <p class="item-desc">Creamy bechamel pasta with fresh vegetables and cheese</p>
+              </div>
+              <div class="item-right">
+                <div class="item-img-wrap">
+                  <img src="assets/menu/white-pasta.jpg" alt="White Sauce Pasta" onerror="this.parentElement.style.background='#e8e0d0'">
+                  <button class="add-btn" onclick="addItemToCart({id:'pizza-14',name:'White Sauce Pasta',price:169})">ADD</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- sides -->
+        <div class="menu-category-block" id="sides">
+          <div class="cat-header" onclick="toggleCategory('sides-items')">
+            <h3>Sides &amp; More <span class="item-count">(5)</span></h3>
+            <svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+          </div>
+          <div class="cat-items" id="sides-items">
+            <div class="menu-item" data-name="coleslaw" data-type="veg">
+              <div class="item-left">
+                <div class="veg-indicator veg-icon"></div>
+                <h4 class="item-name">Coleslaw</h4>
+                <p class="item-price">₹59</p>
+                <p class="item-desc">Fresh creamy coleslaw with shredded cabbage and carrots</p>
+              </div>
+              <div class="item-right">
+                <div class="item-img-wrap">
+                  <img src="assets/menu/coleslaw.jpg" alt="Coleslaw" onerror="this.parentElement.style.background='#e8f0d0'">
+                  <button class="add-btn" onclick="addItemToCart({id:'pizza-15',name:'Coleslaw',price:59})">ADD</button>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item" data-name="choco lava cake" data-type="veg">
+              <div class="item-left">
+                <div class="veg-indicator veg-icon"></div>
+                <h4 class="item-name">Choco Lava Cake</h4>
+                <p class="item-price">₹89</p>
+                <p class="item-desc">Warm chocolate cake with a gooey molten chocolate center</p>
+              </div>
+              <div class="item-right">
+                <div class="item-img-wrap">
+                  <img src="assets/menu/choco-lava.jpg" alt="Choco Lava Cake" onerror="this.parentElement.style.background='#3a2010'">
+                  <button class="add-btn" onclick="addItemToCart({id:'pizza-16',name:'Choco Lava Cake',price:89})">ADD</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- drinks -->
+        <div class="menu-category-block" id="drinks">
+          <div class="cat-header" onclick="toggleCategory('drinks-items')">
+            <h3>Drinks <span class="item-count">(4)</span></h3>
+            <svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+          </div>
+          <div class="cat-items" id="drinks-items">
+            <div class="menu-item" data-name="pepsi" data-type="veg">
+              <div class="item-left">
+                <div class="veg-indicator veg-icon"></div>
+                <h4 class="item-name">Pepsi 330ml</h4>
+                <p class="item-price">₹49</p>
+                <p class="item-desc">Ice cold Pepsi can</p>
+              </div>
+              <div class="item-right">
+                <div class="item-img-wrap">
+                  <img src="assets/menu/pepsi.jpg" alt="Pepsi" onerror="this.parentElement.style.background='#1a3a8a'">
+                  <button class="add-btn" onclick="addItemToCart({id:'pizza-17',name:'Pepsi 330ml',price:49})">ADD</button>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item" data-name="7up" data-type="veg">
+              <div class="item-left">
+                <div class="veg-indicator veg-icon"></div>
+                <h4 class="item-name">7Up 330ml</h4>
+                <p class="item-price">₹49</p>
+                <p class="item-desc">Refreshing lemon lime soda</p>
+              </div>
+              <div class="item-right">
+                <div class="item-img-wrap">
+                  <img src="assets/menu/7up.jpg" alt="7Up" onerror="this.parentElement.style.background='#1a8a2a'">
+                  <button class="add-btn" onclick="addItemToCart({id:'pizza-18',name:'7Up 330ml',price:49})">ADD</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- floating cart bar (shows when cart has items) -->
+  <div class="floating-cart" id="floatingCart" style="display:none">
+    <div class="fc-inner">
+      <div class="fc-info">
+        <span id="fcCount">0 items</span>
+        <span class="fc-sep">|</span>
+        <span id="fcTotal">₹0</span>
+      </div>
+      <a href="cart.html" class="fc-btn">View Cart →</a>
+    </div>
+  </div>
+
+  <!-- sign in drawer -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeSignIn()"></div>
+  <div class="signin-drawer" id="signinDrawer">
+    <button class="drawer-close" onclick="closeSignIn()">✕</button>
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <div>
+          <h2>Login</h2>
+          <p>or <a href="#" class="create-account-link">create an account</a></p>
+          <div class="drawer-underline"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="tel" id="phoneInput" class="phone-input" placeholder="Phone number" maxlength="10">
+      </div>
+      <button class="login-btn" onclick="handleLogin()">LOGIN</button>
+      <p class="terms-text">By clicking on Login, I accept the <a href="#">Terms &amp; Conditions</a> &amp; <a href="#">Privacy Policy</a></p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/restaurant.js"></script>
+</body>
+</html>
