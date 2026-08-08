@@ -273,6 +273,108 @@ mothers_veg_dishes = [
     }
 ]
 
+birdie_bite_dishes = [
+    {
+        "name": "Oats Upma",
+        "price": "249",
+        "rating": "4.0",
+        "rating_count": "(21)",
+        "desc": "A wholesome and flavorful vegetarian twist on a classic Indian breakfast favorite, perfect for a satisfying and nutritious meal.",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2026/1/26/ebef1250-0237-437f-a1c2-2961f612c7ed_87ffff00-250f-4730-88bb-5d6b8bb4ec41.JPG",
+        "veg": True
+    },
+    {
+        "name": "Dal Khichidi [450Ml]",
+        "price": "249",
+        "rating": "3.3",
+        "rating_count": "(6)",
+        "desc": "| Serve 1 | Medium spicy | This gently flavoured khichadi, tempered with a ghee tadka is a powerhouse of protein- served with papad and pickle |",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2025/4/1/72d2953b-2a6d-41ad-aa37-bf04db7a3096_8f9d4506-b9d5-438d-83a1-a303f148c9d7.jpg",
+        "veg": True
+    },
+    {
+        "name": "Garlic Khichdi",
+        "price": "249",
+        "rating": "4.9",
+        "rating_count": "(3)",
+        "desc": "| Serve 1 | Medium spicy | This popular Khichadi is the most delicious way in which you can reap the innumerable health benefits of garlic | Served with Papad |",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2026/1/18/23c6f24e-e362-4911-a7e4-0fe71dcd7128_b8ffbd99-15ce-453c-957b-835ece19d1e0.JPG",
+        "veg": True
+    },
+    {
+        "name": "Sunny Side Up",
+        "price": "129",
+        "rating": "2.1",
+        "rating_count": "(3)",
+        "desc": "A delightful classic featuring perfectly cooked eggs that are simply irresistible.",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/b93936d8b9fc5ce6b8b06113dca783ad",
+        "veg": False
+    },
+    {
+        "name": "Cheese Omlet",
+        "price": "139",
+        "rating": "2.8",
+        "rating_count": "(4)",
+        "desc": "A delectable and savory delight with a rich and creamy filling, perfect for a quick and satisfying bite.",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2026/1/29/ef1c1a74-64af-4ba3-8b42-84f7184e3976_bf9f0693-373e-42c0-a02f-25db43234d81.JPG",
+        "veg": True
+    },
+    {
+        "name": "Nuggets ( 8pcs)",
+        "price": "147",
+        "rating": "4.2",
+        "rating_count": "(8)",
+        "desc": "Crispy and flavorful bites that will surely satisfy your cravings.",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2024/9/11/71059e9e-289d-41a0-b6ff-45f3a9b14b1b_b7b655a7-c364-4bed-918e-a50f6ce69f29.jpg",
+        "veg": False
+    },
+    {
+        "name": "Classic Paneer Maggi",
+        "price": "147",
+        "rating": "4.4",
+        "rating_count": "(11)",
+        "desc": "Indulge in a timeless favorite, loaded with delightful flavors, perfect for a quick and satisfying bite.",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2026/1/18/f8267abc-d0bf-45c7-a2da-6e94ac316bb6_754ce4a5-c2e8-4c87-89b6-63eff5c7bcec.JPG",
+        "veg": True
+    },
+    {
+        "name": "Classic  Maggi",
+        "price": "119",
+        "rating": "3.3",
+        "rating_count": "(5)",
+        "desc": "A timeless favorite that delivers mouthwatering flavors in every bite, perfect for a quick, satisfying vegetarian treat.",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2026/1/18/da41d996-9ffa-4277-8487-64afade5d708_0fe413d9-9a23-4cbf-9a1c-0a664438630f.JPG",
+        "veg": True
+    },
+    {
+        "name": "Egg Maggi",
+        "price": "115",
+        "rating": "3.4",
+        "rating_count": "(8)",
+        "desc": "Indulge in a comforting bowl of noodles, perfectly blended with scrambled egg for a delightful, savory experience.",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2026/7/3/9d99a1e4-4ed0-4087-ac1d-090f8d77ea41_5eee281f-5dd0-4740-8337-d0f60d2698f0.jpg",
+        "veg": False
+    },
+    {
+        "name": "Chicken Massala Maggi",
+        "price": "119",
+        "rating": "3.8",
+        "rating_count": "(32)",
+        "desc": "A tantalizing blend of flavors that will satisfy any craving for a quick, savory non-Veg delight.",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2026/7/3/6f0ac1f7-07ef-4cdc-9b14-17cf4b7dad4b_d1abb90f-c109-4ccd-a99a-77384fb0b8b2.jpg",
+        "veg": False
+    },
+    {
+        "name": "Classic Cheese Massala Maggi",
+        "price": "149",
+        "rating": "4.7",
+        "rating_count": "(5)",
+        "desc": "Deliciously cheesy and flavorful, this quick bite will satisfy your cravings with its classic taste.",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2026/7/3/010a7d5f-6355-4102-a135-f13deb5ffe11_3ddc8bbb-2db4-451e-aaf5-7aded709b601.jpg",
+        "veg": True
+    }
+]
+
 def render_dish(dish, dish_id):
     if dish['veg']:
         icon_svg = '<svg viewBox="0 0 20 20" width="16" height="16" class="sc-eWVJoQ cxxFkr"><rect x="2" y="2" width="16" height="16" rx="3" fill="none" stroke="#0f8a65" stroke-width="2"/><circle cx="10" cy="10" r="4.5" fill="#0f8a65"/></svg>'
@@ -354,6 +456,8 @@ for r in restaurants:
         target_dishes = zam_zam_dishes
     elif r['id'] == 4:
         target_dishes = mothers_veg_dishes
+    elif r['id'] == 5:
+        target_dishes = birdie_bite_dishes
 
     if target_dishes:
         dishes_html = '\n'.join([render_dish(d, idx) for idx, d in enumerate(target_dishes)])
