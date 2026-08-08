@@ -30,13 +30,17 @@ a { text-decoration: none; color: inherit; }
 /* navbar - styled in Header Perfection CSS at end of file */
 
 .offers-link { position: relative; }
-.new-badge {
-  background: var(--yellow);
-  color: #333;
-  font-size: 9px; font-weight: 800;
-  padding: 1px 4px; border-radius: 3px;
-  margin-left: -4px;
-  letter-spacing: .5px;
+.new-badge, ._1eox- {
+  color: #ffa700 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  margin-left: 2px !important;
+  vertical-align: super !important;
+  text-transform: uppercase !important;
 }
 
 .cart-link { position: relative; }
@@ -627,12 +631,17 @@ section.restaurants-section,
   position: relative;
 }
 
-.new-badge {
-  color: #ffa700;
-  font-size: 10px;
-  font-weight: 700;
-  margin-left: 2px;
-  vertical-align: super;
+.new-badge, ._1eox- {
+  color: #ffa700 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  margin-left: 2px !important;
+  vertical-align: super !important;
+  text-transform: uppercase !important;
 }
 
 /* Swiggy Cart Badge & Icon */
