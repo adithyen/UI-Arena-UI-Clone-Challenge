@@ -1,0 +1,8 @@
+
+node_modules/
+.next/
+src/
+.claude/
+*.config.js
+tsconfig.json
+package*.json
