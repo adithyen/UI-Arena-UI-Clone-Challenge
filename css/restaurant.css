@@ -390,6 +390,52 @@ body.rest-body {
   gap: 12px;
 }
 
+/* Swiggy Arrow Controls (sc-tUfxG bGVLMI) */
+.sc-tUfxG.bGVLMI {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.sc-tUfxG.bGVLMI[disabled] {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.sc-emrHyn.fvspqi {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #e2e2e7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #02060c;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.sc-tUfxG.bGVLMI:not([disabled]):hover .sc-emrHyn.fvspqi {
+  background: #d0d0d5;
+}
+
+.sc-emrHyn.sc-kDDaHh.fvspqi.iLVdim,
+.sc-tUfxG[disabled] .sc-emrHyn {
+  opacity: 0.45;
+  background: #f2f2f6;
+  color: #93959f;
+}
+
+.sc-pGbXd.aihwO {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
 /* Deals horizontal slider */
 .sc-hjWTnH.fqwYui {
   overflow-x: auto;
