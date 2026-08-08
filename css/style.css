@@ -533,26 +533,51 @@ section.restaurants-section,
   align-items: center;
   gap: 10px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   color: #3d4152;
   text-decoration: none;
   transition: color 0.2s ease;
   white-space: nowrap;
 }
 
-.nav-link svg {
-  width: 20px;
-  height: 20px;
-  stroke: #3d4152;
-  transition: stroke 0.2s ease;
+.nav-link span {
+  font-weight: 600;
+}
+
+.nav-link svg.ppAwf {
+  fill: #686b78;
+  stroke: none;
+  transition: fill 0.2s ease;
+}
+
+.nav-link svg.corp-icon rect {
+  stroke: #02060c;
+  stroke-opacity: 0.75;
+  transition: stroke 0.2s ease, stroke-opacity 0.2s ease;
+}
+
+.nav-link svg.corp-icon path {
+  fill: #02060c;
+  fill-opacity: 0.75;
+  transition: fill 0.2s ease, fill-opacity 0.2s ease;
 }
 
 .nav-link:hover {
-  color: #fc8019;
+  color: #fc8019 !important;
 }
 
-.nav-link:hover svg {
-  stroke: #fc8019;
+.nav-link:hover svg.ppAwf {
+  fill: #fc8019 !important;
+}
+
+.nav-link:hover svg.corp-icon rect {
+  stroke: #fc8019 !important;
+  stroke-opacity: 1 !important;
+}
+
+.nav-link:hover svg.corp-icon path {
+  fill: #fc8019 !important;
+  fill-opacity: 1 !important;
 }
 
 .active-nav-link {
@@ -560,71 +585,77 @@ section.restaurants-section,
   font-weight: 600;
 }
 
-.active-nav-link svg {
-  stroke: #fc8019 !important;
+.active-nav-link svg.ppAwf {
+  fill: #fc8019 !important;
 }
 
 .offers-link {
   position: relative;
 }
 
-.offers-link svg,
-.nav-link svg.ppAwf {
-  fill: currentColor;
-  stroke: none !important;
-}
-
-.nav-link:hover svg.ppAwf,
-.offers-link:hover svg {
-  fill: #fc8019 !important;
-  stroke: none !important;
-}
-
 .new-badge {
-  color: #e56000;
+  color: #ffa700;
   font-size: 10px;
   font-weight: 700;
   margin-left: 2px;
   vertical-align: super;
 }
 
-.cart-icon-wrapper {
+/* Swiggy Cart Badge & Icon */
+.QO_nN {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  line-height: 0;
 }
 
-.cart-zero-badge {
-  border: 2px solid #3d4152;
-  border-radius: 4px;
-  padding: 1px 6px;
-  font-size: 13px;
-  font-weight: 700;
-  color: #3d4152;
+.vZTPh {
+  fill: #fff !important;
+  stroke-width: 2px !important;
+  stroke: #282c3f !important;
+  transition: stroke 0.2s ease;
+}
+
+.PV4Mz {
+  stroke: #60b246 !important;
+  fill: #60b246 !important;
+}
+
+._25bgJ {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  font-weight: 600;
+  color: #282c3f;
   line-height: 1;
+  pointer-events: none;
 }
 
-.cart-green-badge {
-  background: #60b246;
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 800;
-  padding: 2px 7px;
-  border-radius: 4px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 22px;
-  height: 22px;
+._2Fyck ._25bgJ {
+  color: #fff !important;
 }
 
-.cart-has-items .cart-zero-badge {
-  display: none !important;
+._2Fyck .vZTPh {
+  stroke: #60b246 !important;
+  fill: #60b246 !important;
 }
 
-.cart-has-items .cart-label-text {
+.nav-link:hover svg.vZTPh {
+  stroke: #fc8019 !important;
+}
+
+.nav-link:hover ._2Fyck svg.PV4Mz,
+.nav-link:hover svg.PV4Mz {
+  stroke: #fc8019 !important;
+  fill: #fc8019 !important;
+}
+
+.cart-has-items .cart-label-text,
+.cart-has-items span {
   color: #60b246 !important;
-  font-weight: 700 !important;
 }
 
 /* Exact Swiggy Logo & Checkout Title from checkout.html */

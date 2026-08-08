@@ -26,20 +26,26 @@ function updateCartBadge() {
   const cart = getCart();
   const total = cart.reduce((sum, i) => sum + i.qty, 0);
   
-  const zeroBadge = document.getElementById('cartZeroBadge');
-  const greenBadge = document.getElementById('cartGreenBadge');
+  const countEl = document.getElementById('cartCount');
+  const cartWrapper = document.getElementById('cartIconWrapper');
+  const cartSvg = document.getElementById('cartSvg');
   const navCart = document.getElementById('navCart');
   
+  if (countEl) countEl.textContent = total;
+  
   if (total > 0) {
-    if (zeroBadge) zeroBadge.style.display = 'none';
-    if (greenBadge) {
-      greenBadge.textContent = total;
-      greenBadge.style.display = 'inline-flex';
+    if (cartWrapper) cartWrapper.classList.add('_2Fyck');
+    if (cartSvg) {
+      cartSvg.classList.remove('vZTPh');
+      cartSvg.classList.add('PV4Mz');
     }
     if (navCart) navCart.classList.add('cart-has-items');
   } else {
-    if (zeroBadge) zeroBadge.style.display = 'inline-flex';
-    if (greenBadge) greenBadge.style.display = 'none';
+    if (cartWrapper) cartWrapper.classList.remove('_2Fyck');
+    if (cartSvg) {
+      cartSvg.classList.add('vZTPh');
+      cartSvg.classList.remove('PV4Mz');
+    }
     if (navCart) navCart.classList.remove('cart-has-items');
   }
 }
