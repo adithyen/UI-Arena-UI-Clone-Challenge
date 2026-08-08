@@ -1,0 +1,183 @@
+/* cart / checkout page */
+.checkout-body { background: var(--bg-gray); }
+
+.checkout-nav {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+.checkout-title {
+  font-size: 13px; font-weight: 700; letter-spacing: 1px;
+  color: var(--text-dark);
+}
+
+.checkout-nav-right { display: flex; gap: 28px; }
+
+/* empty cart */
+.empty-cart {
+  min-height: 80vh;
+  display: flex; align-items: center; justify-content: center;
+}
+.empty-inner { text-align: center; }
+.empty-illustration { font-size: 80px; margin-bottom: 24px; }
+.empty-inner h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+.empty-inner p { color: var(--text-gray); margin-bottom: 24px; }
+.see-restaurants-btn {
+  display: inline-block; padding: 14px 28px;
+  background: var(--orange); color: #fff;
+  border-radius: 6px; font-size: 14px; font-weight: 700;
+  letter-spacing: .5px;
+  transition: background .2s;
+}
+.see-restaurants-btn:hover { background: var(--orange-dark); }
+
+/* checkout layout */
+.checkout-wrap {
+  max-width: 1060px; margin: 0 auto;
+  padding: 28px 24px;
+  display: flex; gap: 24px;
+  align-items: flex-start;
+}
+
+/* left steps */
+.checkout-left { flex: 1; display: flex; flex-direction: column; gap: 0; }
+
+.step-card {
+  background: #fff; border-radius: 8px;
+  padding: 0; margin-bottom: 8px;
+  display: flex; overflow: hidden;
+}
+.step-disabled { opacity: .6; pointer-events: none; }
+
+.step-icon-col {
+  width: 56px; background: var(--text-dark);
+  display: flex; flex-direction: column; align-items: center; padding-top: 20px;
+}
+.step-icon {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--text-dark);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.step-icon svg { width: 18px; }
+.step-icon-inactive { background: #aaa; }
+.step-line { width: 1px; flex: 1; background: rgba(255,255,255,.2); margin-top: 8px; }
+
+.step-body { flex: 1; padding: 20px 24px; }
+.step-body h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+.step-sub { font-size: 14px; color: var(--text-gray); margin-bottom: 20px; }
+
+.auth-illustration { text-align: right; margin-bottom: -60px; }
+.auth-illustration img { width: 80px; }
+
+.auth-btns { display: flex; gap: 16px; margin-top: 16px; margin-bottom: 8px; }
+.auth-btn {
+  flex: 1; padding: 16px 20px; border-radius: 6px;
+  font-size: 13px; font-family: inherit; cursor: pointer;
+  line-height: 1.4; text-align: center;
+}
+.login-outline-btn {
+  border: 2px solid var(--green);
+  background: #fff; color: var(--text-dark);
+}
+.login-outline-btn strong { color: var(--green); font-size: 16px; display: block; }
+.signup-btn {
+  border: none; background: var(--green); color: #fff;
+}
+.signup-btn strong { font-size: 16px; display: block; }
+
+/* right: order summary */
+.checkout-right {
+  width: 320px; flex-shrink: 0;
+  display: flex; flex-direction: column; gap: 8px;
+}
+
+.order-restaurant {
+  background: #fff; border-radius: 8px; padding: 16px;
+}
+.rest-row { display: flex; align-items: center; gap: 12px; }
+.rest-thumb { width: 48px; height: 48px; border-radius: 6px; object-fit: cover; background: #ddd; }
+.rest-row-info h4 { font-size: 16px; font-weight: 700; }
+.rest-row-info p { font-size: 13px; color: var(--text-gray); }
+.rest-underline { border-top: 1px solid var(--text-dark); width: 24px; margin-top: 6px; }
+
+.order-items { background: #fff; border-radius: 8px; padding: 0; }
+
+.cart-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px; border-bottom: 1px solid var(--border);
+}
+.cart-item:last-child { border-bottom: none; }
+
+.ci-veg { width: 14px; height: 14px; border: 1px solid var(--green); border-radius: 2px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.ci-veg::after { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+
+.ci-name { font-size: 14px; font-weight: 500; flex: 1; margin-left: 8px; }
+
+.qty-control {
+  display: flex; align-items: center; gap: 0;
+  border: 1px solid var(--border); border-radius: 4px;
+  overflow: hidden;
+}
+.qty-btn {
+  width: 28px; height: 28px; border: none; background: #fff;
+  font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  color: var(--green); font-weight: 700;
+}
+.qty-btn:hover { background: #f0f0f0; }
+.qty-num { width: 24px; text-align: center; font-size: 14px; font-weight: 600; }
+
+.ci-price { font-size: 14px; font-weight: 600; margin-left: 12px; width: 48px; text-align: right; }
+
+/* suggestions */
+.suggestions-row {
+  background: #fff; border-radius: 8px; padding: 12px 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+.quote-icon { font-size: 20px; color: var(--text-gray); }
+.suggestions-input {
+  flex: 1; border: none; outline: none;
+  font-size: 14px; font-family: inherit; color: var(--text-gray);
+  background: transparent;
+}
+
+/* no contact */
+.no-contact-card {
+  background: #fff; border-radius: 8px; padding: 16px;
+}
+.no-contact-label { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
+.nc-checkbox { margin-top: 3px; accent-color: var(--orange); }
+.nc-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+.nc-sub { font-size: 13px; color: var(--text-gray); line-height: 1.5; }
+
+/* bill details */
+.bill-card {
+  background: #fff; border-radius: 8px; padding: 16px;
+}
+.bill-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 14px; }
+.bill-row {
+  display: flex; justify-content: space-between;
+  font-size: 14px; margin-bottom: 10px; color: var(--text-gray);
+}
+.extra-charges { border-top: 1px dashed var(--border); padding-top: 10px; margin-top: 4px; }
+.info-btn { font-size: 12px; color: var(--text-light); cursor: help; }
+.bill-total {
+  border-top: 1px solid var(--text-dark); padding-top: 12px; margin-top: 6px;
+  display: flex; justify-content: space-between;
+  font-size: 16px; font-weight: 800;
+}
+
+/* safety card */
+.safety-card {
+  background: #fff; border-radius: 8px; padding: 16px;
+  font-size: 13px;
+}
+.safety-sub { color: var(--text-gray); margin-top: 6px; line-height: 1.5; }
+.read-policy-link { color: var(--orange); font-weight: 600; display: inline-block; margin-top: 8px; }
+
+@media (max-width: 768px) {
+  .checkout-wrap { flex-direction: column; }
+  .checkout-right { width: 100%; }
+  .auth-btns { flex-direction: column; }
+}
