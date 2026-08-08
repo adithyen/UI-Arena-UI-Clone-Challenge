@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Swiggy</title>
+  <meta name="description" content="Secure checkout on Swiggy. Review your order and complete payment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cart.css">
+</head>
+<body class="checkout-body">
+  <!-- minimal checkout header -->
+  <nav class="checkout-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo-link">
+        <img src="assets/swiggy-logo.svg" alt="Swiggy" class="logo-img">
+      </a>
+      <span class="checkout-title">SECURE CHECKOUT</span>
+      <div class="checkout-nav-right">
+        <a href="help.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Help</a>
+        <a href="#" class="nav-link" id="signInBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Sign In</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- empty cart state -->
+  <div class="empty-cart" id="emptyCart" style="display:none">
+    <div class="empty-inner">
+      <div class="empty-illustration">🛒</div>
+      <h2>Your cart is empty</h2>
+      <p>You can go to home page to view more restaurants</p>
+      <a href="index.html" class="see-restaurants-btn">SEE RESTAURANTS NEAR YOU</a>
+    </div>
+  </div>
+
+  <!-- checkout content -->
+  <div class="checkout-wrap" id="checkoutWrap">
+    <div class="checkout-left">
+      <!-- account step -->
+      <div class="step-card" id="stepAccount">
+        <div class="step-icon-col">
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <h3>Account</h3>
+          <p class="step-sub">To place your order now, log in to your existing account or sign up.</p>
+          <div class="auth-illustration">
+            <img src="assets/food-icon.png" alt="" onerror="this.style.display='none'">
+          </div>
+          <div class="auth-btns">
+            <button class="auth-btn login-outline-btn" onclick="openSignIn()">
+              Have an account?<br><strong>LOG IN</strong>
+            </button>
+            <button class="auth-btn signup-btn">
+              New to Swiggy?<br><strong>SIGN UP</strong>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- delivery step -->
+      <div class="step-card step-disabled" id="stepDelivery">
+        <div class="step-icon-col">
+          <div class="step-icon step-icon-inactive">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <h3>Delivery address</h3>
+        </div>
+      </div>
+
+      <!-- payment step -->
+      <div class="step-card step-disabled" id="stepPayment">
+        <div class="step-icon-col">
+          <div class="step-icon step-icon-inactive">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          </div>
+        </div>
+        <div class="step-body">
+          <h3>Payment</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- right: order summary -->
+    <div class="checkout-right" id="checkoutRight">
+      <!-- restaurant info -->
+      <div class="order-restaurant" id="orderRestaurant">
+        <!-- populated by js -->
+      </div>
+
+      <!-- cart items -->
+      <div class="order-items" id="orderItems">
+        <!-- populated by js -->
+      </div>
+
+      <!-- suggestions -->
+      <div class="suggestions-row">
+        <span class="quote-icon">"</span>
+        <input type="text" class="suggestions-input" placeholder="Any suggestions? We will pass it on...">
+      </div>
+
+      <!-- no-contact delivery -->
+      <div class="no-contact-card">
+        <label class="no-contact-label">
+          <input type="checkbox" class="nc-checkbox">
+          <div class="nc-text">
+            <p class="nc-title">Opt in for No-contact Delivery</p>
+            <p class="nc-sub">Unwell, or avoiding contact? Please select no-contact delivery. Partner will safely place the order outside your door (not for COD)</p>
+          </div>
+        </label>
+      </div>
+
+      <!-- bill details -->
+      <div class="bill-card" id="billCard">
+        <h4>Bill Details</h4>
+        <div class="bill-row"><span>Item Total</span><span id="billItemTotal">₹0</span></div>
+        <div class="bill-row"><span>Delivery Fee | 1.4 kms <span class="info-btn">ℹ</span></span><span>₹24</span></div>
+        <div class="bill-row extra-charges"><span>GST &amp; Other Charges <span class="info-btn">ℹ</span></span><span id="billGst">₹0</span></div>
+        <div class="bill-total">
+          <span>TO PAY</span>
+          <span id="billTotal">₹0</span>
+        </div>
+      </div>
+
+      <!-- safety note -->
+      <div class="safety-card">
+        <p><strong>Review your order and address details to avoid cancellations</strong></p>
+        <p class="safety-sub">Note: Please ensure your address and order details are correct. This order, if cancelled, is non-refundable.</p>
+        <a href="#" class="read-policy-link">Read policy</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- sign in drawer -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeSignIn()"></div>
+  <div class="signin-drawer" id="signinDrawer">
+    <button class="drawer-close" onclick="closeSignIn()">✕</button>
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <div>
+          <h2>Login</h2>
+          <p>or <a href="#" class="create-account-link">create an account</a></p>
+          <div class="drawer-underline"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="tel" id="phoneInput" class="phone-input" placeholder="Phone number" maxlength="10">
+      </div>
+      <button class="login-btn" onclick="handleLogin()">LOGIN</button>
+      <p class="terms-text">By clicking on Login, I accept the <a href="#">Terms &amp; Conditions</a> &amp; <a href="#">Privacy Policy</a></p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>
