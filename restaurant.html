@@ -3,15 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pizza Hut - Order Online | Swiggy</title>
+  <title>Order from Pizza Hut online in Thiruvananthapuram | Swiggy</title>
   <meta name="description" content="Order pizza online from Pizza Hut on Swiggy. View menu, offers and get it delivered fast.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/restaurant.css">
 </head>
-<body>
-      <!-- navbar -->
+<body class="rest-body">
+
+  <!-- sticky top scroll bar -->
+  <div class="sticky-rest-header" id="stickyRestHeader">
+    <div class="sticky-header-inner">
+      <div class="sticky-header-left">
+        <span class="sticky-rest-title">Pizza Hut</span>
+        <span class="sticky-rest-time">30–40 mins</span>
+      </div>
+      <button class="sticky-search-btn" onclick="document.getElementById('dishSearch').focus()">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- navbar -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <div class="nav-left">
@@ -57,204 +72,395 @@
     </div>
   </nav>
 
-  <!-- breadcrumb -->
-  <div class="breadcrumb-bar">
-    <div class="breadcrumb-inner">
+  <!-- main restaurant container -->
+  <main class="rest-main-wrap">
+    
+    <!-- breadcrumb -->
+    <div class="rest-breadcrumb">
       <a href="index.html">Home</a>
-      <span>/</span>
-      <span>Thiruvananthapuram</span>
-      <span>/</span>
+      <span class="bc-sep">/</span>
+      <a href="index.html">Thiruvananthapuram</a>
+      <span class="bc-sep">/</span>
       <span class="bc-current">Pizza Hut</span>
     </div>
-  </div>
 
-  <!-- restaurant hero -->
-  <div class="rest-hero">
-    <div class="rest-hero-inner">
-      <h1 class="rest-name">Pizza Hut</h1>
-      <div class="rest-tabs">
-        <button class="rest-tab active-tab" onclick="switchTab(this,'online')">Order Online</button>
-        <button class="rest-tab" onclick="switchTab(this,'dineout')">Dineout</button>
+    <!-- restaurant header title & tabs -->
+    <div class="rest-top-header">
+      <h1 class="rest-title-name">Pizza Hut</h1>
+      <div class="rest-tabs-nav">
+        <button class="rest-tab-item active-tab" onclick="switchTab(this,'online')">Order Online</button>
+        <button class="rest-tab-item" onclick="switchTab(this,'dineout')">Dineout</button>
       </div>
-      <div class="rest-banner-wrap">
-        <img src="assets/restaurants/pizza-hut.svg" alt="Pizza Hut" class="rest-banner-img">
+    </div>
+
+    <!-- restaurant hero banner & card -->
+    <div class="rest-hero-card-container">
+      <div class="rest-hero-img-box">
+        <img src="assets/restaurants/pizza-hut.jpg" alt="Pizza Hut Hero" class="rest-hero-img" onerror="this.src='assets/restaurants/pizza-hut.svg'">
       </div>
-      <!-- info card -->
-      <div class="rest-info-card">
-        <div class="rest-rating-row">
-          <span class="rating-badge">â˜… 4.4 (4.5K+ ratings)</span>
-          <span class="rest-price">â‚¹350 for two</span>
+      <div class="rest-details-card">
+        <div class="rest-meta-row">
+          <div class="rest-rating-pill">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="#fff"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span>4.4 (4.5K+ ratings)</span>
+          </div>
+          <span class="rest-dot-sep">•</span>
+          <span class="rest-cost-for-two">₹350 for two</span>
         </div>
-        <p class="rest-cuisine-link">Pizzas</p>
-        <div class="rest-status">
-          <span class="status-open">Open now</span>
-          <span class="status-dot">Â·</span>
+        <div class="rest-cuisines-row">
+          <span class="cuisine-tag">Pizzas</span>
+        </div>
+        <div class="rest-timing-status">
+          <span class="open-status">Open now</span>
+          <span class="rest-dot-sep">•</span>
           <span>Closes 11:00 pm</span>
-          <svg viewBox="0 0 24 24" fill="currentColor" width="12" style="color:var(--orange)"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="#ff5200" style="margin-left:2px;"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
-        <div class="outlet-row">
-          <div class="outlet-dot"></div>
-          <span class="outlet-text">Outlet <span class="outlet-name">Palayam</span> <svg viewBox="0 0 24 24" fill="currentColor" width="10" style="color:var(--orange)"><polygon points="5 3 19 12 5 21 5 3"/></svg></span>
-        </div>
-        <div class="delivery-row">
-          <div class="delivery-dot"></div>
-          <span>20â€“25 mins</span>
+        <div class="rest-timeline-box">
+          <div class="timeline-line"></div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span>Outlet</span>
+              <span class="outlet-bold">Palayam</span>
+              <svg viewBox="0 0 24 24" width="10" height="10" fill="#ff5200"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="delivery-time-text">25–30 mins</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- deals for you section (exact Swiggy reference) -->
+    <div class="sc-cbDJdZ gkTsSk deals-outer-section">
+      <div class="sc-gVgovq dhzJlH">
+        <div class="sc-fWPeRB jQTnNU deals-header-flex">
+          <h2 class="sc-gkdxKW gpWcnk title deals-title"><div>Deals for you</div></h2>
+          <div class="deals-arrow-controls">
+            <button class="deal-slider-btn prev-btn" onclick="scrollDeals(-1)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <button class="deal-slider-btn next-btn" onclick="scrollDeals(1)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="sc-hjWTnH fqwYui deals-scroll-container" id="dealsScroll">
+        <div class="row deals-row-inner">
+          
+          <div class="sc-fHYzZk jhDRMQ deal-item-wrapper">
+            <div class="sc-dkmIaX kJjkZv sc-iObwlZ imbBIt deal-card-box">
+              <div data-testid="offer-card-container-0" class="sc-jSijaH eaOlhp deal-card-flex">
+                <div class="sc-fZKHaa gvuaWH deal-card-left">
+                  <div class="sc-jPqoyZ kVgsQP deal-img-wrap">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96,h_96/offers/generic" width="48" height="48" alt="Flat 50% Off" class="sc-bYEtBu eAhAvG">
+                  </div>
+                  <div class="sc-fWSMys deqVEu deal-text-wrap">
+                    <div class="sc-dlfnOL ibkpiG deal-main-text">Flat 50% Off</div>
+                    <div class="sc-dlfnOL byDNgU deal-sub-text">NO CODE REQUIRED</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sc-fHYzZk jhDRMQ deal-item-wrapper">
+            <div class="sc-dkmIaX kJjkZv sc-iObwlZ imbBIt deal-card-box">
+              <div data-testid="offer-card-container-1" class="sc-jSijaH eaOlhp deal-card-flex">
+                <div class="sc-fZKHaa gvuaWH deal-card-left">
+                  <div class="sc-jPqoyZ kVgsQP deal-img-wrap">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96,h_96/offers/DealRush_Offer_Icon.png" width="48" height="48" alt="Items At ₹399" class="sc-bYEtBu eAhAvG">
+                  </div>
+                  <div class="sc-fWSMys deqVEu deal-text-wrap">
+                    <div class="sc-dlfnOL ibkpiG deal-main-text">Items At ₹399</div>
+                    <div class="sc-dlfnOL byDNgU deal-sub-text">ON SELECT ITEMS |</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sc-fHYzZk jhDRMQ deal-item-wrapper">
+            <div class="sc-dkmIaX kJjkZv sc-iObwlZ imbBIt deal-card-box">
+              <div data-testid="offer-card-container-2" class="sc-jSijaH eaOlhp deal-card-flex">
+                <div class="sc-fZKHaa gvuaWH deal-card-left">
+                  <div class="sc-jPqoyZ kVgsQP deal-img-wrap">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96,h_96/offers/generic" width="48" height="48" alt="Flat ₹150 Off" class="sc-bYEtBu eAhAvG">
+                  </div>
+                  <div class="sc-fWSMys deqVEu deal-text-wrap">
+                    <div class="sc-dlfnOL ibkpiG deal-main-text">Flat ₹150 Off</div>
+                    <div class="sc-dlfnOL byDNgU deal-sub-text">USE FLAT150</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sc-fHYzZk jhDRMQ deal-item-wrapper">
+            <div class="sc-dkmIaX kJjkZv sc-iObwlZ imbBIt deal-card-box">
+              <div data-testid="offer-card-container-3" class="sc-jSijaH eaOlhp deal-card-flex">
+                <div class="sc-fZKHaa gvuaWH deal-card-left">
+                  <div class="sc-jPqoyZ kVgsQP deal-img-wrap">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96,h_96/offers/generic" width="48" height="48" alt="Flat ₹200 Off" class="sc-bYEtBu eAhAvG">
+                  </div>
+                  <div class="sc-fWSMys deqVEu deal-text-wrap">
+                    <div class="sc-dlfnOL ibkpiG deal-main-text">Flat ₹200 Off</div>
+                    <div class="sc-dlfnOL byDNgU deal-sub-text">USE CELEBRATIONS</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sc-fHYzZk jhDRMQ deal-item-wrapper">
+            <div class="sc-dkmIaX kJjkZv sc-iObwlZ imbBIt deal-card-box">
+              <div data-testid="offer-card-container-4" class="sc-jSijaH eaOlhp deal-card-flex">
+                <div class="sc-fZKHaa gvuaWH deal-card-left">
+                  <div class="sc-jPqoyZ kVgsQP deal-img-wrap">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96,h_96/MARKETING_BANNERS/IMAGES/OFFERS/2026/7/31/4cb77ced-c959-45be-b33b-ae0b9bf0ed87_Visa.png" width="48" height="48" alt="40% Off Upto ₹300" class="sc-bYEtBu eAhAvG">
+                  </div>
+                  <div class="sc-fWSMys deqVEu deal-text-wrap">
+                    <div class="sc-dlfnOL ibkpiG deal-main-text">40% Off Upto ₹300</div>
+                    <div class="sc-dlfnOL byDNgU deal-sub-text">USE SBIVISADC40</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- search dishes bar -->
+    <div class="dish-search-container">
+      <div class="dish-search-inner">
+        <input type="text" class="dish-search-input" placeholder="Search for dishes" oninput="filterDishes(this.value)" id="dishSearch">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#686b78" stroke-width="2" class="search-dishes-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+    </div>
+
+    <!-- filter toggles (exact Swiggy reference) -->
+    <div class="filter-toggles-outer">
+      <div class="sc-jrPFCa glvQlW filter-row-flex">
+        
+        <!-- Veg Toggle Switch -->
+        <div class="sc-bPsxEN lakZJd toggle-item">
+          <div class="sc-cKQJrq cUWmKO">
+            <label class="sc-bMzzNB gvRsYh custom-switch-label" title="Veg only">
+              <input type="checkbox" aria-checked="false" aria-label="Enable veg option" id="VEG" class="sc-bxIUVk gNKZjb toggle-checkbox" onchange="handleVegFilter(this.checked)">
+              <span type="VEG" class="sc-PTzAb fvsNpY switch-slider veg-switch-slider">
+                <div class="sc-BcUHK ddUdNZ switch-knob">
+                  <svg viewBox="0 0 20 20" width="16" height="16" class="sc-eWVJoQ cxxFkr">
+                    <rect x="2" y="2" width="16" height="16" rx="3" fill="none" stroke="#0f8a65" stroke-width="2"/>
+                    <circle cx="10" cy="10" r="4.5" fill="#0f8a65"/>
+                  </svg>
+                </div>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Non-Veg Toggle Switch -->
+        <div class="sc-bPsxEN lakZJd toggle-item">
+          <div class="sc-cKQJrq cUWmKO">
+            <label class="sc-bMzzNB gvRsYh custom-switch-label" title="Non-veg only">
+              <input type="checkbox" aria-checked="false" aria-label="Enable non veg option" id="NON_VEG" class="sc-bxIUVk gNKZjb toggle-checkbox" onchange="handleNonVegFilter(this.checked)">
+              <span type="NON_VEG" class="sc-PTzAb fvsNpY switch-slider nonveg-switch-slider">
+                <div class="sc-BcUHK ddUdNZ switch-knob">
+                  <svg viewBox="0 0 20 20" width="16" height="16" class="sc-eWVJoQ cxxFkr">
+                    <rect x="2" y="2" width="16" height="16" rx="3" fill="none" stroke="#e43b4f" stroke-width="2"/>
+                    <polygon points="10,4.5 15.5,14.5 4.5,14.5" fill="#e43b4f"/>
+                  </svg>
+                </div>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Bestseller Button -->
+        <div class="sc-bPsxEN lakZJd toggle-item">
+          <div class="sc-tYrig krbHjL">
+            <button class="bestseller-chip-btn" id="bestsellerBtn" onclick="toggleBestsellerFilter()">
+              <div class="sc-dlfnOL ksZbWb">Bestseller</div>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section-divider-line"></div>
+
+    <!-- menu items section -->
+    <div class="menu-items-list" id="menuItemsList">
+      
+      <!-- Recommended category -->
+      <div class="menu-category-group" id="recommendedGroup">
+        <div class="cat-group-header" onclick="toggleCategorySection('recItemsBlock', this)">
+          <h3 class="cat-group-title">Recommended (20)</h3>
+          <svg class="cat-group-chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#02060c" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+        </div>
+
+        <div class="cat-items-block" id="recItemsBlock">
+          
+          <!-- Margherita Dish -->
+          <div class="dish-item-row" data-id="pizza-1" data-name="margherita" data-type="veg" data-bestseller="true">
+            <div class="dish-info-col">
+              <div class="dish-badges-row">
+                <span class="veg-symbol-box">
+                  <svg viewBox="0 0 20 20" width="16" height="16"><rect x="2" y="2" width="16" height="16" rx="3" fill="none" stroke="#0f8a65" stroke-width="2"/><circle cx="10" cy="10" r="4" fill="#0f8a65"/></svg>
+                </span>
+                <span class="bestseller-badge-text">★ Bestseller</span>
+              </div>
+              <h4 class="dish-title-text">Margherita</h4>
+              <div class="dish-price-text">₹149</div>
+              <div class="dish-rating-text">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="#116643"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span class="rating-val">4.4</span>
+                <span class="rating-count">(155)</span>
+              </div>
+              <p class="dish-description-text">Pizza topped with our herb-infused signature pan sauce and mozzarella cheese. A classic treat for all cheese lovers out there! (PAN Per/Med-292 K... <span class="desc-more">more</span></p>
+            </div>
+            <div class="dish-img-action-col">
+              <div class="dish-image-wrapper">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2024/9/4/222d4f8f-1249-43c9-a9a3-5c21df2624cf_5ceee3be-51ff-4841-b0db-b2715fb8950d.jpg" alt="Margherita" class="dish-photo" onerror="this.src='assets/restaurants/pizza-hut.jpg'">
+                
+                <!-- Action Button / Counter -->
+                <div class="dish-action-btn-container" id="dishAction-pizza-1">
+                  <button class="swiggy-add-btn" onclick="handleAddClick({id:'pizza-1',name:'Margherita',price:149,type:'veg'}, true)">ADD</button>
+                </div>
+                <div class="customisable-label">Customisable</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-divider"></div>
+
+          <!-- Veggie Feast Dish -->
+          <div class="dish-item-row" data-id="pizza-2" data-name="veggie feast" data-type="veg" data-bestseller="false">
+            <div class="dish-info-col">
+              <div class="dish-badges-row">
+                <span class="veg-symbol-box">
+                  <svg viewBox="0 0 20 20" width="16" height="16"><rect x="2" y="2" width="16" height="16" rx="3" fill="none" stroke="#0f8a65" stroke-width="2"/><circle cx="10" cy="10" r="4" fill="#0f8a65"/></svg>
+                </span>
+              </div>
+              <h4 class="dish-title-text">Veggie Feast</h4>
+              <div class="dish-price-text">₹229</div>
+              <div class="dish-rating-text">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="#116643"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span class="rating-val">4.5</span>
+                <span class="rating-count">(43)</span>
+              </div>
+              <p class="dish-description-text">Serves 1 | Herbed onion and green capsicum, juicy sweet corn & mozzarella cheese pizza with flavourful pan sauce (PAN Per/Med-269 Kcal/100g | TnC-2... <span class="desc-more">more</span></p>
+            </div>
+            <div class="dish-img-action-col">
+              <div class="dish-image-wrapper">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2024/9/4/7161fb85-a773-455b-bf48-3a992bb3f9ff_db16d3f2-1b15-469b-9a84-0a373b5dfd4f.jpg" alt="Veggie Feast" class="dish-photo" onerror="this.src='assets/restaurants/pizza-hut.jpg'">
+                
+                <div class="dish-action-btn-container" id="dishAction-pizza-2">
+                  <button class="swiggy-add-btn" onclick="handleAddClick({id:'pizza-2',name:'Veggie Feast',price:229,type:'veg'}, true)">ADD</button>
+                </div>
+                <div class="customisable-label">Customisable</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-divider"></div>
+
+          <!-- Tandoori Paneer Dish -->
+          <div class="dish-item-row" data-id="pizza-3" data-name="tandoori paneer" data-type="veg" data-bestseller="true">
+            <div class="dish-info-col">
+              <div class="dish-badges-row">
+                <span class="veg-symbol-box">
+                  <svg viewBox="0 0 20 20" width="16" height="16"><rect x="2" y="2" width="16" height="16" rx="3" fill="none" stroke="#0f8a65" stroke-width="2"/><circle cx="10" cy="10" r="4" fill="#0f8a65"/></svg>
+                </span>
+                <span class="bestseller-badge-text">★ Bestseller</span>
+              </div>
+              <h4 class="dish-title-text">Tandoori Paneer</h4>
+              <div class="dish-price-text">₹369</div>
+              <div class="dish-rating-text">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="#116643"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span class="rating-val">4.2</span>
+                <span class="rating-count">(98)</span>
+              </div>
+              <p class="dish-description-text">Serves 1 | Spiced paneer, crunchy onions & green capsicum, spicy red paprika with delicious tandoori sauce and mozzarella cheese (PAN Per/Med-285 Kcal/100g... <span class="desc-more">more</span></p>
+            </div>
+            <div class="dish-img-action-col">
+              <div class="dish-image-wrapper">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2024/9/4/e5025d50-9c24-4f05-8be4-8a4d2e737fe7_78119eb4-ceb4-4b53-90d5-b040e340a6e0.jpg" alt="Tandoori Paneer" class="dish-photo" onerror="this.src='assets/restaurants/pizza-hut.jpg'">
+                
+                <div class="dish-action-btn-container" id="dishAction-pizza-3">
+                  <button class="swiggy-add-btn" onclick="handleAddClick({id:'pizza-3',name:'Tandoori Paneer',price:369,type:'veg'}, true)">ADD</button>
+                </div>
+                <div class="customisable-label">Customisable</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-divider"></div>
+
+          <!-- Pepperoni Pizza Dish (Non-Veg) -->
+          <div class="dish-item-row" data-id="pizza-4" data-name="pepperoni pizza" data-type="nonveg" data-bestseller="true">
+            <div class="dish-info-col">
+              <div class="dish-badges-row">
+                <span class="nonveg-symbol-box">
+                  <svg viewBox="0 0 20 20" width="16" height="16"><rect x="2" y="2" width="16" height="16" rx="3" fill="none" stroke="#e43b4f" stroke-width="2"/><polygon points="10,4.5 15.5,14.5 4.5,14.5" fill="#e43b4f"/></svg>
+                </span>
+                <span class="bestseller-badge-text">★ Bestseller</span>
+              </div>
+              <h4 class="dish-title-text">Pepperoni Pizza</h4>
+              <div class="dish-price-text">₹329</div>
+              <div class="dish-rating-text">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="#116643"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span class="rating-val">4.6</span>
+                <span class="rating-count">(218)</span>
+              </div>
+              <p class="dish-description-text">Classic pepperoni slices on our signature tomato sauce with mozzarella cheese (PAN Per/Med-310 Kcal/100g... <span class="desc-more">more</span></p>
+            </div>
+            <div class="dish-img-action-col">
+              <div class="dish-image-wrapper">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2024/9/4/8c9e54a3-76ef-466c-bd89-aa81f21ebffc_851e36ff-6f01-4475-9c60-a92c34cb2c21.jpg" alt="Pepperoni Pizza" class="dish-photo" onerror="this.src='assets/restaurants/pizza-hut.jpg'">
+                
+                <div class="dish-action-btn-container" id="dishAction-pizza-4">
+                  <button class="swiggy-add-btn" onclick="handleAddClick({id:'pizza-4',name:'Pepperoni Pizza',price:329,type:'nonveg'}, true)">ADD</button>
+                </div>
+                <div class="customisable-label">Customisable</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Floating MENU Button -->
+  <div class="floating-menu-btn-wrap" id="floatingMenuBtn">
+    <button class="menu-floating-pill" onclick="window.scrollTo({top: document.getElementById('recommendedGroup').offsetTop - 80, behavior: 'smooth'})">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
+      <span>MENU</span>
+    </button>
   </div>
 
-  <!-- menu section -->
-  <div class="menu-container" id="menuContainer">
-    <div class="menu-left" id="menuLeft">
-      <div class="menu-sidebar">
-        <nav class="menu-cat-nav" id="menuCatNav">
-          <a href="#recommended" class="menu-cat-link active-cat" onclick="activateCat(this)">Recommended</a>
-          <a href="#starters" class="menu-cat-link" onclick="activateCat(this)">Starters</a>
-          <a href="#personal" class="menu-cat-link" onclick="activateCat(this)">Personal Pizzas</a>
-          <a href="#medium" class="menu-cat-link" onclick="activateCat(this)">Medium Pizzas</a>
-          <a href="#pasta" class="menu-cat-link" onclick="activateCat(this)">Pasta</a>
-          <a href="#sides" class="menu-cat-link" onclick="activateCat(this)">Sides &amp; More</a>
-          <a href="#drinks" class="menu-cat-link" onclick="activateCat(this)">Drinks</a>
-        </nav>
-      </div>
-    </div>
-
-    <div class="menu-right" id="menuRight">
-      <!-- deals -->
-      <div class="deals-section">
-        <div class="deals-header">
-          <h3>Deals for you</h3>
-          <div class="slider-controls">
-            <button class="slider-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
-            <button class="slider-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
-          </div>
-        </div>
-        <div class="deals-row">
-          <div class="deal-card">
-            <div class="deal-icon" style="background:#f97316">%</div>
-            <div>
-              <p class="deal-title">Flat 50% Off</p>
-              <p class="deal-sub">NO CODE REQUIRED</p>
-            </div>
-          </div>
-          <div class="deal-card">
-            <div class="deal-icon" style="background:#8b5cf6">â˜…</div>
-            <div>
-              <p class="deal-title">Items At â‚¹399</p>
-              <p class="deal-sub">ON SELECT ITEMS |</p>
-            </div>
-          </div>
-          <div class="deal-card">
-            <div class="deal-icon" style="background:#f97316">%</div>
-            <div>
-              <p class="deal-title">60% Off Upto â‚¹120</p>
-              <p class="deal-sub">NO CODE REQUIRED</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- search dishes -->
-      <div class="dish-search-wrap">
-        <input type="text" class="dish-search" placeholder="Search for dishes" oninput="filterDishes(this.value)" id="dishSearch">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="dish-search-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      </div>
-
-      <!-- filter toggles -->
-      <div class="veg-filter-row">
-        <button class="veg-toggle" id="vegToggle" onclick="toggleVeg()" title="Veg only">
-          <span class="veg-dot"></span>
-        </button>
-        <button class="veg-toggle nonveg-toggle" title="Non-veg only">
-          <span class="nonveg-dot"></span>
-        </button>
-        <button class="bestseller-chip">Bestseller</button>
-      </div>
-
-      <!-- menu items -->
-      <div class="menu-items" id="menuItems">
-        <!-- recommended -->
-        <div class="menu-category-block" id="recommended">
-          <div class="cat-header" onclick="toggleCategory('rec-items')">
-            <h3>Recommended <span class="item-count">(20)</span></h3>
-            <svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
-          </div>
-          <div class="cat-items" id="rec-items">
-
-            <div class="menu-item" data-name="margherita" data-type="veg">
-              <div class="item-left">
-                <div class="veg-indicator veg-icon"></div>
-                <p class="item-bestseller">â˜… Bestseller</p>
-                <h4 class="item-name">Margherita</h4>
-                <p class="item-price">â‚¹149</p>
-                <div class="item-rating">â˜… 4.4 (155)</div>
-                <p class="item-desc">Pizza topped with our herb-infused signature pan sauce and mozzarella cheese. A classic treat for all cheese lovers out there!</p>
-              </div>
-              <div class="item-right">
-                <div class="item-img-wrap">
-                  <img src="assets/restaurants/pizza-hut.svg" alt="Margherita">
-                  <button class="add-btn" onclick="handleAddClick({id:'pizza-1',name:'Margherita',price:149}, true)">ADD</button>
-                  <p class="customisable-tag">Customisable</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="menu-item" data-name="veggie feast" data-type="veg">
-              <div class="item-left">
-                <div class="veg-indicator veg-icon"></div>
-                <h4 class="item-name">Veggie Feast</h4>
-                <p class="item-price">â‚¹229</p>
-                <div class="item-rating">â˜… 4.5 (43)</div>
-                <p class="item-desc">Serves 1 | Herbed onion and green capsicum, juicy sweet corn &amp; mozzarella cheese pizza</p>
-              </div>
-              <div class="item-right">
-                <div class="item-img-wrap">
-                  <img src="assets/restaurants/pizza-hut.svg" alt="Veggie Feast">
-                  <button class="add-btn" onclick="handleAddClick({id:'pizza-2',name:'Veggie Feast',price:229}, true)">ADD</button>
-                  <p class="customisable-tag">Customisable</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="menu-item" data-name="tandoori paneer" data-type="veg">
-              <div class="item-left">
-                <div class="veg-indicator veg-icon"></div>
-                <h4 class="item-name">Tandoori Paneer</h4>
-                <p class="item-price">â‚¹369</p>
-                <div class="item-rating">â˜… 4.2 (98)</div>
-                <p class="item-desc">Serves 1 | Spiced paneer, crunchy onions &amp; green capsicum, spicy red paprika with delicious tandoori sauce and mozzarella cheese</p>
-              </div>
-              <div class="item-right">
-                <div class="item-img-wrap">
-                  <img src="assets/restaurants/pizza-hut.svg" alt="Tandoori Paneer">
-                  <button class="add-btn" onclick="handleAddClick({id:'pizza-3',name:'Tandoori Paneer',price:369}, true)">ADD</button>
-                  <p class="customisable-tag">Customisable</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="menu-item" data-name="pepperoni pizza" data-type="nonveg">
-              <div class="item-left">
-                <div class="veg-indicator nonveg-icon"></div>
-                <h4 class="item-name">Pepperoni Pizza</h4>
-                <p class="item-price">â‚¹329</p>
-                <div class="item-rating">â˜… 4.6 (218)</div>
-                <p class="item-desc">Classic pepperoni slices on our signature tomato sauce with mozzarella cheese</p>
-              </div>
-              <div class="item-right">
-                <div class="item-img-wrap">
-                  <img src="assets/restaurants/pizza-hut.svg" alt="Pepperoni Pizza">
-                  <button class="add-btn" onclick="handleAddClick({id:'pizza-4',name:'Pepperoni Pizza',price:329}, true)">ADD</button>
-                  <p class="customisable-tag">Customisable</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
+  <!-- View Cart Footer (exact Swiggy reference) -->
+  <div class="_2mQ-4 ZE4h9" id="floatingCart" style="display:none;">
+    <button class="_3KrAC" data-testid="menu-view-cart-footer" aria-label="Cart details: 1 item added present, total: undefined. Double tap to go to Cart Page." id="view-cart-btn" onclick="window.location.href='cart.html'">
+      <span class="_1JiK6" aria-hidden="true">
+        <span class="_12qOx">
+          <span class="_2xXGW" id="fcCountText">1 item added</span>
+          <span class="_36JxA"></span>
+        </span>
+        <span class="ZVNHp">
+          <span>View Cart</span>
+          <img alt="" class="_5OjeQ" height="14" loading="lazy" width="14" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_28,h_28/ChatbotAssets/Checkout_Cart">
+        </span>
+      </span>
+    </button>
   </div>
 
   <!-- Customisation Modal -->
@@ -263,7 +469,7 @@
       <div class="modal-header">
         <h3 class="modal-item-title" id="modalItemTitle">Customise as per your taste</h3>
         <p class="modal-item-sub">Customise your pizza crust and size</p>
-        <button class="modal-close-btn" onclick="closeCustomiseModal()">âœ•</button>
+        <button class="modal-close-btn" onclick="closeCustomiseModal()">✕</button>
       </div>
       <div class="modal-body" id="modalBody">
         <!-- populated via js -->
@@ -275,20 +481,10 @@
     </div>
   </div>
 
-  <!-- floating cart bar -->
-  <div class="floating-cart" id="floatingCart" style="display:none">
-    <div class="fc-inner">
-      <div class="fc-info">
-        <span id="fcCount">1 item added</span>
-      </div>
-      <a href="cart.html" class="fc-btn" id="fcTotal">VIEW CART ðŸ›ï¸</a>
-    </div>
-  </div>
-
-  <!-- sign in drawer -->
+  <!-- Sign in drawer -->
   <div class="drawer-overlay" id="drawerOverlay" onclick="closeSignIn()"></div>
   <div class="signin-drawer" id="signinDrawer">
-    <button class="drawer-close" onclick="closeSignIn()">âœ•</button>
+    <button class="drawer-close" onclick="closeSignIn()">✕</button>
     <div class="drawer-content">
       <div class="drawer-header">
         <div>
