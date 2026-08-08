@@ -74,8 +74,9 @@ const colors = ['#ffb347','#87ceeb','#98fb98','#dda0dd','#f0e68c','#ffa07a','#20
 
 function buildRestaurantCard(r, idx) {
   const bgColor = colors[idx % colors.length];
+  const url = r.id === 1 ? 'restaurant.html' : `restaurant${r.id}.html`;
   return `
-    <a href="restaurant.html" class="rest-card" id="rest-${r.id}">
+    <a href="${url}" class="rest-card" id="rest-${r.id}">
       <div class="card-img-wrap" style="background:${bgColor}">
         <img src="${r.img}" alt="${r.name}" loading="lazy" onerror="this.style.display='none'">
         ${r.offer ? `<div class="card-offer-tag">${r.offer}</div>` : ''}
