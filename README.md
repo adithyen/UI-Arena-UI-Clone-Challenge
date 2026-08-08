@@ -44,8 +44,8 @@ Click **Fork** (top-right of this repo) to create your own copy under your GitHu
 ### 2. Clone your fork
 
 ```bash
-git clone https://github.com/your-username/ui-arena.git
-cd ui-arena
+git clone https://github.com/your-username/UI-Arena-UI-Clone-Challenge.git
+cd UI-Arena-UI-Clone-Challenge
 ```
 
 ### 3. Create a branch (recommended)
