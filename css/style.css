@@ -607,3 +607,19 @@ a { text-decoration: none; color: inherit; }
   color: #60b246 !important;
   font-weight: 700 !important;
 }
+
+/* Exact Swiggy Logo & Checkout Title from checkout.html */
+.swiggy-exact-logo {
+  width: 49px;
+  height: 49px;
+  display: block;
+}
+
+.secure-checkout-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #02060c;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-left: 20px;
+}

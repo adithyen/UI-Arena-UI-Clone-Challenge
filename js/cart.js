@@ -72,13 +72,11 @@ function changeQty(itemId, delta) {
   cart[idx].qty += delta;
   if (cart[idx].qty <= 0) {
     cart.splice(idx, 1);
-    // remove row from DOM
     const row = document.getElementById('ci-' + itemId);
     if (row) row.remove();
   } else {
     const qtyEl = document.getElementById('qty-' + itemId);
     if (qtyEl) qtyEl.textContent = cart[idx].qty;
-    // update price in row
     const row = document.getElementById('ci-' + itemId);
     if (row) {
       row.querySelector('.ci-price').textContent = '₹' + cart[idx].price * cart[idx].qty;
@@ -86,9 +84,11 @@ function changeQty(itemId, delta) {
   }
   saveCart(cart);
   renderBill(cart);
-  // if cart is now empty, show empty state
   if (cart.length === 0) renderCart();
 }
+
+// Execute renderCart immediately so there is zero delay/flash/collapse
+renderCart();
 
 document.addEventListener('DOMContentLoaded', () => {
   renderCart();
