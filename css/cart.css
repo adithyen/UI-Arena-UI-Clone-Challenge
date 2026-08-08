@@ -11,6 +11,8 @@ body.checkout-body {
   display: flex;
   gap: 30px;
   align-items: flex-start;
+  padding-left: 40px;
+  padding-right: 20px;
 }
 
 ._Nk3n {
@@ -24,7 +26,6 @@ body.checkout-body {
   background: #ffffff;
   padding: 35px 40px 39px 57px;
   position: relative;
-  margin-left: 20px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 }
 
