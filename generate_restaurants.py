@@ -375,6 +375,144 @@ birdie_bite_dishes = [
     }
 ]
 
+cake_bros_dishes = [
+    {
+        "name": "Mayo",
+        "price": "20",
+        "rating": "4.0",
+        "rating_count": "(10)",
+        "desc": "Creamy and smooth, perfect as a dip or to add a rich touch to your snacks.",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2026/2/6/a6f5fb4d-a9d8-4043-a9cb-66661a363f58_516778b7-9d46-406c-84d6-6625aee4ebf4.JPG",
+        "veg": True
+    },
+    {
+        "name": "Cheese",
+        "price": "20",
+        "rating": "4.1",
+        "rating_count": "(12)",
+        "desc": "A creamy and tasty option for cheese lovers, perfect for adding extra indulgence.",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2026/1/18/7d84dc58-ccb1-47b9-bf1d-a0d4a1c83411_a94a21be-59e9-4181-a81e-6df68febd765.JPG",
+        "veg": True
+    },
+    {
+        "name": "Peri peri",
+        "price": "20",
+        "rating": "4.2",
+        "rating_count": "(8)",
+        "desc": "",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2026/2/6/944e5703-f828-4a2c-ba5b-ce807ff8cc67_0f364877-994c-49ae-a8cb-621994c85fcc.JPG",
+        "veg": True
+    },
+    {
+        "name": "Schezwan",
+        "price": "20",
+        "rating": "4.3",
+        "rating_count": "(7)",
+        "desc": "",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2026/1/19/aa3b8a48-631a-4d61-abe4-fa239996399d_01459c7d-48d3-4011-895f-b02e704ea4d2.JPG",
+        "veg": True
+    },
+    {
+        "name": "Strawberry shake",
+        "price": "99",
+        "rating": "4.5",
+        "rating_count": "(20)",
+        "desc": "A chilled and creamy strawberry shake thats perfect for a refreshing treat.",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2026/2/6/ae40fe08-12ff-4930-b631-efdc2391d5a1_de15a82e-e856-490a-85a5-ecb76c51b268.JPG",
+        "veg": True
+    },
+    {
+        "name": "Mango shake",
+        "price": "99",
+        "rating": "4.6",
+        "rating_count": "(18)",
+        "desc": "A creamy and refreshing mango treat blended into a chilled shake, perfect for summers.",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2026/1/17/5cf5cfa9-d252-4601-b944-b0734335fd86_a0fd62df-fb04-4d23-afe6-82555d46ff66.JPG",
+        "veg": True
+    },
+    {
+        "name": "Brownie Sundae",
+        "price": "149",
+        "rating": "4.8",
+        "rating_count": "(3)",
+        "desc": "",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2026/1/27/99b7b818-0d2b-4e12-a88b-1ba51af7cb16_8b6a2d71-4a65-47f0-b62a-09d2a2923ef0.JPG",
+        "veg": False
+    },
+    {
+        "name": "Papaya juice",
+        "price": "80",
+        "rating": "4.0",
+        "rating_count": "(5)",
+        "desc": "",
+        "img": "",
+        "veg": True
+    },
+    {
+        "name": "Butterscotch Pastrie",
+        "price": "89",
+        "rating": "4.2",
+        "rating_count": "(15)",
+        "desc": "",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2024/3/24/9dcb97f6-9b84-4058-b741-c7826a840d9e_8d6ec268-dc98-4296-a0ee-333ec8bd1d93.jpg",
+        "veg": False
+    },
+    {
+        "name": "Vancho Pastrie",
+        "price": "89",
+        "rating": "4.0",
+        "rating_count": "(9)",
+        "desc": "",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2024/3/24/d15d34a5-d311-442b-94ed-bad3040b8886_69a123bc-bffc-4b42-9fec-cab9135ce442.jpg",
+        "veg": False
+    },
+    {
+        "name": "Chocolate Pastrie",
+        "price": "89",
+        "rating": "4.4",
+        "rating_count": "(13)",
+        "desc": "",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2024/3/24/a1d3f0fd-50c6-4c2e-9e38-e7755b34002c_1a1c977d-2617-4f09-b4fb-91d34f9a4b63.jpg",
+        "veg": False
+    },
+    {
+        "name": "Black Forest Pastrie",
+        "price": "69",
+        "rating": "4.1",
+        "rating_count": "(8)",
+        "desc": "",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/71fff509a58eef55e2833089135d4dc7",
+        "veg": False
+    },
+    {
+        "name": "White Forest Pastrie",
+        "price": "69",
+        "rating": "4.0",
+        "rating_count": "(10)",
+        "desc": "",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2024/3/24/e5eadbd4-a393-4e98-9d1c-add280111b3a_f93f6798-e21d-48e4-9187-2d5394a3f99b.jpg",
+        "veg": False
+    },
+    {
+        "name": "Brownie Pastrie",
+        "price": "79",
+        "rating": "3.2",
+        "rating_count": "(12)",
+        "desc": "",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2024/3/24/cc67a09d-9f14-4525-bb03-5f4577db91bf_54491cf5-0d0e-4328-abf0-f442657bbc63.jpg",
+        "veg": False
+    },
+    {
+        "name": "Vanilla Cupcake (2 Pcs)",
+        "price": "109",
+        "rating": "4.2",
+        "rating_count": "(11)",
+        "desc": "",
+        "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2024/10/6/a2e9f140-7d2d-4eca-9870-b515000bf08c_bc2da332-1ade-4a7c-a692-6d9d6340a696.jpg",
+        "veg": True
+    }
+]
+
 def render_dish(dish, dish_id):
     if dish['veg']:
         icon_svg = '<svg viewBox="0 0 20 20" width="16" height="16" class="sc-eWVJoQ cxxFkr"><rect x="2" y="2" width="16" height="16" rx="3" fill="none" stroke="#0f8a65" stroke-width="2"/><circle cx="10" cy="10" r="4.5" fill="#0f8a65"/></svg>'
@@ -458,6 +596,8 @@ for r in restaurants:
         target_dishes = mothers_veg_dishes
     elif r['id'] == 5:
         target_dishes = birdie_bite_dishes
+    elif r['id'] == 6:
+        target_dishes = cake_bros_dishes
 
     if target_dishes:
         dishes_html = '\n'.join([render_dish(d, idx) for idx, d in enumerate(target_dishes)])
