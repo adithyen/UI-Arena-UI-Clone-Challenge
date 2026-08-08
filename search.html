@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Restaurants &amp; Food | Swiggy</title>
+  <meta name="description" content="Search for restaurants and food on Swiggy. Find your favourite cuisine.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="index.html" class="logo-link">
+          <img src="assets/swiggy-logo.svg" alt="Swiggy" class="logo-img">
+        </a>
+        <button class="location-btn">
+          <span class="location-text">Other</span>
+          <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+      </div>
+      <div class="nav-right">
+        <a href="#" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Swiggy Corporate</a>
+        <a href="search.html" class="nav-link active-nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search</a>
+        <a href="#" class="nav-link offers-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Offers<span class="new-badge">NEW</span></a>
+        <a href="help.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Help</a>
+        <a href="#" class="nav-link" id="signInBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Sign In</a>
+        <a href="cart.html" class="nav-link cart-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span id="cartCount">0</span> Cart</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- search section -->
+  <div class="search-page-wrap">
+    <!-- search bar -->
+    <div class="search-bar-wrap">
+      <div class="search-input-row">
+        <svg class="search-page-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" class="search-page-input" placeholder="Search for restaurants and food" autofocus oninput="handleSearch(this.value)">
+        <button class="search-clear-btn" id="clearBtn" onclick="clearSearch()" style="display:none">✕</button>
+      </div>
+    </div>
+
+    <!-- search results (shown when typing) -->
+    <div id="searchResults" class="search-results" style="display:none">
+      <div id="resultsGrid" class="results-grid"></div>
+    </div>
+
+    <!-- default state: popular cuisines -->
+    <div id="defaultState" class="default-state">
+      <h2 class="search-section-title">Popular Cuisines</h2>
+      <div class="cuisines-grid">
+        <a href="#" class="cuisine-item" onclick="searchCuisine('Rolls')">
+          <img src="assets/cat/rolls.png" alt="Rolls" onerror="this.parentElement.style.background='#f5e5d0'">
+          <span>Rolls</span>
+        </a>
+        <a href="#" class="cuisine-item" onclick="searchCuisine('Tea')">
+          <img src="assets/cat/tea.png" alt="Tea" onerror="this.parentElement.style.background='#e8d5c0'">
+          <span>Tea</span>
+        </a>
+        <a href="#" class="cuisine-item" onclick="searchCuisine('Cake')">
+          <img src="assets/cat/cake.png" alt="Cake" onerror="this.parentElement.style.background='#f0d0d8'">
+          <span>Cake</span>
+        </a>
+        <a href="#" class="cuisine-item" onclick="searchCuisine('Dessert')">
+          <img src="assets/cat/dessert.png" alt="Dessert" onerror="this.parentElement.style.background='#f0d8c8'">
+          <span>Dessert</span>
+        </a>
+        <a href="#" class="cuisine-item" onclick="searchCuisine('Sandwich')">
+          <img src="assets/cat/sandwich.png" alt="Sandwich" onerror="this.parentElement.style.background='#e8e0c0'">
+          <span>Sandwich</span>
+        </a>
+        <a href="#" class="cuisine-item" onclick="searchCuisine('Beverages')">
+          <img src="assets/cat/beverages.png" alt="Beverages" onerror="this.parentElement.style.background='#d0e8d8'">
+          <span>Beverages</span>
+        </a>
+        <a href="#" class="cuisine-item" onclick="searchCuisine('Biryani')">
+          <img src="assets/cat/biryani.png" alt="Biryani" onerror="this.parentElement.style.background='#f0e0b0'">
+          <span>Biryani</span>
+        </a>
+        <a href="#" class="cuisine-item" onclick="searchCuisine('Pizza')">
+          <img src="assets/cat/pizza.png" alt="Pizza" onerror="this.parentElement.style.background='#f5e0c0'">
+          <span>Pizza</span>
+        </a>
+        <a href="#" class="cuisine-item" onclick="searchCuisine('Burger')">
+          <img src="assets/cat/burger.png" alt="Burger" onerror="this.parentElement.style.background='#e8d0b0'">
+          <span>Burger</span>
+        </a>
+        <a href="#" class="cuisine-item" onclick="searchCuisine('Pasta')">
+          <img src="assets/cat/pasta.png" alt="Pasta" onerror="this.parentElement.style.background='#f0e8d0'">
+          <span>Pasta</span>
+        </a>
+        <a href="#" class="cuisine-item" onclick="searchCuisine('Dosa')">
+          <img src="assets/cat/dosa.png" alt="Dosa" onerror="this.parentElement.style.background='#e8f0d8'">
+          <span>Dosa</span>
+        </a>
+        <a href="#" class="cuisine-item" onclick="searchCuisine('Chicken')">
+          <img src="assets/cat/chicken.png" alt="Chicken" onerror="this.parentElement.style.background='#f0d8b0'">
+          <span>Chicken</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- sign in drawer -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeSignIn()"></div>
+  <div class="signin-drawer" id="signinDrawer">
+    <button class="drawer-close" onclick="closeSignIn()">✕</button>
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <div>
+          <h2>Login</h2>
+          <p>or <a href="#" class="create-account-link">create an account</a></p>
+          <div class="drawer-underline"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="tel" id="phoneInput" class="phone-input" placeholder="Phone number" maxlength="10">
+      </div>
+      <button class="login-btn" onclick="handleLogin()">LOGIN</button>
+      <p class="terms-text">By clicking on Login, I accept the <a href="#">Terms &amp; Conditions</a> &amp; <a href="#">Privacy Policy</a></p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>
