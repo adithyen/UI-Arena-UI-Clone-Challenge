@@ -59,15 +59,7 @@ const restaurants = [
   { id: 5, name: 'Birdie Bite', img: 'assets/restaurants/birdie-bite.svg', rating: 4.0, time: '30–35 mins', cuisine: 'North Indian, Chinese, Fast Food', area: 'Palayam', offer: 'ITEMS AT ₹105' },
   { id: 6, name: 'The Cake Bros', img: 'assets/restaurants/cake-bros.svg', rating: 4.3, time: '25–30 mins', cuisine: 'Indian', area: 'Eanchakkal', offer: 'ITEMS AT ₹129' },
   { id: 7, name: 'Cring Burger', img: 'assets/restaurants/cring-burger.svg', rating: 4.3, time: '45–50 mins', cuisine: 'Burgers, Cafe', area: 'Ulloor', offer: '70% OFF UPTO ₹130' },
-  { id: 8, name: 'Chefette', img: 'assets/restaurants/chefette.svg', rating: 2.7, time: '45–55 mins', cuisine: 'American, Continental, Punjabi', area: 'Medical College', offer: '50% OFF UPTO ₹100' },
-  { id: 9, name: 'Naadan Bhakshanasala', img: 'assets/restaurants/naadan.svg', rating: 4.4, time: '35–40 mins', cuisine: 'Kerala, Indian, Curry Point', area: 'Pappanamcode', offer: '60% OFF UPTO ₹120' },
-  { id: 10, name: 'CFC Crispy Fried Chicken', img: 'assets/restaurants/cfc.svg', rating: 3.7, time: '50–60 mins', cuisine: 'Juices, Pastas, Burgers, Cafe', area: 'Poojapura', offer: 'ITEMS AT ₹99' },
-  { id: 11, name: 'Flavours by MMS', img: 'assets/restaurants/flavours.svg', rating: 4.6, time: '25–30 mins', cuisine: 'Chinese, South Indian, North Indian', area: 'Pattoor', offer: '' },
-  { id: 12, name: 'The Cozy Cup', img: 'assets/restaurants/cozy-cup.svg', rating: 4.6, time: '35–40 mins', cuisine: 'Juices, Salads, Snacks, Home Food', area: 'Kamaleshwaram', offer: '20% OFF UPTO ₹125' },
-  { id: 13, name: 'The Imperial Kitchen', img: 'assets/restaurants/imperial.svg', rating: 4.2, time: '40–50 mins', cuisine: 'North Indian, Biryani, Kebabs', area: 'Pattom', offer: '₹40 OFF ABOVE ₹99' },
-  { id: 14, name: 'Cake Bliss', img: 'assets/restaurants/cake-bliss.svg', rating: 4.5, time: '30–35 mins', cuisine: 'Bakery, Desserts, Cakes', area: 'Kowdiar', offer: '' },
-  { id: 15, name: 'Ambrosia', img: 'assets/restaurants/ambrosia.svg', rating: 4.1, time: '35–45 mins', cuisine: 'Multi-cuisine, Continental', area: 'Sasthamangalam', offer: 'ITEMS AT ₹125' },
-  { id: 16, name: 'Murfies', img: 'assets/restaurants/murfies.svg', rating: 4.0, time: '40–50 mins', cuisine: 'Burgers, Sandwiches, Fast Food', area: 'Peroorkada', offer: '' },
+  { id: 8, name: 'Chefette', img: 'assets/restaurants/chefette.svg', rating: 2.7, time: '45–55 mins', cuisine: 'American, Continental', area: 'Medical College', offer: '50% OFF UPTO ₹100' }
 ];
 
 const colors = ['#ffb347','#87ceeb','#98fb98','#dda0dd','#f0e68c','#ffa07a','#20b2aa','#ff7f7f','#b0c4de','#8fbc8f','#d2b48c','#bc8f8f'];

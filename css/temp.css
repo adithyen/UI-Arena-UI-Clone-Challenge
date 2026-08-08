@@ -1,0 +1,68 @@
+
+/* Interlinking Sections (Best Cuisines & Explore) */
+.sc-FyKfc {
+  margin-bottom: 48px;
+}
+.sc-QcErI {
+  margin-bottom: 24px;
+}
+h2.exSsmv {
+  font-size: 24px;
+  font-weight: 800;
+  color: #02060c;
+  letter-spacing: -0.5px;
+}
+.sc-izEXPo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.sc-buoLT {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(2, 6, 12, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  background-color: #fff;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.sc-buoLT:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-color: rgba(2, 6, 12, 0.15);
+}
+.cMMVIK {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(2, 6, 12, 0.75);
+}
+.sc-lbZtsy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(2, 6, 12, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  background-color: #fff;
+  cursor: pointer;
+  width: 100%;
+}
+.sc-lbZtsy:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.cytFqm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.kKhMqT {
+  font-size: 16px;
+  font-weight: 600;
+  color: #02060c;
+}
+.sc-dydjmM {
+  height: 24px;
+}
