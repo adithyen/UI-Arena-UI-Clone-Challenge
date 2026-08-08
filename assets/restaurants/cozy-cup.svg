@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="100%" height="100%">
+  <rect width="400" height="260" fill="#4e342e"/>
+  <!-- Saucer -->
+  <ellipse cx="200" cy="170" rx="120" ry="50" fill="#fff"/>
+  <!-- Cup -->
+  <path d="M 130,110 L 270,110 L 250,170 L 150,170 Z" fill="#fff"/>
+  <ellipse cx="200" cy="110" rx="70" ry="25" fill="#6d4c41"/>
+  <!-- Coffee Foam -->
+  <ellipse cx="200" cy="110" rx="64" ry="21" fill="#d7ccc8"/>
+  <path d="M 180,110 Q 200,95 220,110 Q 200,125 180,110 Z" fill="#5d4037"/>
+</svg>

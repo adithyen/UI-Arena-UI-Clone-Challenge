@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="100%" height="100%">
+  <rect width="400" height="260" fill="#2e7d32"/>
+  <path d="M 20,130 Q 200,20 380,130 Q 200,240 20,130 Z" fill="#43a047"/>
+  <!-- Rice Bowl -->
+  <ellipse cx="200" cy="135" rx="120" ry="70" fill="#fff"/>
+  <ellipse cx="200" cy="130" rx="110" ry="62" fill="#fff8e1"/>
+  <!-- Curry topping -->
+  <ellipse cx="200" cy="130" rx="60" ry="35" fill="#e65100"/>
+  <circle cx="190" cy="125" r="8" fill="#c62828"/>
+</svg>

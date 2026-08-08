@@ -249,3 +249,29 @@
   .item-img-wrap { width: 100px; height: 100px; }
   .item-img-wrap img { width: 100px; height: 100px; }
 }
+
+/* Floating Swiggy Green Cart Bar */
+.floating-cart {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #60b246;
+  color: #fff;
+  z-index: 2000;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+  animation: slideUp 0.3s ease;
+}
+.fc-inner {
+  max-width: 800px; margin: 0 auto;
+  padding: 14px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.fc-info {
+  font-size: 15px; font-weight: 700; color: #fff;
+  display: flex; align-items: center; gap: 8px;
+}
+.fc-btn {
+  background: transparent; color: #fff;
+  font-size: 15px; font-weight: 800;
+  letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;
+  text-transform: uppercase;
+}
+.fc-btn:hover { color: #fff; opacity: 0.9; }

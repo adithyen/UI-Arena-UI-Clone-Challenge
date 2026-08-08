@@ -11,16 +11,52 @@
   <link rel="stylesheet" href="css/cart.css">
 </head>
 <body class="checkout-body">
-  <!-- minimal checkout header -->
-  <nav class="checkout-nav">
+  <!-- navbar -->
+  <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="index.html" class="logo-link">
-        <div class="logo-placeholder" title="Swiggy"></div>
-      </a>
-      <span class="checkout-title">SECURE CHECKOUT</span>
-      <div class="checkout-nav-right">
-        <a href="help.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Help</a>
-        <a href="#" class="nav-link" id="signInBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Sign In</a>
+      <div class="nav-left">
+        <a href="index.html" class="logo-link">
+          <svg viewBox="0 0 160 50" width="140" height="42" class="swiggy-logo-svg">
+            <rect x="0" y="4" width="38" height="38" rx="10" fill="#FC8019"/>
+            <path fill="#FFFFFF" d="M19 11c-4.42 0-8 3.58-8 8 0 3.73 2.55 6.85 6 7.74-.31.82-.95 1.37-1.87 1.37-.69 0-1.31-.28-1.8-.73L11 29.7c1.16 1.11 2.74 1.8 4.47 1.8 3.68 0 6.67-2.99 6.67-6.67V19c0-4.42-3.58-8-8-8zm0 11.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+            <text x="48" y="31" font-family="'Inter', sans-serif" font-weight="800" font-size="22" fill="#FC8019" letter-spacing="-0.5">swiggy</text>
+          </svg>
+        </a>
+        <button class="location-btn" id="locationBtn">
+          <span class="location-text">Other</span>
+          <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="#FC8019" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+      <div class="nav-right">
+        <a href="#" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          Swiggy Corporate
+        </a>
+        <a href="search.html" class="nav-link" id="navSearch">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Search
+        </a>
+        <a href="#" class="nav-link offers-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          Offers<span class="new-badge">NEW</span>
+        </a>
+        <a href="help.html" class="nav-link" id="navHelp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Help
+        </a>
+        <a href="#" class="nav-link" id="signInBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Sign In
+        </a>
+        <a href="cart.html" class="nav-link cart-link active-nav-link" id="navCart">
+          <span class="cart-icon-container" id="cartIconContainer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="cart-icon-empty" id="cartSvgEmpty"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="cart-badge-green" id="cartBadgeGreen" style="display:none">0</span>
+          </span>
+          <span class="cart-label" id="cartLabel">Cart</span>
+        </a>
       </div>
     </div>
   </nav>
@@ -92,14 +128,10 @@
     <!-- right: order summary -->
     <div class="checkout-right" id="checkoutRight">
       <!-- restaurant info -->
-      <div class="order-restaurant" id="orderRestaurant">
-        <!-- populated by js -->
-      </div>
+      <div class="order-restaurant" id="orderRestaurant"></div>
 
       <!-- cart items -->
-      <div class="order-items" id="orderItems">
-        <!-- populated by js -->
-      </div>
+      <div class="order-items" id="orderItems"></div>
 
       <!-- suggestions -->
       <div class="suggestions-row">

@@ -406,3 +406,106 @@ a { text-decoration: none; color: inherit; }
   .nav-right { gap: 10px; }
   .signin-drawer { width: 100%; right: -100%; }
 }
+
+/* Swiggy Logo SVG */
+.swiggy-logo-svg {
+  display: block;
+  height: 38px;
+  width: auto;
+}
+
+/* Green Cart Badge when items added */
+.cart-badge-green {
+  background: #60b246;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  margin-right: 4px;
+}
+
+.cart-has-items #cartSvgEmpty {
+  display: none !important;
+}
+
+.cart-has-items .cart-label {
+  color: #60b246 !important;
+  font-weight: 700 !important;
+}
+
+.active-nav-link {
+  color: #FC8019 !important;
+}
+.active-nav-link svg {
+  stroke: #FC8019 !important;
+}
+
+/* Customisation Modal */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 3000;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.modal-overlay.open {
+  opacity: 1; pointer-events: all;
+}
+.customise-modal {
+  background: #fff;
+  width: 520px; max-width: 90vw;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  transform: translateY(20px);
+  transition: transform 0.25s ease;
+}
+.modal-overlay.open .customise-modal {
+  transform: translateY(0);
+}
+.modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #f0f0f0;
+  position: relative;
+}
+.modal-item-title { font-size: 18px; font-weight: 700; color: #282c3f; }
+.modal-item-sub { font-size: 14px; color: #686b78; margin-top: 4px; }
+.modal-close-btn {
+  position: absolute; right: 20px; top: 20px;
+  background: none; border: none; font-size: 22px; cursor: pointer; color: #686b78;
+}
+.modal-body {
+  padding: 20px 24px;
+  max-height: 420px; overflow-y: auto;
+}
+.option-group-title { font-size: 15px; font-weight: 700; color: #282c3f; margin-bottom: 14px; }
+.option-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 0; border-bottom: 1px solid #f9f9f9;
+  cursor: pointer; font-size: 14px; color: #3d4152;
+}
+.option-left { display: flex; align-items: center; gap: 12px; }
+.custom-radio, .custom-checkbox {
+  accent-color: #60b246; width: 18px; height: 18px; cursor: pointer;
+}
+.modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #f0f0f0;
+  display: flex; align-items: center; justify-content: space-between;
+  background: #fafafa;
+}
+.step-indicator { font-size: 14px; font-weight: 600; color: #282c3f; }
+.modal-action-btn {
+  background: #60b246; color: #fff;
+  border: none; padding: 12px 28px;
+  border-radius: 8px; font-size: 15px; font-weight: 700;
+  cursor: pointer; transition: background 0.2s;
+}
+.modal-action-btn:hover { background: #4ca333; }

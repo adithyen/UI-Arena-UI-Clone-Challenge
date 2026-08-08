@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#d32f2f"/>
+      <stop offset="100%" stop-color="#800000"/>
+    </radialGradient>
+    <pattern id="checker" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="10" height="10" fill="#fff" opacity="0.15"/>
+      <rect x="10" width="10" height="10" fill="#800000" opacity="0.2"/>
+      <rect y="10" width="10" height="10" fill="#800000" opacity="0.2"/>
+      <rect x="10" y="10" width="10" height="10" fill="#fff" opacity="0.15"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="260" fill="url(#bg)"/>
+  <rect width="400" height="260" fill="url(#checker)"/>
+  <!-- Wooden Board -->
+  <ellipse cx="200" cy="140" rx="160" ry="100" fill="#795548"/>
+  <ellipse cx="200" cy="135" rx="155" ry="95" fill="#a1887f"/>
+  <!-- Pizza Crust -->
+  <ellipse cx="200" cy="135" rx="135" ry="80" fill="#e65100"/>
+  <ellipse cx="200" cy="135" rx="120" ry="70" fill="#ffb74d"/>
+  <!-- Cheese & Sauce -->
+  <ellipse cx="200" cy="135" rx="112" ry="63" fill="#fff3e0"/>
+  <ellipse cx="200" cy="135" rx="108" ry="60" fill="#ffe082"/>
+  <!-- Toppings: Pepperoni & Basil & Capsicum -->
+  <ellipse cx="150" cy="120" rx="16" ry="10" fill="#c62828"/>
+  <ellipse cx="240" cy="115" rx="18" ry="11" fill="#c62828"/>
+  <ellipse cx="190" cy="155" rx="17" ry="10" fill="#c62828"/>
+  <ellipse cx="210" cy="100" rx="15" ry="9" fill="#c62828"/>
+  <ellipse cx="260" cy="145" rx="14" ry="8" fill="#c62828"/>
+  <ellipse cx="130" cy="145" rx="15" ry="9" fill="#c62828"/>
+  <!-- Capsicum pieces -->
+  <path d="M170,110 Q180,105 175,120" stroke="#2e7d32" stroke-width="4" fill="none"/>
+  <path d="M220,135 Q235,130 225,145" stroke="#2e7d32" stroke-width="4" fill="none"/>
+  <path d="M160,140 Q170,150 155,155" stroke="#2e7d32" stroke-width="4" fill="none"/>
+  <!-- Olives -->
+  <circle cx="175" cy="135" r="5" fill="#212121"/>
+  <circle cx="215" cy="120" r="5" fill="#212121"/>
+  <circle cx="230" cy="155" r="5" fill="#212121"/>
+  <circle cx="140" cy="125" r="5" fill="#212121"/>
+</svg>

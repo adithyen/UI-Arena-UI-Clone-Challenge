@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="100%" height="100%">
+  <rect width="400" height="260" fill="#4a148c"/>
+  <ellipse cx="200" cy="140" rx="150" ry="90" fill="#fff"/>
+  <!-- Pasta Heap -->
+  <ellipse cx="200" cy="135" rx="110" ry="65" fill="#ffcc80"/>
+  <ellipse cx="200" cy="130" rx="100" ry="58" fill="#e65100"/>
+  <circle cx="160" cy="120" r="10" fill="#c62828"/>
+  <circle cx="230" cy="140" r="12" fill="#c62828"/>
+  <path d="M 180,110 Q 200,100 210,120" stroke="#2e7d32" stroke-width="4" fill="none"/>
+</svg>

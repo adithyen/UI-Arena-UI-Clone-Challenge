@@ -27,7 +27,7 @@ function renderRestaurant() {
   if (!el) return;
   el.innerHTML = `
     <div class="rest-row">
-      <img src="assets/restaurants/pizza-hut.jpg" alt="Pizza Hut" class="rest-thumb" onerror="this.style.background='#ddd'">
+      <img src="assets/restaurants/pizza-hut.svg" alt="Pizza Hut" class="rest-thumb">
       <div class="rest-row-info">
         <h4>Pizza Hut</h4>
         <p>Palayam</p>

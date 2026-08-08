@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg_zam" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00695c"/>
+      <stop offset="100%" stop-color="#00251a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="260" fill="url(#bg_zam)"/>
+  <!-- Stainless Steel Thali -->
+  <ellipse cx="200" cy="140" rx="160" ry="95" fill="#b0bec5"/>
+  <ellipse cx="200" cy="135" rx="150" ry="88" fill="#cfd8dc"/>
+  <!-- Dosa / Uttapam -->
+  <ellipse cx="200" cy="135" rx="125" ry="70" fill="#d7ccc8"/>
+  <ellipse cx="200" cy="135" rx="115" ry="62" fill="#ffb74d"/>
+  <!-- Tomato slices on Uttapam -->
+  <circle cx="150" cy="125" r="14" fill="#e53935"/>
+  <circle cx="150" cy="125" r="8" fill="#ff7043"/>
+  <circle cx="210" cy="120" r="16" fill="#e53935"/>
+  <circle cx="210" cy="120" r="9" fill="#ff7043"/>
+  <circle cx="240" cy="145" r="13" fill="#e53935"/>
+  <circle cx="240" cy="145" r="7" fill="#ff7043"/>
+  <circle cx="180" cy="150" r="15" fill="#e53935"/>
+  <circle cx="180" cy="150" r="8" fill="#ff7043"/>
+  <!-- Chutney Katori -->
+  <circle cx="100" cy="100" r="22" fill="#78909c"/>
+  <circle cx="100" cy="100" r="19" fill="#e8f5e9"/>
+  <circle cx="300" cy="100" r="22" fill="#78909c"/>
+  <circle cx="300" cy="100" r="19" fill="#ffe0b2"/>
+</svg>
