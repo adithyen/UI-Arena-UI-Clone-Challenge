@@ -52,7 +52,7 @@
     </div>
   </nav>
 
-  <!-- Help Hero Container -->
+  <!-- Hero: stays on teal background -->
   <div class="help-hero-section">
     <div class="help-hero-inner">
       <h1>Help &amp; Support</h1>
@@ -60,36 +60,36 @@
     </div>
   </div>
 
-  <!-- Help Main Container -->
+  <!-- Main card container -->
   <div class="help-main-container">
     <div class="help-card">
-      
-      <!-- Left Sidebar -->
+
+      <!-- LEFT SIDEBAR -->
       <div class="help-sidebar">
         <nav class="help-cat-nav" id="helpCatNav">
-          <a href="#partner-onboarding" class="help-cat-link active-help-cat" onclick="activateHelpCat(this, 'partner-onboarding'); return false;">Partner Onboarding</a>
-          <a href="#legal" class="help-cat-link" onclick="activateHelpCat(this, 'legal'); return false;">Legal</a>
-          <a href="#faqs" class="help-cat-link" onclick="activateHelpCat(this, 'faqs'); return false;">FAQs</a>
-          <a href="#instamart" class="help-cat-link" onclick="activateHelpCat(this, 'instamart'); return false;">Instamart Onboarding</a>
-          <a href="#irctc" class="help-cat-link" onclick="activateHelpCat(this, 'irctc'); return false;">IRCTC FAQ</a>
+          <a class="help-cat-link active-help-cat" onclick="activateHelpCat(this,'partner-onboarding');return false;" href="#partner-onboarding">Partner Onboarding</a>
+          <a class="help-cat-link" onclick="activateHelpCat(this,'legal');return false;" href="#legal">Legal</a>
+          <a class="help-cat-link" onclick="activateHelpCat(this,'faqs');return false;" href="#faqs">FAQs</a>
+          <a class="help-cat-link" onclick="activateHelpCat(this,'instamart');return false;" href="#instamart">Instamart Onboarding</a>
+          <a class="help-cat-link" onclick="activateHelpCat(this,'irctc');return false;" href="#irctc">IRCTC FAQ</a>
         </nav>
       </div>
 
-      <!-- Right Content Pane -->
+      <!-- RIGHT CONTENT -->
       <div class="help-content">
-        
+
         <!-- 1. Partner Onboarding -->
         <div class="help-section active-section" id="partner-onboarding">
           <h2 class="help-section-title">Partner Onboarding</h2>
           <div class="faq-list">
-            
+
             <div class="faq-item">
               <button class="faq-q" onclick="toggleFaq(this)">
                 <span>I want to partner my restaurant with Swiggy</span>
                 <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div class="faq-a">
-                <p><span class="orange-label">Partner with us</span></p>
+                <span class="orange-label">Partner with us</span>
                 <a href="https://partner.swiggy.com" target="_blank" rel="noopener" class="send-email-btn">SEND AN EMAIL</a>
               </div>
             </div>
@@ -143,11 +143,21 @@
 
             <div class="faq-item">
               <button class="faq-q" onclick="toggleFaq(this)">
-                <span>Who should I contact to get help &amp; support in getting onboarded?</span>
+                <span>Who should I contact if I need help &amp; support in getting onboarded?</span>
                 <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div class="faq-a">
                 <a href="mailto:partner-support@swiggy.in" class="orange-link">Send an email</a>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span>How much commission will I be charged by Swiggy?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">
+                <p>Commission rates vary based on the city, cuisine type, and order volume. You can contact our partner support team for a detailed breakdown specific to your restaurant.</p>
               </div>
             </div>
 
@@ -158,33 +168,40 @@
         <div class="help-section" id="legal">
           <h2 class="help-section-title">Legal</h2>
           <div class="faq-list">
+
             <div class="faq-item">
               <button class="faq-q" onclick="toggleFaq(this)">
-                <span>Terms &amp; Conditions</span>
+                <span>Terms of Use</span>
                 <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div class="faq-a">
-                <p>These terms and conditions govern your use of Swiggy's website and application. By placing an order, you agree to abide by these policies regarding payments, cancellations, and user conduct.</p>
+                <p>These terms of use (the "Terms of Use") govern your use of our website www.swiggy.in (the "Website") and our "Swiggy" application for mobile and handheld devices (the "App"). The Website and the App are jointly referred to as the "Services". Please read these Terms of Use carefully before you download, install or use the Services. If you do not agree to these Terms of Use, you may not install, download or use the Services. By installing, downloading or using the Services, you signify your acceptance to the Terms of Use and Privacy Policy (being hereby incorporated by reference herein) which takes effect on the date on which you download, install or use the Services, and create a legally binding arrangement to abide by the same.</p>
+                <a href="https://www.swiggy.com/terms-and-conditions" target="_blank" class="read-more-link">Read More</a>
               </div>
             </div>
+
             <div class="faq-item">
               <button class="faq-q" onclick="toggleFaq(this)">
                 <span>Privacy Policy</span>
                 <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div class="faq-a">
-                <p>Swiggy respects your privacy and is committed to protecting your personal data. We collect minimal information required to process orders and improve your food ordering experience.</p>
+                <p>We ( Swiggy Limited, alias "Swiggy" ) are fully committed to respecting your privacy and shall ensure that your personal information is safe with us. This privacy policy sets out the information practices of www.swiggy.com ("Website") including the type of information is collected, how the information is collected, how the information is used and with whom it is shared. Reference to "you" in this Privacy Policy refers to the users of this Website whether or not you access the services available on the Website or consummate a transaction on the Website. By using or accessing this Website, you agree to the terms and conditions of this Privacy Policy. You also expressly consent to our use and disclosure of your Personal Information (as defined below) in any manner as described in this Privacy Policy and further signify your agreement to this Privacy Policy and the Terms of Use (being hereby incorporated by reference herein). If you do not agree with the terms and conditions of this Privacy Policy, please do not proceed further or use or access this Website.</p>
+                <a href="https://www.swiggy.com/privacy-policy" target="_blank" class="read-more-link">Read More</a>
               </div>
             </div>
+
             <div class="faq-item">
               <button class="faq-q" onclick="toggleFaq(this)">
-                <span>Cancellations &amp; Refunds</span>
+                <span>Cancellations and Refunds</span>
                 <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div class="faq-a">
-                <p>Orders once placed and accepted by the restaurant cannot be cancelled. In case of quality issues or missing items, refunds are credited back to your original payment source within 3-5 business days.</p>
+                <p>a) As a general rule you shall not be entitled to cancel your order once placed. You may choose to cancel your order only within one-minute of the order being placed by you. However, subject to your previous cancellation history, Swiggy reserves the right to deny any refund to you pursuant to a cancellation initiated by you even if the same is within one-minute. b)If you cancel your order after one minute of placing it, Swiggy shall have a right to charge you 100% of the order amount as the cancellation fee, with a right to either not to refund the order value in case your order is prepaid or recover from your subsequent order in case your order is postpaid, to compensate our restaurant/merchants and delivery partners.</p>
+                <a href="https://www.swiggy.com/cancellation-policy" target="_blank" class="read-more-link">Read More</a>
               </div>
             </div>
+
           </div>
         </div>
 
@@ -192,6 +209,7 @@
         <div class="help-section" id="faqs">
           <h2 class="help-section-title">FAQs</h2>
           <div class="faq-list">
+
             <div class="faq-item">
               <button class="faq-q" onclick="toggleFaq(this)">
                 <span>What is Swiggy Customer Care Number?</span>
@@ -201,24 +219,58 @@
                 <p>We do not have a customer care phone number. You can reach out to us 24x7 via live chat support directly from your active order screen in the Swiggy app.</p>
               </div>
             </div>
+
             <div class="faq-item">
               <button class="faq-q" onclick="toggleFaq(this)">
-                <span>I want to edit my order</span>
+                <span>I want to explore career opportunities with Swiggy</span>
                 <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div class="faq-a">
-                <p>Order editing is currently not supported once an order has been placed. You can contact support for urgent delivery address updates before order dispatch.</p>
+                <span class="orange-label">Join our team</span>
+                <a href="https://careers.swiggy.com" target="_blank" rel="noopener" class="send-email-btn">SEND AN EMAIL</a>
               </div>
             </div>
+
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span>I want to provide feedback</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">
+                <p>You can share your feedback through the Swiggy app under Help &amp; Support. We value your input to make the Swiggy experience better for everyone.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span>Can I edit my order?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">
+                <p>Order editing is currently not supported once an order has been placed. Please ensure your cart is correct before completing your order.</p>
+              </div>
+            </div>
+
             <div class="faq-item">
               <button class="faq-q" onclick="toggleFaq(this)">
                 <span>I want to cancel my order</span>
                 <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div class="faq-a">
-                <p>Please use the Help section on your active order screen to request order cancellation. Cancellation fees may apply if the restaurant has started preparing your food.</p>
+                <p>You may cancel your order within 1 minute of placing it. After that, cancellation is subject to Swiggy's cancellation policy and restaurant acceptance.</p>
               </div>
             </div>
+
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span>Will Swiggy be accountable for quality/quantity?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">
+                <p>Swiggy takes food quality seriously. If you face any issues with the quality or quantity of your order, please reach out through the app for resolution.</p>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -226,39 +278,78 @@
         <div class="help-section" id="instamart">
           <h2 class="help-section-title">Instamart Onboarding</h2>
           <div class="faq-list">
+
             <div class="faq-item">
               <button class="faq-q" onclick="toggleFaq(this)">
-                <span>I want to partner my grocery store with Swiggy Instamart</span>
+                <span>I want to partner with Instamart</span>
                 <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div class="faq-a">
-                <p><span class="orange-label">Partner with Instamart</span></p>
+                <span class="orange-label">Partner with us</span>
                 <a href="mailto:instamart-partner@swiggy.in" class="send-email-btn">SEND AN EMAIL</a>
               </div>
             </div>
+
             <div class="faq-item">
               <button class="faq-q" onclick="toggleFaq(this)">
-                <span>What are the requirements for Instamart onboarding?</span>
+                <span>How many cities does Instamart operate in?</span>
                 <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div class="faq-a">
-                <ul class="doc-list">
-                  <li>- Valid FSSAI Retail License</li>
-                  <li>- GSTIN Registration Certificate</li>
-                  <li>- Bank Account Details &amp; PAN Card</li>
-                  <li>- SKU / Product Inventory List</li>
-                </ul>
+                <p>Swiggy Instamart currently operates in over 25 cities across India and is rapidly expanding to new locations.</p>
               </div>
             </div>
+
             <div class="faq-item">
               <button class="faq-q" onclick="toggleFaq(this)">
-                <span>How long does Instamart store activation take?</span>
+                <span>What is the time to onboard?</span>
                 <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div class="faq-a">
-                <p>Store activation typically takes 5 to 7 business days following inventory verification and catalog listing.</p>
+                <p>Store activation and onboarding typically takes 5 to 7 business days following document verification and catalog listing.</p>
               </div>
             </div>
+
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span>What flavour/grammage moves the best?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">
+                <p>Our data shows that commonly consumed packaged goods in smaller pack sizes (100g-500g) and popular everyday flavours tend to perform the best on Instamart.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span>What are the expected volumes in the first 30 days?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">
+                <p>Volume expectations vary by category, city, and seasonal demand. Our Instamart partner team will share projections tailored to your product portfolio post-onboarding.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span>Do I get sales data?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">
+                <p>Yes! Instamart partners get access to a dedicated dashboard with real-time sales data, order trends, and inventory insights.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span>How do ads work?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">
+                <p>Instamart offers sponsored listing and banner ads for brands to boost product visibility. Ad placements are managed via the partner dashboard and are charged on a cost-per-click model.</p>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -266,48 +357,83 @@
         <div class="help-section" id="irctc">
           <h2 class="help-section-title">IRCTC FAQ</h2>
           <div class="faq-list">
+
             <div class="faq-item">
               <button class="faq-q" onclick="toggleFaq(this)">
-                <span>How to order food on train via Swiggy IRCTC?</span>
+                <span>Will my order be delivered according to the promised time?</span>
                 <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div class="faq-a">
-                <p>Enter your 10-digit PNR number on the Swiggy IRCTC food delivery option, choose your station, select your favorite restaurant &amp; dish, and place your order.</p>
+                <p>Yes. Our delivery partners track live train schedules and aim to deliver your order right to your seat at the confirmed delivery station. In exceptional cases of delays, you will be notified proactively.</p>
               </div>
             </div>
+
             <div class="faq-item">
               <button class="faq-q" onclick="toggleFaq(this)">
-                <span>At which stations is Swiggy IRCTC food delivery available?</span>
+                <span>What will happen if the train is delayed?</span>
                 <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div class="faq-a">
-                <p>Swiggy IRCTC delivery is available at major railway stations across India including New Delhi, Mumbai Central, Bangalore City, Chennai Central, Thiruvananthapuram Central, and more.</p>
+                <p>If the train is significantly delayed, Swiggy will coordinate with our delivery partner and notify you. You may be offered a refund or a revised delivery slot depending on the delay.</p>
               </div>
             </div>
+
             <div class="faq-item">
               <button class="faq-q" onclick="toggleFaq(this)">
-                <span>What if the train is delayed?</span>
+                <span>I am unable to find any restaurants in the railway station where I want to place an order.</span>
                 <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div class="faq-a">
-                <p>Our delivery partners track train status in real-time. If the train delay exceeds delivery windows, your order will be automatically updated or full refund will be processed.</p>
+                <p>Swiggy IRCTC food delivery is currently available at select stations. If your station is not listed, it is not yet covered under our service. We are continuously expanding to new stations.</p>
               </div>
             </div>
+
             <div class="faq-item">
               <button class="faq-q" onclick="toggleFaq(this)">
-                <span>Can I pay Cash on Delivery for train orders?</span>
+                <span>My train is scheduled for next week, when can I place my order?</span>
                 <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div class="faq-a">
-                <p>Both Online Payment and Cash on Delivery options are supported for IRCTC train food orders.</p>
+                <p>IRCTC food orders can be placed up to 24 hours before the scheduled departure. You can pre-book your meal in advance for a seamless train travel experience.</p>
               </div>
             </div>
+
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span>How is the confirmation of the booking done?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">
+                <p>Once your order is confirmed, you will receive an SMS and in-app notification with your order details and estimated delivery station.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span>Can I cancel my order?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">
+                <p>Cancellations for IRCTC orders are allowed up to 1 hour before the scheduled delivery station arrival time. After that, cancellations may not be possible.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span>What is the minimum order value for IRCTC orders?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">
+                <p>The minimum order value for IRCTC train food delivery may vary by restaurant and station. This will be displayed clearly during checkout.</p>
+              </div>
+            </div>
+
           </div>
         </div>
 
-      </div>
-    </div>
-  </div>
+      </div><!-- /.help-content -->
+    </div><!-- /.help-card -->
+  </div><!-- /.help-main-container -->
 
   <!-- Sign in drawer -->
   <div class="drawer-overlay" id="drawerOverlay" onclick="closeSignIn()"></div>

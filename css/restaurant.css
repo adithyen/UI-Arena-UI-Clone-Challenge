@@ -594,15 +594,24 @@ body.rest-body {
 }
 
 .sc-PTzAb.fvsNpY {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  position: relative;
+  display: block;
+  width: 52px;  /* 20px icon + 8px gap + 24px track */
+  height: 20px;
 }
 
 .sc-BcUHK.ddUdNZ {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+  background: #ffffff;
 }
 
 .sc-eWVJoQ.cxxFkr {
@@ -611,26 +620,43 @@ body.rest-body {
   display: block;
 }
 
-/* Mini track on the right side of the icon inside the outer white pill */
+/* Mini track inside the outer white pill */
 .sc-PTzAb.fvsNpY::after {
   content: "";
-  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 3px;
   width: 24px;
   height: 14px;
   border-radius: 7px;
   background-color: #e2e2e7;
-  transition: background-color 0.2s ease;
-  position: relative;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
 }
 
-/* Checked state for VEG */
+/* Checked state for VEG/NON_VEG Icon */
+.sc-bxIUVk.gNKZjb:checked + .sc-PTzAb.fvsNpY .sc-BcUHK.ddUdNZ {
+  transform: translateX(32px);
+}
+
+/* Checked state for VEG Track */
 .sc-bxIUVk.gNKZjb:checked + .sc-PTzAb.fvsNpY::after {
+  transform: translateX(-24px);
   background-color: #0f8a65 !important;
+  width: 28px;
+  height: 20px;
+  top: 0;
+  border-radius: 10px;
 }
 
-/* Checked state for NON_VEG */
+/* Checked state for NON_VEG Track */
 .sc-bxIUVk.gNKZjb:checked + .sc-PTzAb.fvsNpY[type="NON_VEG"]::after {
+  transform: translateX(-24px);
   background-color: #e43b4f !important;
+  width: 28px;
+  height: 20px;
+  top: 0;
+  border-radius: 10px;
 }
 
 .sc-tYrig.krbHjL {
