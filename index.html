@@ -174,23 +174,25 @@
   <div class="section-divider"></div>
 
   <!-- restaurants grid -->
-  <section class="section-block restaurants-section" id="restaurantsSection">
-    <h2 class="section-title">Restaurants with online food delivery in Thiruvananthapuram</h2>
-    <div class="filter-row">
-      <button class="filter-chip active-filter">
-        Sort By <svg viewBox="0 0 24 24" width="12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <button class="filter-chip">15–30 mins</button>
-      <button class="filter-chip">Veg Dishes</button>
-      <button class="filter-chip">Non-Veg</button>
-      <button class="filter-chip">Rated 4+</button>
-      <button class="filter-chip">Offers</button>
-      <button class="filter-chip">Less than ₹800</button>
+  <div style="background:#fff;width:100%;" id="restaurantsSection">
+    <div style="max-width:1200px;margin:0 auto;padding:32px 24px 24px;">
+      <h2 class="section-title">Restaurants with online food delivery in Thiruvananthapuram</h2>
+      <div class="filter-row">
+        <button class="filter-chip active-filter">
+          Sort By <svg viewBox="0 0 24 24" width="12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <button class="filter-chip">15–30 mins</button>
+        <button class="filter-chip">Veg Dishes</button>
+        <button class="filter-chip">Non-Veg</button>
+        <button class="filter-chip">Rated 4+</button>
+        <button class="filter-chip">Offers</button>
+        <button class="filter-chip">Less than ₹800</button>
+      </div>
+      <div class="restaurants-grid" id="restaurantsGrid">
+        <!-- cards via js -->
+      </div>
     </div>
-    <div class="restaurants-grid" id="restaurantsGrid">
-      <!-- cards via js -->
-    </div>
-  </section>
+  </div>
 
   <!-- Gray Footer Zone: no white gap between restaurant cards, banner and footer -->
   <div style="background:#f0f0f5;">

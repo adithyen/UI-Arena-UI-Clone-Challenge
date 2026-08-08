@@ -159,8 +159,9 @@ a { text-decoration: none; color: inherit; }
 section.restaurants-section,
 .section-block.restaurants-section {
   padding-top: 24px;
-  padding-bottom: 24px;
+  padding-bottom: 0;
   margin-bottom: 0;
+  background: #fff;
 }
 
 .filter-row {
