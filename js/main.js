@@ -88,6 +88,20 @@ function buildRestaurantCard(r, idx) {
   `;
 }
 
+function setBtnDisabled(btnId, isDisabled) {
+  const btn = document.getElementById(btnId);
+  if (!btn) return;
+  btn.disabled = isDisabled;
+  const inner = btn.querySelector('.sc-emrHyn');
+  if (inner) {
+    if (isDisabled) {
+      inner.classList.add('sc-kDDaHh', 'iLVdim');
+    } else {
+      inner.classList.remove('sc-kDDaHh', 'iLVdim');
+    }
+  }
+}
+
 // category slider state
 let catOffset = 0;
 const CAT_STEP = 3;
@@ -100,8 +114,8 @@ function slideCat(dir) {
   catOffset = Math.max(0, Math.min(maxOffset, catOffset + dir * CAT_STEP));
   const itemW = items[0].offsetWidth + 16;
   slider.style.transform = `translateX(-${catOffset * itemW}px)`;
-  document.getElementById('catPrev').disabled = catOffset === 0;
-  document.getElementById('catNext').disabled = catOffset >= maxOffset;
+  setBtnDisabled('catPrev', catOffset === 0);
+  setBtnDisabled('catNext', catOffset >= maxOffset);
 }
 
 // chain slider state
@@ -116,8 +130,8 @@ function slideChain(dir) {
   chainOffset = Math.max(0, Math.min(maxOffset, chainOffset + dir * CHAIN_STEP));
   const cardW = cards[0].offsetWidth + 20;
   slider.style.transform = `translateX(-${chainOffset * cardW}px)`;
-  document.getElementById('chainPrev').disabled = chainOffset === 0;
-  document.getElementById('chainNext').disabled = chainOffset >= maxOffset;
+  setBtnDisabled('chainPrev', chainOffset === 0);
+  setBtnDisabled('chainNext', chainOffset >= maxOffset);
 }
 
 // sign in drawer

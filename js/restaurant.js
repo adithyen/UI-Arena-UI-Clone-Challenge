@@ -340,9 +340,50 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// Deals slider controls
+function scrollDeals(dir) {
+  const container = document.getElementById('dealsScroll');
+  if (!container) return;
+  const scrollAmount = 320;
+  container.scrollBy({ left: dir * scrollAmount, behavior: 'smooth' });
+  setTimeout(updateDealArrows, 300);
+}
+
+function updateDealArrows() {
+  const container = document.getElementById('dealsScroll');
+  const prevBtn = document.getElementById('dealPrev');
+  const nextBtn = document.getElementById('dealNext');
+  if (!container || !prevBtn || !nextBtn) return;
+
+  const isStart = container.scrollLeft <= 10;
+  const isEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth - 10;
+
+  if (isStart) {
+    prevBtn.setAttribute('disabled', '');
+    prevBtn.querySelector('.sc-emrHyn')?.classList.add('sc-kDDaHh', 'iLVdim');
+  } else {
+    prevBtn.removeAttribute('disabled');
+    prevBtn.querySelector('.sc-emrHyn')?.classList.remove('sc-kDDaHh', 'iLVdim');
+  }
+
+  if (isEnd) {
+    nextBtn.setAttribute('disabled', '');
+    nextBtn.querySelector('.sc-emrHyn')?.classList.add('sc-kDDaHh', 'iLVdim');
+  } else {
+    nextBtn.removeAttribute('disabled');
+    nextBtn.querySelector('.sc-emrHyn')?.classList.remove('sc-kDDaHh', 'iLVdim');
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   updateDishActionButtons();
   updateFloatingCart();
+  updateDealArrows();
+
+  const dealsScroll = document.getElementById('dealsScroll');
+  if (dealsScroll) {
+    dealsScroll.addEventListener('scroll', updateDealArrows);
+  }
 
   const signInBtn = document.getElementById('signInBtn');
   if (signInBtn) signInBtn.addEventListener('click', e => { e.preventDefault(); openSignIn(); });
