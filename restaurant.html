@@ -439,28 +439,59 @@
 
   </main>
 
-  <!-- Floating MENU Button -->
-  <div class="floating-menu-btn-wrap" id="floatingMenuBtn">
-    <button class="menu-floating-pill" onclick="window.scrollTo({top: document.getElementById('recommendedGroup').offsetTop - 80, behavior: 'smooth'})">
-      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
-      <span>MENU</span>
-    </button>
+  <!-- Exact Swiggy Menu FAB & View Cart Footer Container -->
+  <div class="_22QAR _2JLtx" id="bottomBarContainer">
+    <div class="_1dhez ckXPy _3bT8e" id="menuFabWrap">
+      <div id="browse-menu-btn" data-testid="menu-fab-button" aria-label="Double tap to open Browse Menu modal." class="sc-ftYfFM FzkdX" onclick="toggleBrowseMenuModal()">
+        <div class="sc-dZajOx kmQIlj">
+          <span aria-hidden="true">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/static-assets/icons/menu_book.svg" width="80px" height="84px" class="sc-bYEtBu cHDQjm" alt="Browse Menu">
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="_2mQ-4 ZE4h9" id="floatingCart" style="display:none;">
+      <button class="_3KrAC" data-testid="menu-view-cart-footer" aria-label="Cart details: 1 item added present, total: undefined. Double tap to go to Cart Page." id="view-cart-btn" onclick="window.location.href='cart.html'">
+        <span class="_1JiK6" aria-hidden="true">
+          <span class="_12qOx">
+            <span class="_2xXGW" id="fcCountText">1 item added</span>
+            <span class="_36JxA"></span>
+          </span>
+          <span class="ZVNHp">
+            <span>View Cart</span>
+            <img alt="" class="_5OjeQ" height="14" loading="lazy" width="14" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_28,h_28/ChatbotAssets/Checkout_Cart">
+          </span>
+        </span>
+      </button>
+    </div>
   </div>
 
-  <!-- View Cart Footer (exact Swiggy reference) -->
-  <div class="_2mQ-4 ZE4h9" id="floatingCart" style="display:none;">
-    <button class="_3KrAC" data-testid="menu-view-cart-footer" aria-label="Cart details: 1 item added present, total: undefined. Double tap to go to Cart Page." id="view-cart-btn" onclick="window.location.href='cart.html'">
-      <span class="_1JiK6" aria-hidden="true">
-        <span class="_12qOx">
-          <span class="_2xXGW" id="fcCountText">1 item added</span>
-          <span class="_36JxA"></span>
-        </span>
-        <span class="ZVNHp">
-          <span>View Cart</span>
-          <img alt="" class="_5OjeQ" height="14" loading="lazy" width="14" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_28,h_28/ChatbotAssets/Checkout_Cart">
-        </span>
-      </span>
-    </button>
+  <!-- Browse Menu Category Modal -->
+  <div class="menu-modal-overlay" id="browseMenuOverlay" onclick="if(event.target===this) toggleBrowseMenuModal()">
+    <div class="browse-menu-popup">
+      <div class="browse-menu-list">
+        <div class="browse-menu-item" onclick="scrollToCategory('recommendedGroup')">
+          <span>Recommended</span>
+          <span class="menu-item-count">7</span>
+        </div>
+        <div class="browse-menu-item" onclick="scrollToCategory('combosGroup')">
+          <span>Combos</span>
+          <span class="menu-item-count">2</span>
+        </div>
+        <div class="browse-menu-item" onclick="scrollToCategory('pizzasGroup')">
+          <span>Pizzas</span>
+          <span class="menu-item-count">4</span>
+        </div>
+        <div class="browse-menu-item" onclick="scrollToCategory('sidesGroup')">
+          <span>Garlic Breads &amp; Sides</span>
+          <span class="menu-item-count">2</span>
+        </div>
+        <div class="browse-menu-item" onclick="scrollToCategory('drinksGroup')">
+          <span>Drinks</span>
+          <span class="menu-item-count">2</span>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Customisation Modal -->

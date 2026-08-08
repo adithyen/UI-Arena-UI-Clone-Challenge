@@ -810,51 +810,70 @@ body.rest-body {
 }
 
 /* ==========================================================================
-   FLOATING MENU PILL BUTTON
+   EXACT SWIGGY MENU FAB & BOTTOM VIEW CART BAR (_22QAR _2JLtx)
    ========================================================================== */
 
-.floating-menu-btn-wrap {
-  position: fixed;
-  bottom: 68px;
-  right: calc(50% - 60px);
-  z-index: 995;
-}
-
-.menu-floating-pill {
-  background: #02060c;
-  color: #ffffff;
-  border: none;
-  border-radius: 24px;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-  transition: transform 0.15s ease;
-}
-
-.menu-floating-pill:hover {
-  transform: scale(1.05);
-}
-
-/* ==========================================================================
-   BOTTOM VIEW CART FOOTER (Exact Swiggy Reference Classes)
-   ========================================================================== */
-
-._2mQ-4.ZE4h9 {
+._22QAR._2JLtx {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   width: 100%;
-  background: #60b246;
   z-index: 1000;
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
-  animation: slideUpCart 0.3s ease;
+  pointer-events: none;
+}
+
+/* Floating Browse Menu Button */
+._1dhez.ckXPy._3bT8e {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1001;
+  pointer-events: auto;
+  transition: bottom 0.25s ease, transform 0.2s ease;
+}
+
+._1dhez.ckXPy._3bT8e.with-cart {
+  bottom: 66px;
+}
+
+.sc-ftYfFM.FzkdX {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  transition: transform 0.15s ease;
+}
+
+.sc-ftYfFM.FzkdX:hover {
+  transform: scale(1.06);
+}
+
+.sc-dZajOx.kmQIlj {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sc-bYEtBu.cHDQjm {
+  width: 80px;
+  height: 84px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.22));
+}
+
+/* Bottom Green View Cart Bar */
+._2mQ-4.ZE4h9 {
+  width: 100%;
+  background: #60b246;
+  pointer-events: auto;
+  box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.15);
+  animation: slideUpCart 0.25s ease;
 }
 
 @keyframes slideUpCart {
@@ -866,14 +885,15 @@ body.rest-body {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  height: 52px;
+  height: 48px;
   background: transparent;
   border: none;
-  padding: 0 20px;
+  padding: 0 16px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 
 ._1JiK6 {
@@ -882,7 +902,7 @@ body.rest-body {
   align-items: center;
   justify-content: space-between;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -907,9 +927,76 @@ body.rest-body {
 }
 
 ._5OjeQ {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   object-fit: contain;
+}
+
+/* Browse Menu Popup Modal */
+.menu-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 2000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.menu-modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.browse-menu-popup {
+  background: #ffffff;
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  max-width: 480px;
+  padding: 24px 20px 36px;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(100%);
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.menu-modal-overlay.open .browse-menu-popup {
+  transform: translateY(0);
+}
+
+.browse-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.browse-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--swiggy-text-main);
+  transition: background 0.15s ease;
+}
+
+.browse-menu-item:hover {
+  background: #f2f2f6;
+  color: var(--swiggy-orange);
+}
+
+.menu-item-count {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--swiggy-text-muted);
 }
 
 /* ==========================================================================
