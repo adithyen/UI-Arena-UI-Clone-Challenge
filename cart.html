@@ -41,102 +41,81 @@
     <a href="index.html" class="_2VOaT see-restaurants-btn">SEE RESTAURANTS NEAR YOU</a>
   </div>
 
-  <!-- checkout content -->
-  <div class="checkout-wrap" id="checkoutWrap" style="display:none">
-    <div class="checkout-left">
-      <!-- account step -->
-      <div class="step-card" id="stepAccount">
-        <div class="step-icon-col">
-          <div class="step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <div class="step-line"></div>
+    <!-- checkout content (exact structure & classes from checkout.html) -->
+  <div class="yV5zb checkout-wrap" id="checkoutWrap" style="display:none">
+    <div class="_Nk3n checkout-left">
+      <!-- Step 1: Account -->
+      <div class="_53n2m step-card" id="stepAccount">
+        <div class="_3TslB step-icon-col">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
-        <div class="step-body">
-          <h3>Account</h3>
-          <p class="step-sub">To place your order now, log in to your existing account or sign up.</p>
-          <div class="auth-illustration">
-            <img src="assets/food-icon.png" alt="" onerror="this.style.display='none'">
-          </div>
-          <div class="auth-btns">
-            <button class="auth-btn login-outline-btn" onclick="openSignIn()">
-              Have an account?<br><strong>LOG IN</strong>
-            </button>
-            <button class="auth-btn signup-btn">
-              New to Swiggy?<br><strong>SIGN UP</strong>
-            </button>
+        <div class="_1NUfE">
+          <div class="_28hKu">Account</div>
+        </div>
+        <div class="_19EzR">
+          <div class="_2nM94">To place your order now, log in to your existing account or sign up.</div>
+          <img class="tqBvz" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_147,h_140/Image-login_btpq7r" height="140" width="147" alt="Account Login Illustration"/>
+          <div class="DlFkV">
+            <div class="WO7LQ _2ThIK" onclick="openSignIn()">
+              <div class="_1pCwj">Have an account?</div>
+              <div class="_2UOuf">LOG IN</div>
+            </div>
+            <div class="_24klD _2ThIK" onclick="openSignIn()">
+              <div class="_1pCwj">New to Swiggy?</div>
+              <div class="_2UOuf">SIGN UP</div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- delivery step -->
-      <div class="step-card step-disabled" id="stepDelivery">
-        <div class="step-icon-col">
-          <div class="step-icon step-icon-inactive">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <div class="step-line"></div>
+      <!-- Step 2: Delivery address -->
+      <div class="_53n2m step-card step-disabled" id="stepDelivery">
+        <div class="_3TslB _1754A step-icon-col" style="background:#93959f;">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
-        <div class="step-body">
-          <h3>Delivery address</h3>
+        <div class="_1NUfE _2w6-P">
+          <div class="_28hKu" style="color:#93959f;">Delivery address</div>
         </div>
       </div>
 
-      <!-- payment step -->
-      <div class="step-card step-disabled" id="stepPayment">
-        <div class="step-icon-col">
-          <div class="step-icon step-icon-inactive">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-          </div>
+      <!-- Step 3: Payment -->
+      <div class="_53n2m step-card step-disabled" id="stepPayment">
+        <div class="_3TslB _1754A step-icon-col" style="background:#93959f;">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
         </div>
-        <div class="step-body">
-          <h3>Payment</h3>
+        <div class="_1NUfE _2w6-P">
+          <div class="_28hKu" style="color:#93959f;">Payment</div>
         </div>
       </div>
     </div>
 
-    <!-- right: order summary -->
-    <div class="checkout-right" id="checkoutRight">
-      <!-- restaurant info -->
-      <div class="order-restaurant" id="orderRestaurant"></div>
-
-      <!-- cart items -->
-      <div class="order-items" id="orderItems"></div>
-
-      <!-- suggestions -->
-      <div class="suggestions-row">
-        <span class="quote-icon">"</span>
-        <input type="text" class="suggestions-input" placeholder="Any suggestions? We will pass it on...">
-      </div>
-
-      <!-- no-contact delivery -->
-      <div class="no-contact-card">
-        <label class="no-contact-label">
-          <input type="checkbox" class="nc-checkbox">
-          <div class="nc-text">
-            <p class="nc-title">Opt in for No-contact Delivery</p>
-            <p class="nc-sub">Unwell, or avoiding contact? Please select no-contact delivery. Partner will safely place the order outside your door (not for COD)</p>
+    <!-- Right Side: Order Summary -->
+    <div class="_3tU6Q checkout-right" id="checkoutRight">
+      <div class="_1Hqto">
+        <div class="_2ZKXI">
+          <div class="i1J0h _2cRL5" style="padding: 20px;">
+            <div id="orderRestaurant"></div>
+            <div id="orderItems"></div>
+            <div class="_5NEBb">
+              <input type="text" class="_3MT2r" style="border:none;outline:none;width:100%;font-size:13px;" placeholder="Any suggestions? We will pass it on...">
+            </div>
+            <div class="_3_bvE">
+              <input type="checkbox" style="margin-right:12px;width:16px;height:16px;">
+              <div>
+                <div class="_8JacI" style="font-size:12px;font-weight:600;color:#02060c;">Opt in for No-contact Delivery</div>
+                <div class="_3pEmu" style="font-size:11px;color:rgba(2,6,12,0.6);">Unwell, or avoiding contact? Partner will safely place order outside your door</div>
+              </div>
+            </div>
+            <div class="ki_R8" style="padding-top:15px;">
+              <div class="_2l-j2" style="font-size:15px;font-weight:700;margin-bottom:12px;">Bill Details</div>
+              <div class="gdhNy" style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;color:rgba(2,6,12,0.7);"><span>Item Total</span><span id="billItemTotal" style="font-weight:600;color:#02060c;">₹0</span></div>
+              <div class="gdhNy" style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;color:rgba(2,6,12,0.7);"><span>Delivery Fee | 1.4 kms</span><span style="font-weight:600;color:#02060c;">₹24</span></div>
+              <div class="gdhNy" style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;color:rgba(2,6,12,0.7);"><span>GST &amp; Other Charges</span><span id="billGst" style="font-weight:600;color:#02060c;">₹0</span></div>
+              <div style="border-bottom:1px solid rgba(2,6,12,0.1);margin:12px 0;"></div>
+              <div class="gdhNy" style="display:flex;justify-content:space-between;font-size:15px;font-weight:700;color:#02060c;"><span>TO PAY</span><span id="billTotal" style="font-weight:700;color:#02060c;">₹0</span></div>
+            </div>
           </div>
-        </label>
-      </div>
-
-      <!-- bill details -->
-      <div class="bill-card" id="billCard">
-        <h4>Bill Details</h4>
-        <div class="bill-row"><span>Item Total</span><span id="billItemTotal">₹0</span></div>
-        <div class="bill-row"><span>Delivery Fee | 1.4 kms <span class="info-btn">ℹ</span></span><span>₹24</span></div>
-        <div class="bill-row extra-charges"><span>GST &amp; Other Charges <span class="info-btn">ℹ</span></span><span id="billGst">₹0</span></div>
-        <div class="bill-total">
-          <span>TO PAY</span>
-          <span id="billTotal">₹0</span>
         </div>
-      </div>
-
-      <!-- safety note -->
-      <div class="safety-card">
-        <p><strong>Review your order and address details to avoid cancellations</strong></p>
-        <p class="safety-sub">Note: Please ensure your address and order details are correct. This order, if cancelled, is non-refundable.</p>
-        <a href="#" class="read-policy-link">Read policy</a>
       </div>
     </div>
   </div>

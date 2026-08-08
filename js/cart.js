@@ -26,12 +26,11 @@ function renderRestaurant() {
   const el = document.getElementById('orderRestaurant');
   if (!el) return;
   el.innerHTML = `
-    <div class="rest-row">
-      <img src="assets/restaurants/pizza-hut.svg" alt="Pizza Hut" class="rest-thumb">
-      <div class="rest-row-info">
-        <h4>Pizza Hut</h4>
-        <p>Palayam</p>
-        <div class="rest-underline"></div>
+    <div style="display:flex;align-items:center;gap:14px;padding-bottom:14px;border-bottom:2px solid #02060c;margin-bottom:16px;">
+      <img src="assets/restaurants/pizza-hut.svg" alt="Pizza Hut" style="width:50px;height:50px;border-radius:4px;object-fit:cover;">
+      <div>
+        <h4 style="font-size:17px;font-weight:600;color:#02060c;">Pizza Hut</h4>
+        <p style="font-size:13px;color:rgba(2,6,12,0.6);margin-top:2px;">Palayam</p>
       </div>
     </div>
   `;
@@ -41,15 +40,17 @@ function renderItems(cart) {
   const el = document.getElementById('orderItems');
   if (!el) return;
   el.innerHTML = cart.map(item => `
-    <div class="cart-item" id="ci-${item.id}">
-      <span class="ci-veg"></span>
-      <span class="ci-name">${item.name}</span>
-      <div class="qty-control">
-        <button class="qty-btn" onclick="changeQty('${item.id}', -1)">−</button>
-        <span class="qty-num" id="qty-${item.id}">${item.qty}</span>
-        <button class="qty-btn" onclick="changeQty('${item.id}', 1)">+</button>
+    <div id="ci-${item.id}" style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;font-size:14px;color:#02060c;">
+      <div style="display:flex;align-items:center;gap:8px;flex:1;">
+        <span style="width:12px;height:12px;border:1px solid #1ba672;display:flex;align-items:center;justify-content:center;border-radius:2px;"><span style="width:6px;height:6px;background:#1ba672;border-radius:50%;"></span></span>
+        <span style="font-size:13px;font-weight:500;">${item.name}</span>
       </div>
-      <span class="ci-price">₹${item.price * item.qty}</span>
+      <div style="display:flex;align-items:center;border:1px solid #bebfc5;padding:3px 8px;font-size:13px;font-weight:600;gap:12px;margin:0 14px;">
+        <button onclick="changeQty('${item.id}', -1)" style="border:none;background:none;color:#686b78;cursor:pointer;font-weight:700;font-size:14px;">−</button>
+        <span id="qty-${item.id}" style="color:#60b246;font-weight:700;">${item.qty}</span>
+        <button onclick="changeQty('${item.id}', 1)" style="border:none;background:none;color:#60b246;cursor:pointer;font-weight:700;font-size:14px;">+</button>
+      </div>
+      <span class="ci-price" style="font-weight:600;font-size:14px;min-width:50px;text-align:right;">₹${item.price * item.qty}</span>
     </div>
   `).join('');
 }
