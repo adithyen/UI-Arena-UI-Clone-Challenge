@@ -14,23 +14,66 @@
 
 .checkout-nav-right { display: flex; gap: 28px; }
 
-/* empty cart */
-.empty-cart {
-  min-height: 80vh;
-  display: flex; align-items: center; justify-content: center;
+/* exact swiggy empty cart styles from checkout.html */
+._3guTM, .empty-cart {
+  min-height: calc(100vh - 80px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+  background: #ffffff;
+  padding: 40px 20px;
 }
-.empty-inner { text-align: center; }
-.empty-illustration { font-size: 80px; margin-bottom: 24px; }
-.empty-inner h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
-.empty-inner p { color: var(--text-gray); margin-bottom: 24px; }
-.see-restaurants-btn {
-  display: inline-block; padding: 14px 28px;
-  background: var(--orange); color: #fff;
-  border-radius: 6px; font-size: 14px; font-weight: 700;
-  letter-spacing: .5px;
-  transition: background .2s;
+
+._1xnKo {
+  width: 271px;
+  height: 256px;
+  background-image: url("https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
 }
-.see-restaurants-btn:hover { background: var(--orange-dark); }
+
+._3u_-O {
+  margin-top: 24px;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(2, 6, 12, 0.8);
+  font-family: 'Inter', sans-serif;
+}
+
+._1xfqf {
+  margin-top: 8px;
+  font-size: 14px;
+  color: rgba(2, 6, 12, 0.6);
+  font-family: 'Inter', sans-serif;
+}
+
+._2VOaT, .see-restaurants-btn {
+  margin-top: 30px;
+  padding: 11px 20px;
+  text-transform: uppercase;
+  background-color: #ff5200;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  font-size: 15px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 0;
+  transition: transform 0.2s cubic-bezier(0.2, 1, 0.2, 1), box-shadow 0.2s ease;
+}
+
+._2VOaT:hover, .see-restaurants-btn:hover {
+  background-color: #ff5200;
+  box-shadow: 0 4px 14px rgba(2, 6, 12, 0.2);
+}
 
 /* checkout layout */
 .checkout-wrap {
