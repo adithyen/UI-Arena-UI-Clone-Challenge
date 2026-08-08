@@ -222,10 +222,7 @@ def render_dish(dish, dish_id):
       <div style="position: relative;">
         <div class="sc-cBNeAB hIFViE">
           <div class="sc-jcVbNL dfmBqs" id="dishAction-dish-{dish_id}">
-            <button class="swiggy-main-add-btn" onclick="openCustomiseModal(this, '{dish['name']}', '{dish['price']}')">ADD</button>
-          </div>
-          <div class="sc-AzeoO gdEeEA">
-            <div class="sc-dlfnOL itAPdo">Customisable</div>
+            <button class="swiggy-main-add-btn" onclick="handleAddClick({{id:'dish-{dish_id}',name:'{dish['name'].replace(chr(39), chr(92)+chr(39))}',price:{dish['price']},type:'{veg_str}'}}, false)">ADD</button>
           </div>
         </div>
       </div>

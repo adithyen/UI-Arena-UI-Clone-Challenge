@@ -242,9 +242,10 @@ function updateDishActionButtons() {
       const priceText = row.querySelector('.sc-dlfnOL.cWZrLo').textContent.replace('₹', '').trim();
       const price = parseInt(priceText) || 149;
       const type = row.dataset.type || 'veg';
+      const isCustomisable = dishId.startsWith('pizza');
 
       container.innerHTML = `
-        <button class="swiggy-main-add-btn" onclick="handleAddClick({id:'${dishId}',name:'${name}',price:${price},type:'${type}'}, true)">ADD</button>
+        <button class="swiggy-main-add-btn" onclick="handleAddClick({id:'${dishId}',name:'${name}',price:${price},type:'${type}'}, ${isCustomisable})">ADD</button>
       `;
     }
   });
