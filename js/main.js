@@ -26,20 +26,23 @@ function updateCartBadge() {
   const cart = getCart();
   const total = cart.reduce((sum, i) => sum + i.qty, 0);
   
-  // Legacy badge text
-  const badge = document.getElementById('cartCount');
-  if (badge) badge.textContent = total;
-  
-  // Green Badge & Empty SVG toggle
-  const badgeGreen = document.getElementById('cartBadgeGreen');
-  const svgEmpty = document.getElementById('cartSvgEmpty');
+  const zeroBadge = document.getElementById('cartZeroBadge');
+  const greenBadge = document.getElementById('cartGreenBadge');
   const navCart = document.getElementById('navCart');
   
   if (total > 0) {
-    if (badgeGreen) {
-      badgeGreen.textContent = total;
-      badgeGreen.style.display = 'inline-flex';
+    if (zeroBadge) zeroBadge.style.display = 'none';
+    if (greenBadge) {
+      greenBadge.textContent = total;
+      greenBadge.style.display = 'inline-flex';
     }
+    if (navCart) navCart.classList.add('cart-has-items');
+  } else {
+    if (zeroBadge) zeroBadge.style.display = 'inline-flex';
+    if (greenBadge) greenBadge.style.display = 'none';
+    if (navCart) navCart.classList.remove('cart-has-items');
+  }
+}
     if (svgEmpty) svgEmpty.style.display = 'none';
     if (navCart) navCart.classList.add('cart-has-items');
   } else {
