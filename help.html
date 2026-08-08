@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help &amp; Support | Swiggy</title>
+  <meta name="description" content="Get help and support for your Swiggy orders. FAQs, partner onboarding, legal, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/help.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="index.html" class="logo-link">
+          <img src="assets/swiggy-logo.svg" alt="Swiggy" class="logo-img">
+        </a>
+        <span class="nav-page-label">HELP</span>
+      </div>
+      <div class="nav-right">
+        <a href="#" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Swiggy Corporate</a>
+        <a href="search.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search</a>
+        <a href="#" class="nav-link offers-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Offers<span class="new-badge">NEW</span></a>
+        <a href="help.html" class="nav-link active-nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Help</a>
+        <a href="#" class="nav-link" id="signInBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Sign In</a>
+        <a href="cart.html" class="nav-link cart-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span id="cartCount">0</span> Cart</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- help hero -->
+  <div class="help-hero">
+    <h1>Help &amp; Support</h1>
+    <p>Let's take a step ahead and help you better.</p>
+  </div>
+
+  <!-- help body -->
+  <div class="help-wrap">
+    <div class="help-sidebar">
+      <nav class="help-cat-nav" id="helpCatNav">
+        <a href="#partner-onboarding" class="help-cat-link active-help-cat" onclick="activateHelpCat(this, 'partner-onboarding')">Partner Onboarding</a>
+        <a href="#legal" class="help-cat-link" onclick="activateHelpCat(this, 'legal')">Legal</a>
+        <a href="#faqs" class="help-cat-link" onclick="activateHelpCat(this, 'faqs')">FAQs</a>
+        <a href="#instamart" class="help-cat-link" onclick="activateHelpCat(this, 'instamart')">Instamart Onboarding</a>
+        <a href="#irctc" class="help-cat-link" onclick="activateHelpCat(this, 'irctc')">IRCTC FAQ</a>
+      </nav>
+    </div>
+
+    <div class="help-content">
+      <!-- partner onboarding -->
+      <div class="help-section active-section" id="partner-onboarding">
+        <h2 class="help-section-title">Partner Onboarding</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              I want to partner my restaurant with Swiggy
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>To partner your restaurant with Swiggy, visit <a href="https://partner.swiggy.com" style="color:var(--orange)">partner.swiggy.com</a> and register your restaurant. You'll need to provide basic details about your restaurant including FSSAI license, PAN card, and bank account information. Our team will reach out to you within 24-48 hours after submission.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              What are the mandatory documents needed to list my restaurant on Swiggy?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>You'll need: FSSAI License, PAN Card, GST Certificate, Bank Account details, and a valid mobile number. For a complete list, visit the partner portal.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              I want to opt-out from Google reserve
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>To opt-out from Google Reserve, please log in to your Swiggy Partner portal and navigate to Settings &gt; Integrations &gt; Google Reserve, then disable it from there.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              After I submit all documents, how long will it take for my restaurant to go live on Swiggy?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Once all documents are verified and approved, your restaurant typically goes live within 5-7 business days. You will receive a confirmation email and SMS once your restaurant is live.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              What is this one time Onboarding fees? Do I have to pay for it while registering?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Swiggy charges a one-time onboarding fee which covers the cost of menu photography, cataloguing, and training. This is paid after your restaurant is approved. You do not need to pay during registration.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Who should I contact to get help &amp; support in getting onboarded?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>You can contact your dedicated onboarding manager assigned to you, or reach out through the Partner Support portal at <strong>1800-208-9999</strong> (Mon-Sat, 10 AM – 6 PM).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- legal -->
+      <div class="help-section" id="legal" style="display:none">
+        <h2 class="help-section-title">Legal</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Terms &amp; Conditions
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>By using Swiggy services, you agree to our Terms and Conditions. These include usage policies, payment terms, cancellation policies, and dispute resolution mechanisms. The full terms are available at swiggy.com/termsofuse.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Privacy Policy
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Swiggy is committed to protecting your privacy. We collect personal data to provide and improve our services. We do not sell your data to third parties. Read our full Privacy Policy at swiggy.com/privacy.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Cancellation &amp; Refund Policy
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Orders can be cancelled before they are accepted by the restaurant. Once accepted, cancellation may not be possible. Refunds are processed within 5-7 business days to the original payment method.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- faqs -->
+      <div class="help-section" id="faqs" style="display:none">
+        <h2 class="help-section-title">FAQs</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              How do I track my order?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Once your order is placed, you can track it in real-time from the Order Tracking page. You'll receive SMS and push notifications at each stage: Order confirmed → Preparing → Out for delivery → Delivered.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              My order is late. What should I do?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>If your order is significantly delayed, you can contact our support through the Help section in the app. We will investigate and provide an update as quickly as possible.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              How do I apply a coupon code?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>On the checkout page, tap "Add a promo code" and enter your code. Valid codes will be applied automatically and the discount reflected in your bill.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Can I change my delivery address after placing an order?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Address changes after placing an order are not possible in most cases. Please ensure you select the correct delivery address before placing your order.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              What payment methods does Swiggy accept?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Swiggy accepts UPI, Credit/Debit Cards, Net Banking, Swiggy Money, and Cash on Delivery (COD) where available. You can also use Swiggy One discounts if you have a subscription.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- instamart -->
+      <div class="help-section" id="instamart" style="display:none">
+        <h2 class="help-section-title">Instamart Onboarding</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              How do I register my store on Swiggy Instamart?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Visit the Swiggy Instamart partner portal and submit your grocery/retail store details. Instamart focuses on hyperlocal delivery for grocery stores, pharmacies, and daily essentials.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              What categories of stores can join Instamart?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Grocery stores, supermarkets, pharmacies, pet stores, home essentials stores, baby care stores, and electronics stores can all partner with Swiggy Instamart.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- irctc -->
+      <div class="help-section" id="irctc" style="display:none">
+        <h2 class="help-section-title">IRCTC FAQ</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              How can I order food on a train via Swiggy?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Swiggy has partnered with IRCTC to deliver food directly to your train seat. Go to the Swiggy app, select "Food on Train", enter your PNR number and seat details, and choose from restaurants at your upcoming station.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Can I cancel my train food order?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-a">
+              <p>Train food orders can be cancelled up to 60 minutes before the scheduled delivery station stop. After that, cancellations may not be possible.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- sign in drawer -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeSignIn()"></div>
+  <div class="signin-drawer" id="signinDrawer">
+    <button class="drawer-close" onclick="closeSignIn()">✕</button>
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <div>
+          <h2>Login</h2>
+          <p>or <a href="#" class="create-account-link">create an account</a></p>
+          <div class="drawer-underline"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="tel" id="phoneInput" class="phone-input" placeholder="Phone number" maxlength="10">
+      </div>
+      <button class="login-btn" onclick="handleLogin()">LOGIN</button>
+      <p class="terms-text">By clicking on Login, I accept the <a href="#">Terms &amp; Conditions</a> &amp; <a href="#">Privacy Policy</a></p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/help.js"></script>
+</body>
+</html>
