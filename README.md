@@ -124,7 +124,6 @@ New to Git? A free pre-event orientation walks through all of this live, and [`U
 | Minnu Lekha V G | +91 91882 26165 |
 | Shreya Ajith | +91 82899 57074 |
 
-## 🔗 Links
 
 ## 🔗 Links
 
