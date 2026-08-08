@@ -126,10 +126,13 @@ New to Git? A free pre-event orientation walks through all of this live, and [`U
 
 ## 🔗 Links
 
-- **Email:**
-- **Linkedin:**
+## 🔗 Links
+
+- **Email:** [fossclub@lbsitw.ac.in](mailto:fossclub@lbsitw.ac.in)
+- **LinkedIn:** [@FOSS Club Lbsitw](https://www.linkedin.com/company/foss-club-lbsitw)
 - **Instagram:** [@foss_club_lbsitw](https://instagram.com/foss_club_lbsitw)
-- **Github:** 
+- **GitHub:** [FOSSCLUB-LBSITW](https://github.com/FOSSCLUB-LBSITW)
+  
 ---
 
 <p align="center">Organized with 💚 by <b>FOSS Club, LBSITW</b></p>
