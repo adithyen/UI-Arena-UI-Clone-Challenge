@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/search.css">
 </head>
-<body>
-      <!-- navbar -->
+<body class="search-body">
+  <!-- navbar -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <div class="nav-left">
@@ -57,74 +57,218 @@
     </div>
   </nav>
 
-  <!-- search section -->
-  <div class="search-page-wrap">
-    <!-- search bar -->
-    <div class="search-bar-wrap">
-      <div class="search-input-row">
-        <svg class="search-page-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="text" id="searchInput" class="search-page-input" placeholder="Search for restaurants and food" autofocus oninput="handleSearch(this.value)">
-        <button class="search-clear-btn" id="clearBtn" onclick="clearSearch()" style="display:none">✕</button>
+  <!-- exact Swiggy search section -->
+  <div class="_3dbwz">
+    <div class="_1X7NZ">
+      <div class="_6-jfE _2QWO2" data-testid="search-bar">
+        <form onsubmit="event.preventDefault();">
+          <div class="_1UHJH">
+            <div class="_37bn2">
+              <input type="text" id="searchInput" class="ssM7E" placeholder="Search for restaurants and food" value="" autofocus="" maxlength="200" oninput="handleSearch(this.value)">
+            </div>
+            <div class="_474KM" id="searchActionIcon">
+              <span class="icon-magnifier" id="searchMagnifier">
+                <svg viewBox="5 -1 12 25" height="17" width="17" fill="#686b78"><path d="M17.6671481,17.1391632 L22.7253317,22.1973467 L20.9226784,24 L15.7041226,18.7814442 C14.1158488,19.8024478 12.225761,20.3946935 10.1973467,20.3946935 C4.56550765,20.3946935 0,15.8291858 0,10.1973467 C0,4.56550765 4.56550765,0 10.1973467,0 C15.8291858,0 20.3946935,4.56550765 20.3946935,10.1973467 C20.3946935,12.8789625 19.3595949,15.3188181 17.6671481,17.1391632 Z M10.1973467,17.8453568 C14.4212261,17.8453568 17.8453568,14.4212261 17.8453568,10.1973467 C17.8453568,5.97346742 14.4212261,2.54933669 10.1973467,2.54933669 C5.97346742,2.54933669 2.54933669,5.97346742 2.54933669,10.1973467 C2.54933669,14.4212261 5.97346742,17.8453568 10.1973467,17.8453568 Z"></path></svg>
+              </span>
+              <button type="button" class="search-clear-btn" id="clearBtn" onclick="clearSearch()" style="display:none;">✕</button>
+            </div>
+          </div>
+          <input type="submit" hidden="">
+        </form>
       </div>
     </div>
 
-    <!-- search results -->
-    <div id="searchResults" class="search-results" style="display:none">
+    <!-- Search Results Section -->
+    <div id="searchResults" class="search-results-container" style="display:none;">
+      <!-- Filter Tabs: Restaurants / Dishes -->
+      <div class="search-filter-tabs">
+        <button class="search-tab-pill active" id="tabRestaurants" onclick="switchSearchTab('restaurants')">Restaurants</button>
+        <button class="search-tab-pill" id="tabDishes" onclick="switchSearchTab('dishes')">Dishes</button>
+      </div>
       <div id="resultsGrid" class="results-grid"></div>
     </div>
 
-    <!-- default state: popular cuisines -->
-    <div id="defaultState" class="default-state">
-      <h2 class="search-section-title">Popular Cuisines</h2>
-      <div class="cuisines-grid">
-        <a href="#" class="cuisine-item" onclick="searchCuisine('Rolls')">
-          <img src="assets/cat/rolls.svg" alt="Rolls">
-          <span>Rolls</span>
-        </a>
-        <a href="#" class="cuisine-item" onclick="searchCuisine('Tea')">
-          <img src="assets/cat/tea.svg" alt="Tea">
-          <span>Tea</span>
-        </a>
-        <a href="#" class="cuisine-item" onclick="searchCuisine('Cake')">
-          <img src="assets/cat/cake.svg" alt="Cake">
-          <span>Cake</span>
-        </a>
-        <a href="#" class="cuisine-item" onclick="searchCuisine('Dessert')">
-          <img src="assets/cat/dessert.svg" alt="Dessert">
-          <span>Dessert</span>
-        </a>
-        <a href="#" class="cuisine-item" onclick="searchCuisine('Sandwich')">
-          <img src="assets/cat/sandwich.svg" alt="Sandwich">
-          <span>Sandwich</span>
-        </a>
-        <a href="#" class="cuisine-item" onclick="searchCuisine('Beverages')">
-          <img src="assets/cat/beverages.svg" alt="Beverages">
-          <span>Beverages</span>
-        </a>
-        <a href="#" class="cuisine-item" onclick="searchCuisine('Biryani')">
-          <img src="assets/cat/biryani.svg" alt="Biryani">
-          <span>Biryani</span>
-        </a>
-        <a href="#" class="cuisine-item" onclick="searchCuisine('Pizza')">
-          <img src="assets/cat/pizza.svg" alt="Pizza">
-          <span>Pizza</span>
-        </a>
-        <a href="#" class="cuisine-item" onclick="searchCuisine('Burger')">
-          <img src="assets/cat/burger.svg" alt="Burger">
-          <span>Burger</span>
-        </a>
-        <a href="#" class="cuisine-item" onclick="searchCuisine('Pasta')">
-          <img src="assets/cat/pasta.svg" alt="Pasta">
-          <span>Pasta</span>
-        </a>
-        <a href="#" class="cuisine-item" onclick="searchCuisine('Dosa')">
-          <img src="assets/cat/dosa.svg" alt="Dosa">
-          <span>Dosa</span>
-        </a>
-        <a href="#" class="cuisine-item" onclick="searchCuisine('Chicken')">
-          <img src="assets/cat/chicken.svg" alt="Chicken">
-          <span>Chicken</span>
-        </a>
+    <!-- Default State: Popular Cuisines Carousel (Exact 1:1 Swiggy markup) -->
+    <div id="defaultState" class="_1T3G4">
+      <div class="_3orhj">
+        <div class="_2CK_4 _38pwG" data-testid="search-pl-wrapper">
+          <div class="_1x4Gx _3Wbx3"></div>
+          <div class="_3eaXY"><div></div></div>
+          <div class="_3eaXY">
+            <div class="hUGhG">
+              <div></div>
+              <div data-testid="grid-header" class="_1f-L8">
+                <div style="padding: 28px 0px 0px 16px;">
+                  <h2 class="tMOTP"><span>Popular Cuisines</span></h2>
+                  <span class="_1oWSt" aria-hidden="true"></span>
+                </div>
+              </div>
+              <div data-testid="grid-container" aria-hidden="false" style="padding: 12px 16px 24px; margin-top: 8px; margin-bottom: 8px;">
+                <div class="_1kx7N" data-testid="grid-slider">
+                  <div class="_34zZU" data-testid="grid-row">
+                    <!-- 1. Biryani -->
+                    <div class="uItqF" style="margin-right: 10px;">
+                      <div class="_1kG7e">
+                        <div>
+                          <div data-testid="image-info-container" class="_2Rj2_" style="width: calc(-13.1765px + 5.88235vw); height: calc(-18.7245px + 8.35913vw); min-width: calc(-13.1765px + 5.88235vw); min-height: calc(-18.7245px + 8.35913vw);">
+                            <button data-testid="image-info-ripple" class="_2NkGx _3Woul" onclick="searchCuisine('Biryani')">
+                              <img alt="Biryani" class="_2OXql" loading="lazy" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/3df4fca020027e89b89c733cdffc4966">
+                            </button>
+                          </div>
+                          <div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 2. Pizza -->
+                    <div class="uItqF" style="margin-right: 10px;">
+                      <div class="_1kG7e">
+                        <div>
+                          <div data-testid="image-info-container" class="_2Rj2_" style="width: calc(-13.1765px + 5.88235vw); height: calc(-18.7245px + 8.35913vw); min-width: calc(-13.1765px + 5.88235vw); min-height: calc(-18.7245px + 8.35913vw);">
+                            <button data-testid="image-info-ripple" class="_2NkGx _3Woul" onclick="searchCuisine('Pizza')">
+                              <img alt="Pizzas" class="_2OXql" loading="lazy" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/5dd234f7decdac4b4f71a2ff1408e10f">
+                            </button>
+                          </div>
+                          <div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 3. Burger -->
+                    <div class="uItqF" style="margin-right: 10px;">
+                      <div class="_1kG7e">
+                        <div>
+                          <div data-testid="image-info-container" class="_2Rj2_" style="width: calc(-13.1765px + 5.88235vw); height: calc(-18.7245px + 8.35913vw); min-width: calc(-13.1765px + 5.88235vw); min-height: calc(-18.7245px + 8.35913vw);">
+                            <button data-testid="image-info-ripple" class="_2NkGx _3Woul" onclick="searchCuisine('Burger')">
+                              <img alt="Burgers" class="_2OXql" loading="lazy" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/87664acb0f9dd95d10a549bb8190ab27">
+                            </button>
+                          </div>
+                          <div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 4. Rolls -->
+                    <div class="uItqF" style="margin-right: 10px;">
+                      <div class="_1kG7e">
+                        <div>
+                          <div data-testid="image-info-container" class="_2Rj2_" style="width: calc(-13.1765px + 5.88235vw); height: calc(-18.7245px + 8.35913vw); min-width: calc(-13.1765px + 5.88235vw); min-height: calc(-18.7245px + 8.35913vw);">
+                            <button data-testid="image-info-ripple" class="_2NkGx _3Woul" onclick="searchCuisine('Rolls')">
+                              <img alt="Rolls" class="_2OXql" loading="lazy" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/e76b511935016406e6ebc11dd7593387">
+                            </button>
+                          </div>
+                          <div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 5. Chinese / Noodles -->
+                    <div class="uItqF" style="margin-right: 10px;">
+                      <div class="_1kG7e">
+                        <div>
+                          <div data-testid="image-info-container" class="_2Rj2_" style="width: calc(-13.1765px + 5.88235vw); height: calc(-18.7245px + 8.35913vw); min-width: calc(-13.1765px + 5.88235vw); min-height: calc(-18.7245px + 8.35913vw);">
+                            <button data-testid="image-info-ripple" class="_2NkGx _3Woul" onclick="searchCuisine('Chinese')">
+                              <img alt="Chinese" class="_2OXql" loading="lazy" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/89f3fec702aef5acbb51a6cbc284b3f7">
+                            </button>
+                          </div>
+                          <div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 6. North Indian / Thali -->
+                    <div class="uItqF" style="margin-right: 10px;">
+                      <div class="_1kG7e">
+                        <div>
+                          <div data-testid="image-info-container" class="_2Rj2_" style="width: calc(-13.1765px + 5.88235vw); height: calc(-18.7245px + 8.35913vw); min-width: calc(-13.1765px + 5.88235vw); min-height: calc(-18.7245px + 8.35913vw);">
+                            <button data-testid="image-info-ripple" class="_2NkGx _3Woul" onclick="searchCuisine('North Indian')">
+                              <img alt="North Indian" class="_2OXql" loading="lazy" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/8322f6d6df488dc1f5a6674cfe863f0f">
+                            </button>
+                          </div>
+                          <div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 7. South Indian / Dosa -->
+                    <div class="uItqF" style="margin-right: 10px;">
+                      <div class="_1kG7e">
+                        <div>
+                          <div data-testid="image-info-container" class="_2Rj2_" style="width: calc(-13.1765px + 5.88235vw); height: calc(-18.7245px + 8.35913vw); min-width: calc(-13.1765px + 5.88235vw); min-height: calc(-18.7245px + 8.35913vw);">
+                            <button data-testid="image-info-ripple" class="_2NkGx _3Woul" onclick="searchCuisine('South Indian')">
+                              <img alt="South Indian" class="_2OXql" loading="lazy" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/31f03222ea978aef3b10d386729eb076">
+                            </button>
+                          </div>
+                          <div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 8. Cakes -->
+                    <div class="uItqF" style="margin-right: 10px;">
+                      <div class="_1kG7e">
+                        <div>
+                          <div data-testid="image-info-container" class="_2Rj2_" style="width: calc(-13.1765px + 5.88235vw); height: calc(-18.7245px + 8.35913vw); min-width: calc(-13.1765px + 5.88235vw); min-height: calc(-18.7245px + 8.35913vw);">
+                            <button data-testid="image-info-ripple" class="_2NkGx _3Woul" onclick="searchCuisine('Cake')">
+                              <img alt="Cakes" class="_2OXql" loading="lazy" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/c170aa4262ec0d191642f42a3a03b4ce">
+                            </button>
+                          </div>
+                          <div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 9. Ice cream / Dessert -->
+                    <div class="uItqF" style="margin-right: 10px;">
+                      <div class="_1kG7e">
+                        <div>
+                          <div data-testid="image-info-container" class="_2Rj2_" style="width: calc(-13.1765px + 5.88235vw); height: calc(-18.7245px + 8.35913vw); min-width: calc(-13.1765px + 5.88235vw); min-height: calc(-18.7245px + 8.35913vw);">
+                            <button data-testid="image-info-ripple" class="_2NkGx _3Woul" onclick="searchCuisine('Dessert')">
+                              <img alt="Ice Cream" class="_2OXql" loading="lazy" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/0b5ffa32a04d99c1f212d2aacefd5f6f">
+                            </button>
+                          </div>
+                          <div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 10. Momos -->
+                    <div class="uItqF" style="margin-right: 10px;">
+                      <div class="_1kG7e">
+                        <div>
+                          <div data-testid="image-info-container" class="_2Rj2_" style="width: calc(-13.1765px + 5.88235vw); height: calc(-18.7245px + 8.35913vw); min-width: calc(-13.1765px + 5.88235vw); min-height: calc(-18.7245px + 8.35913vw);">
+                            <button data-testid="image-info-ripple" class="_2NkGx _3Woul" onclick="searchCuisine('Momos')">
+                              <img alt="Momos" class="_2OXql" loading="lazy" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/36184033ebef97d27a85fa3af5c1d403">
+                            </button>
+                          </div>
+                          <div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 11. Tea / Coffee -->
+                    <div class="uItqF" style="margin-right: 10px;">
+                      <div class="_1kG7e">
+                        <div>
+                          <div data-testid="image-info-container" class="_2Rj2_" style="width: calc(-13.1765px + 5.88235vw); height: calc(-18.7245px + 8.35913vw); min-width: calc(-13.1765px + 5.88235vw); min-height: calc(-18.7245px + 8.35913vw);">
+                            <button data-testid="image-info-ripple" class="_2NkGx _3Woul" onclick="searchCuisine('Tea')">
+                              <img alt="Tea" class="_2OXql" loading="lazy" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/d0884e09ef431ee610e54a0bb2dfecd5">
+                            </button>
+                          </div>
+                          <div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 12. Shawarma / Kebab -->
+                    <div class="uItqF" style="margin-right: 10px;">
+                      <div class="_1kG7e">
+                        <div>
+                          <div data-testid="image-info-container" class="_2Rj2_" style="width: calc(-13.1765px + 5.88235vw); height: calc(-18.7245px + 8.35913vw); min-width: calc(-13.1765px + 5.88235vw); min-height: calc(-18.7245px + 8.35913vw);">
+                            <button data-testid="image-info-ripple" class="_2NkGx _3Woul" onclick="searchCuisine('Shawarma')">
+                              <img alt="Shawarma" class="_2OXql" loading="lazy" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/8a78ff126fb0b02fb6813408022d7d54">
+                            </button>
+                          </div>
+                          <div></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
