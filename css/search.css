@@ -1,0 +1,80 @@
+/* search page styles */
+.active-nav-link { color: var(--orange) !important; }
+
+.search-page-wrap {
+  max-width: 860px; margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.search-bar-wrap { margin-bottom: 32px; }
+
+.search-input-row {
+  display: flex; align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 4px; background: #fff;
+  padding: 12px 16px; gap: 12px;
+  box-shadow: var(--card-shadow);
+}
+.search-input-row:focus-within { border-color: var(--text-dark); }
+
+.search-page-icon { width: 20px; color: var(--text-gray); flex-shrink: 0; }
+
+.search-page-input {
+  flex: 1; border: none; outline: none;
+  font-size: 16px; font-family: inherit;
+  color: var(--text-dark); background: transparent;
+}
+.search-page-input::placeholder { color: var(--text-gray); }
+
+.search-clear-btn {
+  background: none; border: none; cursor: pointer;
+  font-size: 16px; color: var(--text-gray);
+  padding: 2px 6px;
+}
+
+/* default state */
+.search-section-title {
+  font-size: 20px; font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.cuisines-grid {
+  display: flex; gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cuisine-item {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  cursor: pointer; padding: 8px; border-radius: 12px;
+  transition: transform .2s; min-width: 80px;
+}
+.cuisine-item:hover { transform: scale(1.05); }
+
+.cuisine-item img {
+  width: 80px; height: 80px; border-radius: 50%;
+  object-fit: cover; background: #f0f0f0;
+  border: 2px solid #eee;
+}
+.cuisine-item span { font-size: 13px; font-weight: 600; color: var(--text-dark); }
+
+/* search results */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px 20px;
+}
+
+.no-results {
+  text-align: center; padding: 60px 0;
+  color: var(--text-gray);
+}
+.no-results h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; color: var(--text-dark); }
+
+@media (max-width: 768px) {
+  .results-grid { grid-template-columns: repeat(2, 1fr); }
+  .cuisines-grid { gap: 10px; }
+  .cuisine-item img { width: 64px; height: 64px; }
+}
+@media (max-width: 480px) {
+  .results-grid { grid-template-columns: 1fr; }
+}
