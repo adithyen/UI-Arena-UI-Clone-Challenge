@@ -155,7 +155,8 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* restaurants grid */
-.restaurants-section { padding-top: 24px; }
+.restaurants-section { padding-top: 24px; padding-bottom: 0 !important; margin-bottom: 0; }
+.section-block.restaurants-section { padding-bottom: 0 !important; }
 
 .filter-row {
   display: flex; gap: 12px; flex-wrap: wrap;
@@ -195,7 +196,7 @@ a { text-decoration: none; color: inherit; }
 .site-footer {
   background: var(--footer-bg);
   color: #aaa;
-  margin-top: 48px;
+  margin-top: 0;
 }
 
 .footer-top {
