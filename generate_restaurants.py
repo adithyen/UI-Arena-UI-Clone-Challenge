@@ -181,7 +181,11 @@ zam_zam_dishes = [
 ]
 
 def render_dish(dish, dish_id):
-    veg_icon = 'vegVeg16' if dish['veg'] else 'nonvegNonVeg16'
+    if dish['veg']:
+        icon_svg = '<svg viewBox="0 0 20 20" width="16" height="16" class="sc-eWVJoQ cxxFkr"><rect x="2" y="2" width="16" height="16" rx="3" fill="none" stroke="#0f8a65" stroke-width="2"/><circle cx="10" cy="10" r="4.5" fill="#0f8a65"/></svg>'
+    else:
+        icon_svg = '<svg viewBox="0 0 20 20" width="16" height="16" class="sc-eWVJoQ cxxFkr"><rect x="2" y="2" width="16" height="16" rx="3" fill="none" stroke="#e43b4f" stroke-width="2"/><polygon points="10,4.5 15.5,14.5 4.5,14.5" fill="#e43b4f"/></svg>'
+        
     color = '#116649' if float(dish['rating']) >= 4.0 else '#E6A408'
     veg_str = 'veg' if dish['veg'] else 'nonveg'
     desc_html = f'<div class="sc-fUfliA iGdIQY"><div aria-hidden="true" class="sc-dlfnOL ipuZJn sc-jSUnEA jaouuY">{dish["desc"]}</div></div>' if dish['desc'] else ''
@@ -190,9 +194,7 @@ def render_dish(dish, dish_id):
   <div class="sc-goLLcu jEJsYT">
     <div>
       <div aria-hidden="true" class="sc-eWmBjE bSWzBq">
-        <svg viewBox="0 0 20 20" width="16" height="16" class="sc-eWVJoQ cxxFkr">
-          <use xlink:href="/food/sprite-0RhsIk92.svg#{veg_icon}"></use>
-        </svg>
+        {icon_svg}
       </div>
       <h3 aria-hidden="true" class="sc-dlfnOL hJCbXn sc-bxIdbF hEeFlr">{dish['name']}</h3>
       <div class="sc-kYpOdn gRmCvj">
@@ -211,22 +213,19 @@ def render_dish(dish, dish_id):
       </div>
       {desc_html}
     </div>
-    <div aria-hidden="true" class="sc-jmAvkx PgoaT">
-      <button aria-label="See more information" class="sc-iUeFge fxIkFp" style="background: rgb(246, 230, 233);">
-        <img alt="{dish['name']}" class="_3XS7H" height="144" loading="lazy" width="156" src="{dish['img']}">
-      </button>
-      <div class="sc-fXJWTj goDnKo">
-        <div style="position: relative;">
-          <div class="sc-cBNeAB hIFViE">
-            <div class="sc-jcVbNL dfmBqs">
-              <button class="swiggy-main-add-btn" onclick="openCustomiseModal(this, '{dish['name']}', '{dish['price']}')">ADD</button>
-              <div class="swiggy-qty-counter" style="display: none;">
-                <button class="sc-bZSSRQ sc-eggOvH eDwJae qty-btn" onclick="handleQtyChange(this, -1)">−</button>
-                <div class="sc-dlfnOL qty-val">1</div>
-                <button class="sc-bZSSRQ sc-cTkvqA eDwJae qty-btn" onclick="handleQtyChange(this, 1)">+</button>
-              </div>
-            </div>
-            <div class="sc-dlfnOL kOObuW">Customisable</div>
+  </div>
+  <div aria-hidden="true" class="sc-jmAvkx bIQAsK">
+    <button aria-label="See more information" class="sc-iUeFge fxIkFp" style="background: rgb(246, 230, 233);">
+      <img alt="{dish['name']}" class="_3XS7H" height="144" loading="lazy" width="156" src="{dish['img']}">
+    </button>
+    <div class="sc-fXJWTj goDnKo">
+      <div style="position: relative;">
+        <div class="sc-cBNeAB hIFViE">
+          <div class="sc-jcVbNL dfmBqs" id="dishAction-dish-{dish_id}">
+            <button class="swiggy-main-add-btn" onclick="openCustomiseModal(this, '{dish['name']}', '{dish['price']}')">ADD</button>
+          </div>
+          <div class="sc-AzeoO gdEeEA">
+            <div class="sc-dlfnOL itAPdo">Customisable</div>
           </div>
         </div>
       </div>
@@ -263,15 +262,13 @@ for r in restaurants:
     if target_dishes:
         dishes_html = '\n'.join([render_dish(d, idx) for idx, d in enumerate(target_dishes)])
         
-        # Replace recItemsBlock content
-        marker1 = '<div class="category-dish-container" id="recItemsBlock">'
+        marker1 = 'id="recItemsBlock">'
         marker2 = '<!-- Exact Swiggy Menu FAB'
         
         if marker1 in html and marker2 in html:
             idx1 = html.find(marker1) + len(marker1)
             idx2 = html.find(marker2)
             
-            # Find the closing tags right before marker2
             prefix = html[:idx1]
             suffix = html[idx2:]
             
