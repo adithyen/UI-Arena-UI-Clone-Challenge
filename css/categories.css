@@ -1,0 +1,19 @@
+/* override individual food category images using CSS background positions */
+/* since all categories use the same grid image, we can use background-position */
+/* or just use simple colored placeholder circles with emoji for each */
+
+/* individual category fallback colors */
+.cat-item[href*="biryani"] img { object-position: top left; }
+.cat-item[href*="pizza"] img { object-position: top center; }
+.cat-item[href*="burger"] img { object-position: top right; }
+.cat-item[href*="dosa"] img { object-position: center left; }
+.cat-item[href*="idli"] img { object-position: center; }
+.cat-item[href*="chicken"] img { object-position: center right; }
+.cat-item[href*="rolls"] img { object-position: bottom left; }
+.cat-item[href*="noodles"] img { object-position: bottom center; }
+.cat-item[href*="desserts"] img { object-position: bottom right; }
+
+/* use emoji fallback icons via CSS - nicer than showing wrong images */
+.cat-item img {
+  background-size: cover;
+}
