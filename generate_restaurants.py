@@ -180,6 +180,99 @@ zam_zam_dishes = [
     }
 ]
 
+mothers_veg_dishes = [
+    {
+        "name": "1 Butter Naan With Paneer Kadhai (combo)",
+        "price": "165",
+        "rating": "4.2",
+        "rating_count": "(15)",
+        "desc": "Curry/Masala served on 250 ml container",
+        "img": "",
+        "veg": True
+    },
+    {
+        "name": "1 Butter Naan With Palak Paneer (combo)",
+        "price": "155",
+        "rating": "4.1",
+        "rating_count": "(9)",
+        "desc": "Curry/Masala served on 250 ml container",
+        "img": "",
+        "veg": True
+    },
+    {
+        "name": "1 Butter Naan With Paneer Chilly (combo)",
+        "price": "165",
+        "rating": "5.0",
+        "rating_count": "(3)",
+        "desc": "Curry/Masala served on 250 ml container",
+        "img": "",
+        "veg": True
+    },
+    {
+        "name": "1 Butter Naan With Paneer Masala (combo)",
+        "price": "145",
+        "rating": "4.7",
+        "rating_count": "(9)",
+        "desc": "Curry/Masala served on 250 ml container",
+        "img": "",
+        "veg": True
+    },
+    {
+        "name": "1 Butter Naan With Veg Kurma (combo)",
+        "price": "115",
+        "rating": "5.0",
+        "rating_count": "(4)",
+        "desc": "Curry/Masala served on 250 ml container",
+        "img": "",
+        "veg": True
+    },
+    {
+        "name": "1 Butter Naan With Aloo Gobi (combo)",
+        "price": "125",
+        "rating": "4.0",
+        "rating_count": "(5)",
+        "desc": "Curry/Masala served on 250 ml container",
+        "img": "",
+        "veg": True
+    },
+    {
+        "name": "1 Butter Naan With Aloo Masala (combo)",
+        "price": "105",
+        "rating": "3.8",
+        "rating_count": "(4)",
+        "desc": "Curry/Masala served on 250 ml container",
+        "img": "",
+        "veg": True
+    },
+    {
+        "name": "1 Butter Naan With Aloo Mutter (combo)",
+        "price": "125",
+        "rating": "4.5",
+        "rating_count": "(6)",
+        "desc": "Curry/Masala served on 250 ml container",
+        "img": "",
+        "veg": True
+    },
+    {
+        "name": "1 Butter Naan With Dal Tadka (combo)",
+        "price": "110",
+        "rating": "3.5",
+        "rating_count": "(3)",
+        "desc": "Curry/Masala served on 250 ml container",
+        "img": "",
+        "veg": True
+    },
+    {
+        "name": "1 Butter Naan With Mix Veg Curry (combo)",
+        "price": "115",
+        "rating": "4.3",
+        "rating_count": "(7)",
+        "desc": "Curry/Masala served on 250 ml container",
+        "img": "",
+        "veg": True
+    }
+]
+
 def render_dish(dish, dish_id):
     if dish['veg']:
         icon_svg = '<svg viewBox="0 0 20 20" width="16" height="16" class="sc-eWVJoQ cxxFkr"><rect x="2" y="2" width="16" height="16" rx="3" fill="none" stroke="#0f8a65" stroke-width="2"/><circle cx="10" cy="10" r="4.5" fill="#0f8a65"/></svg>'
@@ -189,6 +282,12 @@ def render_dish(dish, dish_id):
     color = '#116649' if float(dish['rating']) >= 4.0 else '#E6A408'
     veg_str = 'veg' if dish['veg'] else 'nonveg'
     desc_html = f'<div class="sc-fUfliA iGdIQY"><div aria-hidden="true" class="sc-dlfnOL ipuZJn sc-jSUnEA jaouuY">{dish["desc"]}</div></div>' if dish['desc'] else ''
+    
+    img_html = ""
+    if dish.get('img'):
+        img_html = f"""<button aria-label="See more information" class="sc-iUeFge fxIkFp" style="background: rgb(246, 230, 233);">
+      <img alt="{dish['name']}" class="_3XS7H" height="144" loading="lazy" width="156" src="{dish['img']}">
+    </button>"""
     
     return f"""<div data-testid="normal-dish-item" class="sc-jiVjYv gRIQgR" data-id="dish-{dish_id}" data-name="{dish['name'].lower()}" data-type="{veg_str}" data-bestseller="true">
   <div class="sc-goLLcu jEJsYT">
@@ -215,9 +314,7 @@ def render_dish(dish, dish_id):
     </div>
   </div>
   <div aria-hidden="true" class="sc-jmAvkx bIQAsK">
-    <button aria-label="See more information" class="sc-iUeFge fxIkFp" style="background: rgb(246, 230, 233);">
-      <img alt="{dish['name']}" class="_3XS7H" height="144" loading="lazy" width="156" src="{dish['img']}">
-    </button>
+    {img_html}
     <div class="sc-fXJWTj goDnKo">
       <div style="position: relative;">
         <div class="sc-cBNeAB hIFViE">
@@ -255,6 +352,8 @@ for r in restaurants:
         target_dishes = chinnus_dishes
     elif r['id'] == 3:
         target_dishes = zam_zam_dishes
+    elif r['id'] == 4:
+        target_dishes = mothers_veg_dishes
 
     if target_dishes:
         dishes_html = '\n'.join([render_dish(d, idx) for idx, d in enumerate(target_dishes)])
