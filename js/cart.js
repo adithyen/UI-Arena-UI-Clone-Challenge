@@ -26,12 +26,17 @@ function renderRestaurant() {
   const el = document.getElementById('orderRestaurant');
   if (!el) return;
   el.innerHTML = `
-    <div style="display:flex;align-items:center;gap:14px;padding-bottom:14px;border-bottom:2px solid #02060c;margin-bottom:16px;">
+    <div style="display:flex;align-items:center;gap:14px;padding-bottom:14px;margin-bottom:12px;">
       <img src="assets/restaurants/pizza-hut.svg" alt="Pizza Hut" style="width:50px;height:50px;border-radius:4px;object-fit:cover;">
       <div>
-        <h4 style="font-size:17px;font-weight:600;color:#02060c;">Pizza Hut</h4>
-        <p style="font-size:13px;color:rgba(2,6,12,0.6);margin-top:2px;">Palayam</p>
+        <h4 style="font-size:17px;font-weight:600;color:#02060c;margin:0;">Pizza Hut</h4>
+        <p style="font-size:13px;color:rgba(2,6,12,0.6);margin-top:2px;margin:0;">Palayam</p>
+        <div style="width:40px;height:2px;background:#02060c;margin-top:6px;"></div>
       </div>
+    </div>
+    <div style="border-left:3px solid #02060c;padding-left:10px;margin-bottom:16px;margin-top:14px;">
+      <div style="font-size:12px;font-weight:700;color:#02060c;text-transform:uppercase;">FEASTMODE70 eligible items</div>
+      <div style="font-size:12px;font-weight:600;color:#02060c;margin-top:2px;">You just saved <strong>₹129</strong> on these items!</div>
     </div>
   `;
 }
@@ -40,17 +45,22 @@ function renderItems(cart) {
   const el = document.getElementById('orderItems');
   if (!el) return;
   el.innerHTML = cart.map(item => `
-    <div id="ci-${item.id}" style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;font-size:14px;color:#02060c;">
-      <div style="display:flex;align-items:center;gap:8px;flex:1;">
-        <span style="width:12px;height:12px;border:1px solid #1ba672;display:flex;align-items:center;justify-content:center;border-radius:2px;"><span style="width:6px;height:6px;background:#1ba672;border-radius:50%;"></span></span>
-        <span style="font-size:13px;font-weight:500;">${item.name}</span>
+    <div id="ci-${item.id}" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid #f1f1f6;">
+      <div style="display:flex;align-items:center;gap:10px;flex:1;">
+        <span style="width:14px;height:14px;border:1px solid #1ba672;display:inline-flex;align-items:center;justify-content:center;border-radius:2px;flex-shrink:0;">
+          <span style="width:6px;height:6px;background:#1ba672;border-radius:50%;"></span>
+        </span>
+        <span style="font-size:13px;font-weight:500;color:#02060c;">${item.name} (Personal, Pan)</span>
       </div>
-      <div style="display:flex;align-items:center;border:1px solid #bebfc5;padding:3px 8px;font-size:13px;font-weight:600;gap:12px;margin:0 14px;">
-        <button onclick="changeQty('${item.id}', -1)" style="border:none;background:none;color:#686b78;cursor:pointer;font-weight:700;font-size:14px;">−</button>
+      <div style="display:flex;align-items:center;border:1px solid #bebfc5;padding:3px 8px;font-size:13px;font-weight:600;gap:10px;background:#fff;margin:0 12px;">
+        <button onclick="changeQty('${item.id}', -1)" style="border:none;background:none;color:#686b78;cursor:pointer;font-weight:700;font-size:14px;padding:0 2px;">−</button>
         <span id="qty-${item.id}" style="color:#60b246;font-weight:700;">${item.qty}</span>
-        <button onclick="changeQty('${item.id}', 1)" style="border:none;background:none;color:#60b246;cursor:pointer;font-weight:700;font-size:14px;">+</button>
+        <button onclick="changeQty('${item.id}', 1)" style="border:none;background:none;color:#60b246;cursor:pointer;font-weight:700;font-size:14px;padding:0 2px;">+</button>
       </div>
-      <span class="ci-price" style="font-weight:600;font-size:14px;min-width:50px;text-align:right;">₹${item.price * item.qty}</span>
+      <div style="text-align:right;min-width:65px;">
+        <span style="font-size:11px;color:#686b78;text-decoration:line-through;display:block;">₹${Math.round(item.price * 1.35 * item.qty)}</span>
+        <span class="ci-price" style="font-weight:600;font-size:14px;color:#02060c;">₹${item.price * item.qty}</span>
+      </div>
     </div>
   `).join('');
 }
@@ -88,7 +98,7 @@ function changeQty(itemId, delta) {
   if (cart.length === 0) renderCart();
 }
 
-// Execute renderCart immediately so there is zero delay/flash/collapse
+// Execute renderCart immediately
 renderCart();
 
 document.addEventListener('DOMContentLoaded', () => {
