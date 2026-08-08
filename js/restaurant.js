@@ -1,5 +1,5 @@
 // ==========================================================================
-// SWIGGY RESTAURANT PAGE JAVASCRIPT LOGIC
+// SWIGGY RESTAURANT PAGE - AUTHENTIC 1:1 CONTROLLER LOGIC
 // ==========================================================================
 
 let isVegOnly = false;
@@ -9,37 +9,29 @@ let searchQuery = '';
 
 // Tab switching (Order Online vs Dineout)
 function switchTab(btn, tab) {
-  document.querySelectorAll('.rest-tab-item').forEach(t => t.classList.remove('active-tab'));
-  btn.classList.add('active-tab');
+  document.querySelectorAll('.sc-gaGBLo.gsSDZP').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
 }
 
-// Deals carousel scroll
-function scrollDeals(direction) {
-  const container = document.getElementById('dealsScroll');
+// Category Accordion Toggle
+function toggleCategoryAccordion(btn) {
+  btn.classList.toggle('collapsed');
+  const container = btn.parentElement.querySelector('.category-dish-container');
   if (container) {
-    container.scrollBy({ left: direction * 240, behavior: 'smooth' });
+    container.classList.toggle('collapsed');
   }
 }
 
-// Toggle Category Accordion
-function toggleCategorySection(blockId, headerEl) {
-  const block = document.getElementById(blockId);
-  if (!block) return;
-  const isHidden = block.classList.contains('hidden');
-  if (isHidden) {
-    block.classList.remove('hidden');
-    headerEl.classList.remove('collapsed');
-  } else {
-    block.classList.add('hidden');
-    headerEl.classList.add('collapsed');
-  }
+// Search dishes in restaurant
+function handleDishSearch(val) {
+  searchQuery = (val || '').toLowerCase().trim();
+  applyFilters();
 }
 
-// Filter handlers
+// Veg Filter Handler
 function handleVegFilter(checked) {
   isVegOnly = checked;
   if (checked) {
-    // Uncheck non-veg if checked
     const nonVegCb = document.getElementById('NON_VEG');
     if (nonVegCb) nonVegCb.checked = false;
     isNonVegOnly = false;
@@ -47,10 +39,10 @@ function handleVegFilter(checked) {
   applyFilters();
 }
 
+// Non-Veg Filter Handler
 function handleNonVegFilter(checked) {
   isNonVegOnly = checked;
   if (checked) {
-    // Uncheck veg if checked
     const vegCb = document.getElementById('VEG');
     if (vegCb) vegCb.checked = false;
     isVegOnly = false;
@@ -58,22 +50,19 @@ function handleNonVegFilter(checked) {
   applyFilters();
 }
 
-function toggleBestsellerFilter() {
+// Bestseller Filter Handler
+function toggleBestsellerFilter(btn) {
   isBestsellerOnly = !isBestsellerOnly;
-  const btn = document.getElementById('bestsellerBtn');
-  if (btn) {
-    btn.classList.toggle('active', isBestsellerOnly);
+  const chipBtn = btn || document.getElementById('bestsellerBtn');
+  if (chipBtn) {
+    chipBtn.classList.toggle('active', isBestsellerOnly);
   }
   applyFilters();
 }
 
-function filterDishes(val) {
-  searchQuery = (val || '').toLowerCase().trim();
-  applyFilters();
-}
-
+// Master Filter Function
 function applyFilters() {
-  const dishRows = document.querySelectorAll('.dish-item-row');
+  const dishRows = document.querySelectorAll('.sc-jiVjYv.gRIQgR');
   dishRows.forEach(row => {
     const type = row.dataset.type; // 'veg' | 'nonveg'
     const name = (row.dataset.name || '').toLowerCase();
@@ -86,7 +75,7 @@ function applyFilters() {
     if (isBestsellerOnly && !isBestseller) match = false;
     if (searchQuery && !name.includes(searchQuery)) match = false;
 
-    row.classList.toggle('hidden-by-filter', !match);
+    row.style.display = match ? 'flex' : 'none';
   });
 }
 
@@ -94,7 +83,6 @@ function applyFilters() {
 // DISH ADD & QUANTITY CONTROLLER LOGIC
 // ==========================================================================
 
-// Customisation Modal State
 let currentCustomiseItem = null;
 let currentStep = 1;
 let selectedCrust = 'Pan';
@@ -117,12 +105,12 @@ function openCustomiseModal(item) {
   extraCheese = false;
   renderModalStep();
   const modal = document.getElementById('modalOverlay');
-  if (modal) modal.classList.add('open');
+  if (modal) modal.style.display = 'flex';
 }
 
 function closeCustomiseModal() {
   const modal = document.getElementById('modalOverlay');
-  if (modal) modal.classList.remove('open');
+  if (modal) modal.style.display = 'none';
 }
 
 function renderModalStep() {
@@ -131,6 +119,8 @@ function renderModalStep() {
   const stepInd = document.getElementById('modalStepIndicator');
   const actionBtn = document.getElementById('modalActionBtn');
 
+  if (!title || !body || !stepInd || !actionBtn) return;
+
   if (currentStep === 1) {
     title.textContent = `${currentCustomiseItem.name} · ₹${currentCustomiseItem.price}`;
     stepInd.textContent = 'Step 1/2';
@@ -138,65 +128,44 @@ function renderModalStep() {
     actionBtn.onclick = () => { currentStep = 2; renderModalStep(); };
 
     body.innerHTML = `
-      <p class="option-group-title">Choose your Crust</p>
-      <label class="option-row">
-        <span class="option-left">
-          <input type="radio" name="crust" value="Pan" ${selectedCrust === 'Pan' ? 'checked' : ''} onchange="selectedCrust='Pan'">
-          Pan
-        </span>
+      <p style="font-weight:700; margin-bottom:12px; font-size:14px;">Choose your Crust</p>
+      <label style="display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid #f0f0f5; cursor:pointer;">
+        <span><input type="radio" name="crust" value="Pan" ${selectedCrust === 'Pan' ? 'checked' : ''} onchange="selectedCrust='Pan'"> Pan Crust</span>
       </label>
-      <label class="option-row">
-        <span class="option-left">
-          <input type="radio" name="crust" value="Ultimate Cheese" ${selectedCrust === 'Ultimate Cheese' ? 'checked' : ''} onchange="selectedCrust='Ultimate Cheese'">
-          Ultimate Cheese
-        </span>
+      <label style="display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid #f0f0f5; cursor:pointer;">
+        <span><input type="radio" name="crust" value="Ultimate Cheese" ${selectedCrust === 'Ultimate Cheese' ? 'checked' : ''} onchange="selectedCrust='Ultimate Cheese'"> Ultimate Cheese Crust</span>
       </label>
-      <label class="option-row">
-        <span class="option-left">
-          <input type="radio" name="crust" value="Stuffed Crust - Maxx" ${selectedCrust === 'Stuffed Crust - Maxx' ? 'checked' : ''} onchange="selectedCrust='Stuffed Crust - Maxx'">
-          Stuffed Crust - Maxx
-        </span>
+      <label style="display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid #f0f0f5; cursor:pointer;">
+        <span><input type="radio" name="crust" value="Stuffed Crust" ${selectedCrust === 'Stuffed Crust' ? 'checked' : ''} onchange="selectedCrust='Stuffed Crust'"> Stuffed Crust - Maxx</span>
       </label>
-      <label class="option-row">
-        <span class="option-left">
-          <input type="radio" name="crust" value="Thin n Crispy" ${selectedCrust === 'Thin n Crispy' ? 'checked' : ''} onchange="selectedCrust='Thin n Crispy'">
-          Thin n Crispy
-        </span>
+      <label style="display:flex; justify-content:space-between; align-items:center; padding:10px 0; cursor:pointer;">
+        <span><input type="radio" name="crust" value="Thin n Crispy" ${selectedCrust === 'Thin n Crispy' ? 'checked' : ''} onchange="selectedCrust='Thin n Crispy'"> Thin n Crispy</span>
       </label>
     `;
   } else {
     stepInd.textContent = 'Step 2/2';
-    actionBtn.textContent = 'Add Item to cart';
+    actionBtn.textContent = 'Add Item to Cart';
     actionBtn.onclick = finishCustomisation;
 
     body.innerHTML = `
-      <div style="background:#f9f9f9; padding:12px 16px; border-radius:8px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center;">
-        <span>• ${selectedCrust}</span>
-        <button style="border:none; background:none; color:#fc8019; font-weight:700; cursor:pointer;" onclick="currentStep=1; renderModalStep();">Change</button>
+      <div style="background:#f0f0f5; padding:10px 14px; border-radius:8px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; font-size:13px; font-weight:600;">
+        <span>• Crust: ${selectedCrust}</span>
+        <button style="border:none; background:none; color:#ff5200; font-weight:700; cursor:pointer;" onclick="currentStep=1; renderModalStep();">Change</button>
       </div>
-      <p class="option-group-title">Choose Size</p>
-      <label class="option-row">
-        <span class="option-left">
-          <input type="radio" name="size" value="Personal" ${selectedSize === 'Personal' ? 'checked' : ''} onchange="selectedSize='Personal'">
-          Personal
-        </span>
-        <span>₹${currentCustomiseItem.price}</span>
+      <p style="font-weight:700; margin-bottom:12px; font-size:14px;">Choose Size</p>
+      <label style="display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid #f0f0f5; cursor:pointer;">
+        <span><input type="radio" name="size" value="Personal" ${selectedSize === 'Personal' ? 'checked' : ''} onchange="selectedSize='Personal'"> Personal (Serves 1)</span>
+        <span style="font-weight:600;">₹${currentCustomiseItem.price}</span>
       </label>
-      <label class="option-row">
-        <span class="option-left">
-          <input type="radio" name="size" value="Medium" ${selectedSize === 'Medium' ? 'checked' : ''} onchange="selectedSize='Medium'">
-          Medium
-        </span>
-        <span>₹${currentCustomiseItem.price + 200}</span>
+      <label style="display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid #f0f0f5; cursor:pointer;">
+        <span><input type="radio" name="size" value="Medium" ${selectedSize === 'Medium' ? 'checked' : ''} onchange="selectedSize='Medium'"> Medium (Serves 2)</span>
+        <span style="font-weight:600;">₹${currentCustomiseItem.price + 200}</span>
       </label>
 
-      <p class="option-group-title" style="margin-top:20px;">Extra Cheese Topping</p>
-      <label class="option-row">
-        <span class="option-left">
-          <input type="checkbox" ${extraCheese ? 'checked' : ''} onchange="extraCheese=this.checked">
-          Extra Mozzarella Cheese
-        </span>
-        <span>+ ₹65</span>
+      <p style="font-weight:700; margin:16px 0 12px; font-size:14px;">Extra Cheese Topping</p>
+      <label style="display:flex; justify-content:space-between; align-items:center; padding:10px 0; cursor:pointer;">
+        <span><input type="checkbox" ${extraCheese ? 'checked' : ''} onchange="extraCheese=this.checked"> Extra Mozzarella Cheese</span>
+        <span style="font-weight:600;">+ ₹65</span>
       </label>
     `;
   }
@@ -224,14 +193,15 @@ function addItemDirectly(item) {
 function changeDishQty(dishId, delta) {
   const cart = getCart();
   const idx = cart.findIndex(i => i.id === dishId || (i.id && i.id.startsWith(dishId)));
+  
   if (idx === -1) {
     if (delta > 0) {
-      // Find item details from DOM
-      const row = document.querySelector(`.dish-item-row[data-id="${dishId}"]`);
+      const row = document.querySelector(`.sc-jiVjYv.gRIQgR[data-id="${dishId}"]`);
       if (row) {
-        const name = row.querySelector('.dish-title-text').textContent;
-        const price = parseInt(row.querySelector('.dish-price-text').textContent.replace('₹', ''));
-        const type = row.dataset.type;
+        const name = row.querySelector('h3').textContent.trim();
+        const priceText = row.querySelector('.sc-dlfnOL.cWZrLo').textContent.replace('₹', '').trim();
+        const price = parseInt(priceText) || 149;
+        const type = row.dataset.type || 'veg';
         addToCart({ id: dishId, name, price, type });
       }
     }
@@ -246,76 +216,65 @@ function changeDishQty(dishId, delta) {
   updateFloatingCart();
 }
 
-// Update all dish ADD buttons / quantity selectors on page based on cart
+// Update all dish action buttons / counters
 function updateDishActionButtons() {
   const cart = getCart();
-  const dishRows = document.querySelectorAll('.dish-item-row');
+  const dishRows = document.querySelectorAll('.sc-jiVjYv.gRIQgR');
 
   dishRows.forEach(row => {
     const dishId = row.dataset.id;
     const container = document.getElementById(`dishAction-${dishId}`);
     if (!container) return;
 
-    // Find quantity in cart
     const inCart = cart.filter(i => i.id === dishId || (i.id && i.id.startsWith(dishId)));
     const totalQty = inCart.reduce((sum, item) => sum + item.qty, 0);
 
     if (totalQty > 0) {
-      // Render Swiggy interactive counter: [-] [ 1 ] [+]
       container.innerHTML = `
-        <div class="sc-dOSQqJ eHMbdb">
-          <button class="sc-bZSSRQ sc-jNMdgd eDwJae emzPLX" onclick="changeDishQty('${dishId}', -1)">
-            <div class="sc-dlfnOL dIFmud">−</div>
-          </button>
-          <button direction="stable" class="sc-bZSSRQ sc-bBrNAk eDwJae AowEK">
-            <div class="sc-dlfnOL dIFmud">${totalQty}</div>
-          </button>
-          <button class="sc-bZSSRQ sc-cOahfn eDwJae kyLLdF" onclick="changeDishQty('${dishId}', 1)">
-            <div class="sc-dlfnOL dIFmud">+</div>
-          </button>
+        <div class="swiggy-qty-counter" style="display:flex; align-items:center; justify-content:space-between; width:100%; height:100%; padding:0 8px;">
+          <button class="qty-btn" style="background:none; border:none; color:#1ba672; font-size:18px; font-weight:800; cursor:pointer;" onclick="changeDishQty('${dishId}', -1)">−</button>
+          <div class="qty-val" style="font-size:14px; font-weight:800; color:#1ba672;">${totalQty}</div>
+          <button class="qty-btn" style="background:none; border:none; color:#1ba672; font-size:18px; font-weight:800; cursor:pointer;" onclick="changeDishQty('${dishId}', 1)">+</button>
         </div>
       `;
     } else {
-      // Render standard Swiggy ADD button
-      const name = row.querySelector('.dish-title-text').textContent;
-      const price = parseInt(row.querySelector('.dish-price-text').textContent.replace('₹', ''));
-      const type = row.dataset.type;
+      const name = row.querySelector('h3').textContent.trim();
+      const priceText = row.querySelector('.sc-dlfnOL.cWZrLo').textContent.replace('₹', '').trim();
+      const price = parseInt(priceText) || 149;
+      const type = row.dataset.type || 'veg';
 
       container.innerHTML = `
-        <button class="swiggy-add-btn" onclick="handleAddClick({id:'${dishId}',name:'${name}',price:${price},type:'${type}'}, true)">ADD</button>
+        <button class="swiggy-main-add-btn" onclick="handleAddClick({id:'${dishId}',name:'${name}',price:${price},type:'${type}'}, true)">ADD</button>
       `;
     }
   });
 }
 
-// Floating View Cart Green Bar & Menu FAB positioning
+// Floating View Cart Green Bar
 function updateFloatingCart() {
   const cart = getCart();
   const total = cart.reduce((sum, i) => sum + i.qty, 0);
   const fc = document.getElementById('floatingCart');
   const countText = document.getElementById('fcCountText');
-  const menuFabWrap = document.getElementById('menuFabWrap');
 
   if (total > 0) {
     if (fc) fc.style.display = 'block';
-    if (menuFabWrap) menuFabWrap.classList.add('with-cart');
     if (countText) {
       countText.textContent = total + (total === 1 ? ' item added' : ' items added');
     }
   } else {
     if (fc) fc.style.display = 'none';
-    if (menuFabWrap) menuFabWrap.classList.remove('with-cart');
   }
 
-  // Update header cart count
   updateCartBadge();
 }
 
-// Browse Menu Modal Handlers
+// Browse Menu Modal
 function toggleBrowseMenuModal() {
   const overlay = document.getElementById('browseMenuOverlay');
   if (overlay) {
-    overlay.classList.toggle('open');
+    const isVisible = overlay.style.display === 'flex';
+    overlay.style.display = isVisible ? 'none' : 'flex';
   }
 }
 
@@ -328,11 +287,11 @@ function scrollToCategory(groupId) {
   toggleBrowseMenuModal();
 }
 
-// Sticky top header scroll listener
+// Sticky header scroll listener
 window.addEventListener('scroll', () => {
   const stickyHeader = document.getElementById('stickyRestHeader');
   if (stickyHeader) {
-    if (window.scrollY > 320) {
+    if (window.scrollY > 340) {
       stickyHeader.classList.add('visible');
     } else {
       stickyHeader.classList.remove('visible');
@@ -340,13 +299,13 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Deals slider controls
+// Deals carousel scroll
 function scrollDeals(dir) {
   const container = document.getElementById('dealsScroll');
   if (!container) return;
-  const scrollAmount = 320;
+  const scrollAmount = 300;
   container.scrollBy({ left: dir * scrollAmount, behavior: 'smooth' });
-  setTimeout(updateDealArrows, 300);
+  setTimeout(updateDealArrows, 250);
 }
 
 function updateDealArrows() {
@@ -355,8 +314,8 @@ function updateDealArrows() {
   const nextBtn = document.getElementById('dealNext');
   if (!container || !prevBtn || !nextBtn) return;
 
-  const isStart = container.scrollLeft <= 10;
-  const isEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth - 10;
+  const isStart = container.scrollLeft <= 5;
+  const isEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth - 5;
 
   if (isStart) {
     prevBtn.setAttribute('disabled', '');
@@ -388,4 +347,3 @@ document.addEventListener('DOMContentLoaded', () => {
   const signInBtn = document.getElementById('signInBtn');
   if (signInBtn) signInBtn.addEventListener('click', e => { e.preventDefault(); openSignIn(); });
 });
-
