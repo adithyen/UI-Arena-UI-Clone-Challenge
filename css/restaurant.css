@@ -567,8 +567,22 @@ body.rest-body {
 
 .sc-bMzzNB.gvRsYh {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 10px 0 8px;
+  border: 1px solid rgba(2, 6, 12, 0.15);
+  border-radius: 18px;
+  background-color: #ffffff;
   cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.sc-bMzzNB.gvRsYh:hover {
+  background-color: #f0f0f5;
 }
 
 .sc-bxIUVk.gNKZjb {
@@ -576,54 +590,47 @@ body.rest-body {
   opacity: 0;
   width: 0;
   height: 0;
+  pointer-events: none;
 }
 
 .sc-PTzAb.fvsNpY {
   display: inline-flex;
   align-items: center;
-  justify-content: flex-start;
-  width: 48px;
-  height: 24px;
-  border-radius: 12px;
-  background-color: #d4d5d9;
-  border: 1px solid rgba(2, 6, 12, 0.15);
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-  padding: 1px;
-  box-sizing: border-box;
-  cursor: pointer;
-  position: relative;
+  gap: 8px;
 }
 
 .sc-BcUHK.ddUdNZ {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateX(0);
 }
 
 .sc-eWVJoQ.cxxFkr {
-  width: 14px;
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* Mini track on the right side of the icon inside the outer white pill */
+.sc-PTzAb.fvsNpY::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
   height: 14px;
+  border-radius: 7px;
+  background-color: #e2e2e7;
+  transition: background-color 0.2s ease;
+  position: relative;
 }
 
-.sc-bxIUVk.gNKZjb:checked + .sc-PTzAb.fvsNpY {
+/* Checked state for VEG */
+.sc-bxIUVk.gNKZjb:checked + .sc-PTzAb.fvsNpY::after {
   background-color: #0f8a65 !important;
-  border-color: #0f8a65 !important;
 }
 
-.sc-bxIUVk.gNKZjb:checked + .sc-PTzAb.fvsNpY[type="NON_VEG"] {
+/* Checked state for NON_VEG */
+.sc-bxIUVk.gNKZjb:checked + .sc-PTzAb.fvsNpY[type="NON_VEG"]::after {
   background-color: #e43b4f !important;
-  border-color: #e43b4f !important;
-}
-
-.sc-bxIUVk.gNKZjb:checked + .sc-PTzAb.fvsNpY .sc-BcUHK.ddUdNZ {
-  transform: translateX(24px) !important;
 }
 
 .sc-tYrig.krbHjL {
