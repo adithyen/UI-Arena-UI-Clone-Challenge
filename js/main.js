@@ -43,14 +43,6 @@ function updateCartBadge() {
     if (navCart) navCart.classList.remove('cart-has-items');
   }
 }
-    if (svgEmpty) svgEmpty.style.display = 'none';
-    if (navCart) navCart.classList.add('cart-has-items');
-  } else {
-    if (badgeGreen) badgeGreen.style.display = 'none';
-    if (svgEmpty) svgEmpty.style.display = 'block';
-    if (navCart) navCart.classList.remove('cart-has-items');
-  }
-}
 
 // restaurant data - clean single-dish SVG images
 const restaurants = [
