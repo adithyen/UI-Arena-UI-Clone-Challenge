@@ -95,7 +95,7 @@ Your Pull Request **is** your submission. Only PRs opened within the event windo
 | Push | `git push origin <branch-name>` |
 | Pull latest | `git pull` |
 
-New to Git? A free pre-event orientation walks through all of this live, and [`UI_ARENA_Git_Guide.pdf`](./UI_ARENA_Git_Guide.pdf) covers it step by step with screenshots.
+New to Git? A Git guide attached to this repo [`UI_ARENA_Git_Guide.pdf`](./UI_ARENA_Git_Guide.pdf) covers it step by step with instructions.
 
 ---
 
